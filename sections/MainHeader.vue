@@ -1,6 +1,6 @@
 <template>
     <SectionsContainer 
-    :backgroundUrl="'bg3.svg'">
+    :backgroundUrl="'bg.png'">
 
         <div class="welcome">
     
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import SectionsContainer from '../SectionsContainer.vue';
+import SectionsContainer from '@/components/SectionsContainer.vue';
 
 
 </script>

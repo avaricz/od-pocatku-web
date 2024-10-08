@@ -7,7 +7,7 @@ $gray: #334155;
 
 // Variables for screen width
 $small-screen: 768px;
-$medium-sceen: 1024px;
+$medium-screen: 1024px;
 $large-screen: 1280px;
 
 // LOGO
@@ -15,6 +15,10 @@ $logo-font: Italianno;
 $logo-size: 3.6rem;
 $logo-title-color: $purple;
 $logo-img-color: invert(9%) sepia(42%) saturate(3464%) hue-rotate(284deg) brightness(87%) contrast(102%);
+
+//HEADER 
+$header-height: 80px;
+$header-height-mobile: 60px;
 
 // NAVBAR
 $nav-font: Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
@@ -37,7 +41,7 @@ $border-item: .5px solid lightgray;
 
 body {
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
   font-family:  Inter var,
 ui-sans-serif,
 system-ui,

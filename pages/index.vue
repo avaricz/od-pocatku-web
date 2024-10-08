@@ -4,8 +4,8 @@
 </template>
 
 <script setup lang="ts">
-import MainHeader from '~/components/sections/MainHeader.vue';
-import MainInfo from '~/components/sections/MainInfo.vue';
+import MainHeader from '~/sections/MainHeader.vue';
+import MainInfo from '~/sections/MainInfo.vue';
 
 
 

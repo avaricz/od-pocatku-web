@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 
-import { infoCards } from '~/content/infoCards';
+import { infoCards } from '@/content/infoCards';
 
 const cardsContent = ref(infoCards)
 
