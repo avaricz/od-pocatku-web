@@ -1,5 +1,6 @@
 <template>
-    <nav>
+    <header>
+        <nav>
         <NuxtLink :to="logo.link" class="logo-wrapper">
                 <img :src="logo.logo" alt="">
                 <div class="logo-title">{{ logo.title}}</div>
@@ -7,7 +8,7 @@
 
         <div class="navigation-wrapper" :class="{visible: isMenuOpen}">
             <ul>
-                <li v-for="link in links" @click="isMenuOpen=false">
+                <li v-for="link in navigation" @click="isMenuOpen=false">
                     <NuxtLink :to="link.link">{{link.lable}}</NuxtLink>
                 </li>
             </ul>
@@ -25,41 +26,43 @@
             <i class="pi pi-bars"></i>
         </div>
     </nav>
+    </header>
 </template>
 
 <script setup lang="ts">
 
-    interface Logo {
-        link: string,
-        title: string,
-        logo: string
-    }
+const isMenuOpen = ref(false)
 
-    interface Link {
-        lable: string,
-        link: string
-    }
+function openMenu () {
+    isMenuOpen.value = !isMenuOpen.value
+}
 
-    interface Social {
-        icon: string,
-        url: string
-    }
+const logo = ref({
+    link: '/',
+    logo: './img/logo.svg',
+    title: 'Od počátku',
+})
 
-    defineProps <{
-        logo: Logo
-        links: Link[]
-        socials: Social[]
-    }>()
+const navigation = ref([
+    { lable: 'Home', link: '/' },
+    { lable: 'O mně', link: '/about' },
+    { lable: 'Události', link: '/events' },
+])
 
-    const isMenuOpen = ref(false)
-
-    function openMenu () {
-        isMenuOpen.value = !isMenuOpen.value
-    }
+const socials = ref([
+    {icon: '/icon/instagram-colored-filled.png', url: 'https://www.instagram.com/od_pocatku_s_dulou_lucii/'},
+    {icon: '/icon/facebook-colored-filled.png', url: 'https://www.facebook.com/profile.php?id=100087763303156'}
+])
 
 </script>
 
 <style lang="scss" scoped>
+
+header {
+    border-bottom: $section-border;
+    background: $pink-dr;
+} 
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -126,11 +129,11 @@ nav {
                 }
                 &::before {
                     transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
-                    background: $purple;
+                    background: $link-color;
                 }
                 &::after {
                     transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
-                    background: $purple;
+                    background: $link-color;
                 }
             } 
         }
@@ -220,7 +223,4 @@ nav {
 .visible {
     display: flex;
 }
-
-
-
 </style>

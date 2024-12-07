@@ -1,8 +1,9 @@
 $red: blue;
 $pink: #ff9aaa;
 $purple: #3D0B37;
+$pink-dr: #AB3B63;
 $gray-lt: #f8fafc;
-$gray: #334155;
+$gray-dr: #334155;
 
 
 // Variables for screen width
@@ -22,7 +23,7 @@ $header-height-mobile: 60px;
 
 // NAVBAR
 $nav-font: Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
-$link-color: $purple;
+$link-color: $gray-lt;
 
 // Section's bottom border
 $section-border: .5px solid lightgray;

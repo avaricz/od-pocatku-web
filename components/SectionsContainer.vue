@@ -13,21 +13,20 @@
         backgroundUrl?: string
     }>()
     
-    const background = ref(props.backgroundUrl ? `url(${props.backgroundUrl})`  : "")
+    const background = ref(props.backgroundUrl ? `url(${props.backgroundUrl})`  : "transparent")
 </script>
 
 <style lang="scss" scoped>
 section {
     border-bottom: $section-border;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 50%;
 }
 .container {
     margin: 0 auto;
     padding: 6rem 2rem;
     max-width: $large-screen;
-
 
     display: flex;
     justify-content: space-evenly;

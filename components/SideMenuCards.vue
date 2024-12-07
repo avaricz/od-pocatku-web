@@ -63,7 +63,7 @@ defineProps<{
         padding: 2rem 4rem;
         width: 60%;
         background: white;
-        min-height: 120%;
+        min-height: 140%;
 
         -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
         -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
@@ -74,6 +74,7 @@ defineProps<{
             text-align: center;
             font-size: 2rem;
             font-weight: 300;
+
         }
         p {
             padding: 3rem 0 0 ;
