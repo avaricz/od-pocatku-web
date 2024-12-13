@@ -6,7 +6,7 @@
                 <div class="logo-title">{{ logo.title}}</div>
         </NuxtLink>
 
-        <div class="navigation-wrapper" :class="{visible: isMenuOpen}">
+        <div class="navigation-wrapper" :class="{'visible': isMenuOpen}">
             <ul>
                 <li v-for="link in navigation" @click="isMenuOpen=false">
                     <NuxtLink :to="link.link">{{link.lable}}</NuxtLink>
@@ -59,7 +59,6 @@ const socials = ref([
 <style lang="scss" scoped>
 
 header {
-    border-bottom: $section-border;
     background: $pink-dr;
 } 
 
@@ -82,13 +81,13 @@ nav {
     img {
         width: auto;
         height: 80%;
-        filter: $logo-img-color;
+        
     }
     .logo-title {
         text-wrap: nowrap;
-        font-family: $logo-font;
-        font-size: $logo-size;
-        color: $logo-title-color;
+        font-family: Italianno;
+        font-size: 3.6rem;
+        color: $black;
     }
 }
 
@@ -98,42 +97,22 @@ nav {
     justify-content: space-between;
     gap: 2rem;
     ul {
-        font-family: $nav-font;
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
         li {
             display: flex;
             a {
+                padding: .3rem .5rem;
+                border-radius: 10px;
                 font-weight: 700;
-                color: $link-color;
-
-            // EXPERIMENT HOVER
-                position: relative;
-                display: inline-block;
-                transition: color .2s ease;
+                color: $white;
+                transition: all .3s linear;
                 &:hover {
-                    &::after,
-                    &::before {
-                    width: 100%;
-                    left: 0;
-                    }
+                    background-color: darken($pink-dr, 10%);
                 }
-                &::after,
-                &::before {
-                    content: ''; 
-                    position: absolute;
-                    bottom: 0;
-                    width: 0;
-                    right: 0;
-                    height: 2px;
-                }
-                &::before {
-                    transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
-                    background: $link-color;
-                }
-                &::after {
-                    transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
-                    background: $link-color;
+                &:active {
+                    color:$white;
+                    background-color: darken($pink-dr, 20%);
                 }
             } 
         }
@@ -157,11 +136,19 @@ nav {
 }
     
 @media screen and  (max-width: $small-screen) {
-
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 0 10px 5px $black;
+        
+    }
     nav{
-        height: $header-height-mobile;
+        height: 60px;
         position: relative;
         overflow: visible;
+        
     }
 
     .logo-wrapper {
@@ -173,13 +160,13 @@ nav {
     .navigation-wrapper {
         display: none;
         flex-direction: column;
-        background: $gray-lt;
-        position: absolute;
+        background: $white;
+        position: fixed;
         right: 0;
-        top: $header-height-mobile;
+        top: 60px;
         width: 100%;
         padding: 1rem 0;
-        height: calc(100vh - $header-height-mobile);
+        max-height: calc(100vh - 60px);
         ul {
             flex-direction: column;
             align-items: center;
@@ -193,16 +180,11 @@ nav {
                     color: $purple;
                     width: 100%;
                     &:hover {
-                        &::after,
-                        &::before {
-                            width: 0;
-                        }
+                        background: $pink-dr;
                     }
                 }
             }
-            li:not(:last-child) {
-                border-bottom: .5px solid $purple;
-            }
+            
         }
     }
 
@@ -222,5 +204,6 @@ nav {
 
 .visible {
     display: flex;
+    background-color: $white;
 }
 </style>

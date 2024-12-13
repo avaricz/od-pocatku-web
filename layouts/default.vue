@@ -1,4 +1,5 @@
 <template>
+
         <TheHeader />
         <TheMain>
             <slot></slot>
@@ -11,3 +12,10 @@ import TheHeader from '~/layout_components/TheHeader.vue';
 import TheMain from '~/layout_components/TheMain.vue';
 import TheFooter from '~/layout_components/TheFooter.vue';
 </script>
+
+<style lang="scss" scoped>
+.test {
+    display: flex;
+}
+
+</style>

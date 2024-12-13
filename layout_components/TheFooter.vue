@@ -1,6 +1,5 @@
 <template>
     <footer>
-        <SectionsContainer>
             <div class="footer-container">
                 <div class="contact-area">
                     <h3>Lucie Machalová</h3>
@@ -18,7 +17,6 @@
                     <span>Události</span>
                 </div>
             </div>
-        </SectionsContainer>
     </footer>
 </template>
 
@@ -32,15 +30,17 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    bottom: 0;
-    align-self: flex-end;
-    background: $gray-dr;
-    color: $gray-lt;
+    background: $black;
+    color: $white;
+    margin-top: auto;
 }
 .footer-container {
     display: flex;
     gap: 3rem;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    max-width: $large-screen;
+    justify-content: space-evenly;
 }
 .contact-area {
     display:flex;
@@ -61,7 +61,7 @@ footer {
         display: flex;
         gap: 2rem;
         svg {
-        color: $gray-lt; 
+        color: $white; 
         height: 32px;
         width: 32px;
         cursor: pointer;

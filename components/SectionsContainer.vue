@@ -1,24 +1,48 @@
+
 <template>
-    <section :style="{ backgroundImage: background }">
-        <div class="container"
+    <section :class="backgroundColor">
+        <div 
+        class="container"
+        
          >
-            <slot></slot>
+            <div class="section-header" :class="headerAlignment">
+                <slot name="header" />
+            </div>
+            <div class="section-content">
+                <slot name="content" />
+            </div>
         </div>
 
     </section>
 </template>
 
 <script setup lang="ts">
-    const props = defineProps<{
-        backgroundUrl?: string
-    }>()
+ const props = defineProps ({
+    backgroundColor: {
+        type: String,
+        required: false
+    },
+    justify: {
+        type: String,
+        required: false,
+        default: "left",
+        validator: (value: string) => ["start", "center", "end"].includes(value)
+    }
+ })
+
+ const headerAlignment = computed(() => {
+    return {
+        "justify-start": props.justify === "start",
+        "justify-center": props.justify === "center",
+        "justify-end": props.justify === "end",
+    }
+})
     
-    const background = ref(props.backgroundUrl ? `url(${props.backgroundUrl})`  : "transparent")
 </script>
 
 <style lang="scss" scoped>
 section {
-    border-bottom: $section-border;
+    border-bottom: 1px solid $black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -29,7 +53,20 @@ section {
     max-width: $large-screen;
 
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 5rem
+}
+.section-header {
+    display:flex;
+}
+.justify-start{
+    justify-content: start;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-end{
+    justify-content: end;
 }
 
 </style>

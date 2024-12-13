@@ -1,36 +1,14 @@
-$red: blue;
-$pink: #ff9aaa;
-$purple: #3D0B37;
-$pink-dr: #AB3B63;
-$gray-lt: #f8fafc;
+$white: #f8fafc;
 $gray-dr: #334155;
-
+$black: #212121;
+$pink: #ff9aaa;
+$pink-dr: #AB3B63;
+$purple: #3D0B37;
 
 // Variables for screen width
 $small-screen: 768px;
 $medium-screen: 1024px;
 $large-screen: 1280px;
-
-// LOGO
-$logo-font: Italianno;
-$logo-size: 3.6rem;
-$logo-title-color: $purple;
-$logo-img-color: invert(9%) sepia(42%) saturate(3464%) hue-rotate(284deg) brightness(87%) contrast(102%);
-
-//HEADER 
-$header-height: 80px;
-$header-height-mobile: 60px;
-
-// NAVBAR
-$nav-font: Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
-$link-color: $gray-lt;
-
-// Section's bottom border
-$section-border: .5px solid lightgray;
-
-// Items Border
-$border-item: .5px solid lightgray;
-
 
 *,
 *::before,
@@ -44,13 +22,15 @@ body {
   min-height: 100vh;
   min-width: 100%;
   font-family:  Inter var,
-ui-sans-serif,
-system-ui,
+  ui-sans-serif,
+  system-ui,
   sans-serif,
   "Apple Color Emoji",
   "Segoe UI Emoji",
   Segoe UI Symbol,
    "Noto Color Emoji";
+   color: $black;
+   background: $white
 }
 
 ul {
