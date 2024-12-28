@@ -5,10 +5,10 @@
                 <h2>Protože na počátku záleží...</h2>
                 <p>Hledáš průvodkyni pro své těhotenství – porod – šestinedělí – kojení – rané mateřství – ženství? Veškerá péče a informace na jednom místě. </p>
                 <p class="pink">Buď v tom už od počátku s dulou Lucií.</p>
-                <TheButton label="Poznej mě"/>
+                <TheButton label="O mně"/>
             </div>
             <div class="welcome-flower-area">
-                <img src="/flower.svg" alt="">
+                <img src="/header_lucie.png" alt="">
             </div>
         </div>
     </HeaderContainer>
@@ -83,16 +83,17 @@ const infoCards = [
 @import '@/assets/scss/base.scss';
 // WELCOME AREA
 .welcome {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     min-height: 30vh;
     .welcome-title-area{
         display: flex;
         flex-direction: column;
         gap: 4rem;
-        max-width: 50%;
+        max-width: 60%;
         color: $pink-dr;
+        padding-left: 60px;
         h2 {
             font-size: 5.4rem;
             font-weight: 100;
@@ -112,10 +113,14 @@ const infoCards = [
         }
     }
     .welcome-flower-area {
+        position: absolute;
+        right: 0;
+        bottom: -100px;
         img {
-            margin-bottom: 100px;
-            width: 360px;
+            width: 780px;
             height: auto;
+            z-index: -1; 
+            pointer-events: none;
         }
     }
 }
@@ -132,7 +137,21 @@ const infoCards = [
     }
 }
 
+@media screen and (max-width: 1020px) {
+    .welcome {
+        .welcome-title-area {
+            max-width: 70%;
+            padding-left: 0;
+        }
+        .welcome-flower-area {
+            img {
+            width: 560px;
+            height: auto;
+        }
+        }
 
+    }
+}
 
 
 @media screen and (max-width: $small-screen) {
