@@ -60,6 +60,7 @@ const socials = ref([
 
 header {
     background: $pink-dr;
+    z-index: 10;
 } 
 
 nav {

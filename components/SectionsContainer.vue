@@ -42,14 +42,15 @@
 
 <style lang="scss" scoped>
 section {
-    border-bottom: 1px solid $black;
+    border-bottom: .5px solid $gray;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+    padding-bottom: 3rem;
 }
 .container {
     margin: 0 auto;
-    padding: 6rem 2rem;
+    padding: 6rem 2rem ;
     max-width: $large-screen;
 
     display: flex;
@@ -67,6 +68,13 @@ section {
 }
 .justify-end{
     justify-content: end;
+}
+
+@media screen and (max-width: $small-screen) {
+    section {
+    padding-bottom: 3rem;
+}
+    
 }
 
 </style>

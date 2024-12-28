@@ -27,17 +27,7 @@
             </template>
     </SectionsContainer>
 
-    <SectionsContainer >
-        <template #header>
-                <div class="section-title">
-                    <h2>Nová kniha - Od počátku</h2>
-                     <p>„Pokud budeš spokojená ty, budou spokojeni i tví nejbližší.“</p>
-                </div>
-            </template>
-            <template #content>
-                
-            </template>
-    </SectionsContainer>
+
 
     <SectionsContainer :justify="'center'" >
         <template #header>
@@ -61,20 +51,60 @@ import HeaderContainer from '~/components/HeaderContainer.vue';
 const infoCards = [
     {
         title: "Předporodní kurzy a péče o těhotné",
-        description: "Kromě individuální a párové přípravy k porodu pořádám i zážitkové předporodní kurzy, které Vás kompletně připraví na porod i to, co přijde po něm. Propojuji přípravu těla i mysli a učím ženy, jak z porodu vytěžit veškerý potenciál. Poskytuji masáže, individuální konzultace a lekce na přípravu pánevního dna k porod."
+        description: [
+            "kompletní příprava na porod",
+            "kontinuální podpora a péče",
+            "masáže",
+            "rebozo",
+            "spinning babies",
+            "předporodní rituál",
+        ],
+        thumbnail: "img/img_9071_thumbnail.jpg"
     },
     {
         title: "Laktační poradenství a péče v šestinedělí",
-        description: "Navštěvuji vás v pohodlí Vašeho domova hned po návratu z porodnice. Kontroluji poporodní hojení, krvácení, zavinování dělohy, poskytuji laktační poradenství a pomoc s péčí o miminko. Dopřávám masáže břicha bylinnými koulemi a rituál zavírání kostí."
+        description: [
+            "podpora bezprostředně po porodu",
+            "péče o jizvy a porodní poranění",
+            "pomoc s kojením",
+            "psychická opora",
+            "masáž bříška bylinnými koulemi",
+            "rituál zavírání kostí",
+        ],
+        thumbnail: "img/img_lp_thumbnail.jpg"
     },
     {
         title: "Zpracování placenty",
-        description: "Placenta - strom života a poporodní životabudič. Může se zpracovat do formy kapslí nebo tinktury. Navrací do těla spoustu důležitých látek, které byly porodem ztraceny. Placenta obsahuje např. obrovské množství železa, kmenových buněk a vitamínů."
+        description: [
+            "placenta jako přirozený životabudič",
+            "návrat energie a živin do těla",
+            "kapsle",
+            "tinktura",
+        ],
+        thumbnail: "img/img_5481_thumbnail.jpeg"
     },
     {
         title: "Kurzy zaměřené na zdravý pohyb",
-        description: "Nabízím pravidelné navazující kurzy, workshopy i individuální lekce. Jako lektorka Školy pánevního dna se zaměřuji na pánevní dno a hluboký stabilizační systém nás žen a to v kterémkoliv věku. Chodit ke mně můžete také na hodiny břišního tance."
-    }
+        description: [
+            "posilování pánevního dna",
+            "posilování středu těla",
+            "pochopení hlubokého stabilizačního systému",
+            "individuální cvičební plány",
+            "diagnostika",
+        ],
+        thumbnail: "img/img_9320_thumbnail.jpg"
+    },
+    {
+        title: "Vzdělávání",
+        description: [
+            "besedy pro dívky o dospívání a začínající ženské cykličnosti",
+            "workshopy Tajemství pánevního dna",
+            "workshopy o práci s tělem - bioenergetika, dechové techniky",
+            "předporodní kurzy",
+            "e-booky",
+        ],
+        thumbnail: "img/img_9249_thumbnail.jpg"
+    },
 ]
 
 </script>
@@ -128,6 +158,7 @@ const infoCards = [
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
     h2 {
         font-size: 3rem;
     }
@@ -163,6 +194,9 @@ const infoCards = [
             display: none;
         }
 
+    }
+    .section-title {
+        margin-bottom: 3rem;
     }
 }
 
