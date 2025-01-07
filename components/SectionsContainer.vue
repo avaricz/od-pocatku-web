@@ -1,6 +1,6 @@
 
 <template>
-    <section :class="backgroundColor">
+    <section :class="['background-' + backgroundColor]">
         <div 
         class="container"
         
@@ -20,7 +20,9 @@
  const props = defineProps ({
     backgroundColor: {
         type: String,
-        required: false
+        required: false,
+        default: "white",
+        validator: (value: string) => ["gray", "white", "black", "gray-lt", "gray-dr"].includes(value),
     },
     justify: {
         type: String,
@@ -42,11 +44,26 @@
 
 <style lang="scss" scoped>
 section {
-    border-bottom: .5px solid $gray;
+    //border-bottom: .5px solid $gray;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
     padding-bottom: 3rem;
+    &.background-gray {
+        background-color: $gray;
+    }
+    &.background-white{
+        background-color: $white;
+    }
+    &.background-black {
+        background-color: $black;
+    }
+    &.background-gray-lt {
+        background-color: $gray-lt;
+    }
+    &.background-gray-dr {
+        background-color: $gray-dr;
+    }
 }
 .container {
     margin: 0 auto;
@@ -70,11 +87,10 @@ section {
     justify-content: end;
 }
 
-@media screen and (max-width: $small-screen) {
-    section {
-    padding-bottom: 3rem;
-}
-    
+@media screen and (max-width: $small-screen) {    
+    .container {
+        padding: 6rem .5rem;
+    }
 }
 
 </style>

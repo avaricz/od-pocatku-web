@@ -1,6 +1,7 @@
 <template>
-    <section>
+    <section :style="{ backgroundImage: `url('${bgImage}')` }">
         <div class="container"
+        
          >
             <slot></slot>
         </div>
@@ -9,25 +10,26 @@
 </template>
 
 <script setup lang="ts">
-   
+   defineProps({
+    bgImage: String
+   })
 </script>
 
 <style lang="scss" scoped>
 section {
-    border-bottom: 1px solid $black;
+    background-color: $black;
+    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50%;
-    background-color: $black;
-    background-image: url('bg1.png');
+    background-position: right;
 }
 .container {
     margin: 0 auto;
     padding: 6rem 2rem;
     max-width: $large-screen;
-
+    height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    color: $pink-dr;
 }
 
 </style>

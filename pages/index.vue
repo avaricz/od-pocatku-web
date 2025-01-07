@@ -1,23 +1,19 @@
 <template>
-    <HeaderContainer>
+    <HeaderContainer :bg-image="'/header_bg.png'">
         <div class="welcome">
             <div class="welcome-title-area">
-                <h2>Protože na počátku záleží...</h2>
-                <p>Hledáš průvodkyni pro své těhotenství – porod – šestinedělí – kojení – rané mateřství – ženství? Veškerá péče a informace na jednom místě. </p>
-                <p class="pink">Buď v tom už od počátku s dulou Lucií.</p>
+                <h2>Dula Lucie...</h2>
+                <p>Laktační poradkyně, lektorka Školy pánevního dna a funkční trenérka.</p>
                 <TheButton label="O mně"/>
-            </div>
-            <div class="welcome-flower-area">
-                <img src="/header_lucie.png" alt="">
             </div>
         </div>
     </HeaderContainer>
 
-    <SectionsContainer :justify="'start'" >
+    <SectionsContainer :background-color="'gray-lt'" :justify="'start'" >
         <template #header>
                 <div class="section-title">
-                    <h2>Nech o sebe pečovat</h2>
-                    <p>„Pokud budeš spokojená ty, budou spokojeni i tví nejbližší.“</p>
+                    <h2>Jsem v tom s Tebou</h2>
+                    <p>„Protože na počátku záleží.“</p>
                 </div>
             </template>
             <template #content>
@@ -26,8 +22,6 @@
                 />
             </template>
     </SectionsContainer>
-
-
 
     <SectionsContainer :justify="'center'" >
         <template #header>
@@ -47,6 +41,10 @@
 import TheButton from '~/components/TheButton.vue';
 import SectionsContainer from '@/components/SectionsContainer.vue';
 import HeaderContainer from '~/components/HeaderContainer.vue';
+
+const img = useImage()
+
+const bg = img('/header_bg.png')
 
 const infoCards = [
     {
@@ -115,44 +113,29 @@ const infoCards = [
 .welcome {
     position: relative;
     display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: start;
     min-height: 30vh;
     .welcome-title-area{
         display: flex;
         flex-direction: column;
-        gap: 4rem;
-        max-width: 60%;
         color: $pink-dr;
         padding-left: 60px;
+        gap: 2rem;
         h2 {
-            font-size: 5.4rem;
+            font-size: 6.4rem;
             font-weight: 100;
             font-family: Italianno;
             line-height: 4.5rem;
         }
         p {
-            color: $pink;
+            color: $white;
             font-size: 1.3rem;
             font-weight: 500;
             font-style: italic;
         }
-        .pink {
-            font-size: 1.4rem;
-            color: $pink-dr;
-            font-weight: 700;
-        }
     }
-    .welcome-flower-area {
-        position: absolute;
-        right: 0;
-        bottom: -100px;
-        img {
-            width: 780px;
-            height: auto;
-            z-index: -1; 
-            pointer-events: none;
-        }
-    }
+    
 }
 .section-title {
     display: flex;
@@ -164,6 +147,7 @@ const infoCards = [
     }
     p {
         color: $gray-dr;
+        font-size: 1.2rem;
         font-weight: 500;
     }
 }

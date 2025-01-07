@@ -14,7 +14,7 @@
             </ul>
         </div>
         <div class="info-description">
-            <div class="flower"></div>
+            <div class="flower"><NuxtImg src="/flower.svg"/></div>
             <ul class="circle">
                 <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
                 <li 
@@ -66,11 +66,11 @@ function previousActiveIndex () {
 
 let interval
 
-/* onMounted(() => {
+onMounted(() => {
     interval = setInterval(() => {
         activeIndex.value = (activeIndex.value + 1) % props.content.length;
     }, 5000);
-}); */
+});
 
 onUnmounted(() => {
     clearInterval(interval);
@@ -90,7 +90,7 @@ onUnmounted(() => {
         border-bottom-left-radius: 10px;
 
         width: 40%;
-        background: $white;
+        background: transparent;
         ul{
             li {
                 text-align: center;
@@ -130,19 +130,20 @@ onUnmounted(() => {
         flex-direction: column;
         flex-grow: 1;
 
-        -webkit-box-shadow: 0px 0px 10px 0px $pink-dr;
-        -moz-box-shadow: 0px 0px 10px 0px $pink-dr;
+        -webkit-box-shadow: 0px 0px 15px 0px $pink-dr;
+        -moz-box-shadow: 0px 0px 15px 0px $pink-dr;
         box-shadow: 0px 0px 15px 0px $pink-dr;
         .flower {
             position: absolute;
             top: -30px;
             left: -30px;
-            background-image: url(flower.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
             width: 100px;
             height: 100px;
+            img {
+                width: 100%;
+                height: auto;
+                filter: drop-shadow(2px 4px 6px $pink-dr);
+            }
         }
         .circle {
             display: none;
@@ -205,7 +206,7 @@ onUnmounted(() => {
         .info-description {
             width: 100%;
             min-height: 100%;
-            padding:  2rem;
+            padding:  2rem 1rem;
             .flower {
                 position: absolute;
                 top: -20px;

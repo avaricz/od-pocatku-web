@@ -26,10 +26,10 @@ button {
     color: $white;
     transition: all .3s linear;
     &:hover {
-        background-color: darken($pink-dr, 10%);
+        background-color: $purple;
     }
     &:active {
-        background-color: darken($pink-dr, 20%);
+        background-color: $pink-dr;
     }
 }
 </style>
