@@ -37,15 +37,29 @@
         </SplitedSection>
            
 
-        <SectionsContainer background-color="white" :justify="'start'">
+        <SectionsContainer background-color="white" :justify="'center'">
+            <template #header>
+                <div>
+                    <h2>DÁLE TI V TĚHOTENSTVÍ NABÍZÍM:</h2>
+                </div>
+            </template>
             <template #content>
-
-                **DÁLE TI V TĚHOTENSTVÍ NABÍZÍM:**
-                
-                - rozvolňující masáže před porodem
-                - práci s rebozem, spinning babies
-                - celotělovou práci na protažení svalů a kompletní přípravu těla pro porod
-                - rituál s bylinnou vaginální napářkou
+                <div class="next-info">
+                    <ul>
+                        <li>
+                            rozvolňující masáže před porodem
+                        </li>
+                        <li>
+                            práci s rebozem, spinning babies
+                        </li>
+                        <li>
+                            celotělovou práci na protažení svalů a kompletní přípravu těla pro porod
+                        </li>
+                        <li>
+                            rituál s bylinnou vaginální napářkou
+                        </li>
+                    </ul>
+                </div>
             </template>
         </SectionsContainer>
 
@@ -141,6 +155,38 @@ h2 {
                 font-weight: bold;
         }
     }       
+}
+.next-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        li {
+            font-size: 1.8rem;
+            font-weight: 200;
+            font-style: italic;
+        }
+    }
+}
+.next-info::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200%;
+    height: 200%;
+    background-image: url('../flower.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.15; 
+    z-index: 0; 
+    pointer-events: none; 
 }
 
 @media screen and (max-width: $small-screen) {

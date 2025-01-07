@@ -15,6 +15,7 @@
 
 <style lang="scss" scoped>
 .container {
+    position: relative;
     display: flex;
     max-width: 100vw;
     padding: 5rem 0 ;
@@ -30,15 +31,15 @@
     position: relative;
     z-index: 1;
 }
-.right::before {
+.container::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: -300px;
-    width: 100%;
-    height: 100%;
+    top: -100px;
+    right: 0;
+    width: 80%;
+    height: 80%;
     background-image: url('../flower.svg');
-    background-position: center;
+    background-position: right -300px top ;
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.15; 
