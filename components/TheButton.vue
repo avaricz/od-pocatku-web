@@ -22,14 +22,16 @@ button {
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
-    background-color: $pink-dr;
+    // background-color: $pink-dr;
+     background-color: transparent;
+    border: 2px solid $pink-dr;
     color: $white;
     transition: all .3s linear;
     &:hover {
-        background-color: $purple;
+        background-color: $pink-dr;
     }
     &:active {
-        background-color: $pink-dr;
+        background-color: $purple;
     }
 }
 </style>

@@ -60,10 +60,12 @@ const navigation = ref([
     { label: 'O mně', link: '/about' },
     { label: 'Služby', link: '/sluzby', innerLinks: [
         { label: 'Kompletní příprava na porod a péče v těhotenství', link: '/sluzby/kompletni-priprava-na-porod-a-pece-v-tehotenstvi' },
+        { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
+
         { label: 'Péče v šestinedělí', link: '/sluzby/pece-v-sestinedeli' },
         { label: 'Laktační poradenství', link: '/sluzby/laktacni-poradenstvi' },
-        { label: 'Rebozo a těhotenské masáže', link: '/sluzby/rebozo-a-tehotenske-masaze' },
-        { label: 'Individuální cvičební plán na posílení pánevního dna a středu těla', link: '/sluzby/individualni-cvicebni-plan-na-posileni-panevniho-dna-a-stredu-tela' },
+        { label: 'Těhotenské a rebozo masáže', link: '/sluzby/tehotenske-a-rebozo-masaze' },
+        { label: 'Individuální funkční cvičební plán', link: '/sluzby/individualni-funkcni-cvicebni-plan' },
         { label: 'Bylinná napářka', link: '/sluzby/bylinna-naparka' },
         { label: 'Spinning babies', link: '/sluzby/spinning-babies' },
         { label: 'Zpracování placenty', link: '/sluzby/zpracovani-placenty' },
@@ -131,11 +133,8 @@ nav {
                 color: $white;
                 transition: all .3s linear;
                 &:hover {
-                    background-color: $purple;
-                }
-                &:active {
-                    color:$white;
-                    background-color: $pink-dr;
+                    color:$black;
+
                 }
             } 
             .dropdown {
@@ -196,7 +195,7 @@ nav {
     display: none;
 }
     
-@media screen and  (max-width: $small-screen) {
+@media screen and  (max-width: $medium-screen) {
     header {
         position: fixed;
         top: 0;
@@ -241,7 +240,9 @@ nav {
                     padding: .5rem;
                     color: $white;
                     width: 100%;
-                    
+                    &:hover {
+                      color: $black;
+                    }
                 }
                 .dropdown {
                     display: flex;
@@ -260,6 +261,9 @@ nav {
                         li {
                             .inner-links {
                                 color: $white;
+                                &:hover {
+                                color: $black;
+                            }
                             }
                         }
                         li::marker {

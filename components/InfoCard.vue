@@ -1,7 +1,9 @@
 <template>
     <div class="card">
         <div class="flower"><NuxtImg src="/flower.svg" alt="" /></div>
-        <div class="card-title">{{ content.title }}</div>
+        <div class="card-header">
+            <div class="card-title">{{ content.title }}</div>
+        </div>
         <ul>
             <li v-for="item in content.description">
                 {{item}}
@@ -26,26 +28,15 @@ defineProps({
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-
+    gap: 1rem;
     width: 340px;
     max-width: 340px;
-   
-    padding: 2rem;
-
-    border: 1px solid $pink-dr;
     border-radius: 10px;
-   
-    background: $white;
-    -webkit-box-shadow: 0px 0px 15px 0px $pink-dr;
-    -moz-box-shadow: 0px 0px 15px 0px $pink-dr;
-    box-shadow: 0px 0px 15px 0px $pink-dr;
-
+    background: transparent;
+    -webkit-box-shadow: 0px 0px 15px 0px $gray;
+    -moz-box-shadow: 0px 0px 15px 0px $gray;
+    box-shadow: 0px 0px 15px 0px $gray;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 8px 30px $pink-dr;
-    }
     .flower {
         position: absolute;
         top:-20px;
@@ -58,44 +49,41 @@ defineProps({
             filter: drop-shadow(2px 4px 6px $pink-dr);
         }
     }
-    .card-title{
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 1px;
-        font-size: 1.5rem;
-        text-align: center;
-        font-weight: 700;
-        color: $pink-dr;
-        text-transform: uppercase;
-        border-bottom: 2px solid $pink-dr;
-        padding-bottom: 0.5rem;
+    .card-header {
+        background-image: url('/img/9103_small_darker.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $black-dr;
+        border-radius: 10px 10px 0 0;
+        .card-title{
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+            color: $white;
+            text-transform: uppercase;
+            padding: 1rem;
+        }
     }
     ul {
         display: flex;
         flex-direction: column;
         height: 100%;
-        gap: .8rem;
         list-style: none;
-        padding: 0;
+        padding: 0 1.5rem 2rem 1.5rem;
         margin: 0;
+        list-style-type:disc;
+        padding-left: 3rem;
         li {
             font-size: 1.1rem;
             font-weight: 400;
             font-style: italic;
             color: $gray-dr;
             line-height: 1.5;
-            position: relative;
-            padding-left: 1.5rem;
-            &:before {
-                content: '•';
-                color: $pink-dr;
-                position: absolute;
-                left: 0;
-                font-size: 1.5rem;
-                line-height: 1.2;
-            }
         }
 
     }

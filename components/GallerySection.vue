@@ -22,7 +22,7 @@
   const scrollLeft = () => {
     if (galleryWrapperRef.value) {
       galleryWrapperRef.value.scrollBy({
-        left: -720, // Adjust scroll amount as needed
+        left: 720, // Adjust scroll amount as needed
         behavior: "smooth"
       });
     }
@@ -31,7 +31,7 @@
   const scrollRight = () => {
     if (galleryWrapperRef.value) {
       galleryWrapperRef.value.scrollBy({
-        left: 720, // Adjust scroll amount as needed
+        left: -720, // Adjust scroll amount as needed
         behavior: "smooth"
       });
     }
@@ -58,7 +58,11 @@
     margin: 2rem 2rem 2rem 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    &:hover img {
+    @media (max-width: $medium-screen) {
+        margin: 0;
+        border-radius: 0
+    }
+    img:hover {
         scale: 1.05;
     }
   }

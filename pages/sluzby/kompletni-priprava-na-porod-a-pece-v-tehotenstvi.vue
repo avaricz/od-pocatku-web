@@ -1,50 +1,39 @@
 <template>
-    <div>
-        <HeaderContainer bg-image="/img/img_9400-edit.jpg">
-            <div class="header">
-                <h2>
-                    Kompletní příprava na porod a péče v těhotenství
-                </h2>
+    <HeaderContainer 
+        :bg-image="'/img/9400_transparent_darker.png'"
+        title=" Kompletní příprava na porod a péče v těhotenství"
+    />
+    
+    <SectionsContainer :justify-header="'center'" title="Náplň setkávání" :justify-content="'center'">
+        <template #content>
+            <CardsPanel :data="cardsContent" />
+        </template>
+    </SectionsContainer>
+    <SectionsContainer shadow background-color="black-dr">
+        <template #content>
+            <div class="section-1">
+                <div class="left">
+                    <InfoWrapper>
+                        <p>"Během <span>individuálních setkávání</span> Ti pomůžu připravit se na porod po všech stránkách tak, abys k němu šla <span>klidná a sebevědomá</span>. Díky kombinaci <span>praktických cvičení</span>, <span>dechových technik</span> a <span>mentální přípravy</span> budeš připravena na každou fázi porodu s <span>důvěrou ve své tělo i sebe samu</span>."</p>
+                    </InfoWrapper>
+                </div>
+                <div class="right">
+                    <GalleryTwoPhotos :images="images1"/>
+                </div>
             </div>
-        </HeaderContainer>
+        </template>
+    </SectionsContainer>
+    <SectionsContainer 
+        background-color="white" 
+        :justify-header="'center'" 
         
-        <SectionsContainer :justify="'start'">
-            <template #header >
-                <h2>
-                    Náplní setkávání je:
-                </h2>
-            </template>
-            <template #content>
-                <div class="cards-container">
-                    <InfoCard
-                        v-for="card in cardsContent"
-                        :key="card.title"
-                        :content="card"
-                    />
-                </div>
-            </template>
-        </SectionsContainer>
-        <SplitedSection>
-            <template #left >
-                <SectionGallery :media="images" />
-            </template>
-            <template #right>
-                <div class="info-wrapper">
-                    <p>"Během <span>individuálních setkávání</span> Ti pomůžu připravit se na porod po všech stránkách tak, abys k němu šla <span>klidná a sebevědomá</span>. Díky kombinaci <span>praktických cvičení</span>, <span>dechových technik</span> a <span>mentální přípravy</span> budeš připravena na každou fázi porodu s <span>důvěrou ve své tělo i sebe samu</span>."</p>
-                </div>
-            </template>
+    >
+        <template #content>
+            <div class="section-2">
 
-        </SplitedSection>
-           
-
-        <SectionsContainer background-color="white" :justify="'center'">
-            <template #header>
-                <div>
-                    <h2>DÁLE TI V TĚHOTENSTVÍ NABÍZÍM:</h2>
-                </div>
-            </template>
-            <template #content>
+                <GallerySinglePhoto :photo="'/img/9175_org.jpg'" :rotate="'right'"/>
                 <div class="next-info">
+                    <h2>Dále ti nabízím</h2>
                     <ul>
                         <li>
                             rozvolňující masáže před porodem
@@ -60,22 +49,26 @@
                         </li>
                     </ul>
                 </div>
-            </template>
-        </SectionsContainer>
+            </div>
+        </template>
+    </SectionsContainer>
+    <SectionsContainer 
+        background-color="white" 
+        :justify-header="'center'" 
+        
+    >
+        <template #content>
+            <PricePanel :title="'CENA'" :price="'600,- / 60min'"/>
+        </template>
+    </SectionsContainer>
 
 
 
-**CENA:**
 
-600,- / 60min
-    </div>
 </template>
 
 <script setup>
-import HeaderContainer from '~/components/HeaderContainer.vue';
-import SectionGallery from '~/components/SectionGallery.vue';
-import SectionsContainer from '~/components/SectionsContainer.vue';
-import SplitedSection from '~/components/SplitedSection.vue';
+
 
 const cardsContent = ref([
     {title: "FYZICKÁ PŘÍPRAVA NA POROD",
@@ -101,98 +94,69 @@ const cardsContent = ref([
     ]}
 ])
 
-const images = ref([
-    {src: '/img/img_9357.jpg'},
-    {src: '/img/img_9364.jpg'},
-    {src: '/img/img_9175-edit.jpg'},
-    {src: '/img/img_9391-edit.jpg'},
-    {src: '/img/img_9400-edit.jpg'},
-    {src: '/img/img_9412-edit.jpg'},
+const images1 = ref([
+    {src: '/img/9357_org.jpg', position: 'horizontal'},
+    {src: '/img/9364_org.jpg', position: 'vertical'},
+])
+
+const images2 = ref([ // TODO: zakomponovat tyto foto?
+    {src: '/img/9175_org.jpg'},
+    {src: '/img/9391_org.jpg'},
+])
+
+const images3 = ref([ // TODO: zakomponovat tyto foto?
+    {src: '/img/9400_org.jpg'},
+    {src: '/img/9412_org.jpg'},
 ])
 
 </script>
 
 <style lang="scss" scoped>
-.header {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    h2 {
-        text-align: center;
-        font-size: 3.8rem;
-        font-weight: 400;
-        line-height: 4.5rem;
-        color: $pink-dr;
-    }
-       
-}
-
 // SECTIONS
-h2 {
-    font-size: 3rem;
-}
-.cards-container {
-    display: flex ;
-    gap: 4rem;
-    justify-content: space-between;
-}
-.info-wrapper {
+.section-1 {
     display: flex;
-    height: 100%;
-    background-color: transparent;
-    max-width: 800px;
     align-items: center;
-    justify-content: start;
-    font-size: 1.8rem;
-    font-weight: 200;
-    padding: 4rem;
-    p {
-        padding: 1rem;
-        border-radius: 10px;
-        line-height: 2.2rem;
-        font-style: italic;
-        span {
-                font-weight: bold;
-        }
-    }       
+    @media (max-width: $large-screen) {
+        flex-direction: column-reverse;
+        gap: 5rem;
+    }
+    .left {
+        flex: 1;
+    }
 }
-.next-info {
-    position: relative;
+.section-2 {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    ul {
+    @media (max-width: $large-screen) {
+        flex-direction: column-reverse;
+        gap: 5rem;
+    }
+    .next-info {
+        position: relative;
+        padding: 0 1rem;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
         align-items: center;
-        li {
-            font-size: 1.8rem;
-            font-weight: 200;
-            font-style: italic;
+        gap: 3rem;
+        h2 {
+            font-size: 2.2rem;
+            color: $pink-dr;
+            text-transform: uppercase;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: left;
+            list-style-type: disc;
+            padding-left: 2rem;
+            li {
+                font-size: 1.8rem;
+                font-weight: 200;
+                font-style: italic;
+            }
         }
     }
 }
-.next-info::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url('../flower.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.15; 
-    z-index: 0; 
-    pointer-events: none; 
-}
 
-@media screen and (max-width: $small-screen) {
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 </style>

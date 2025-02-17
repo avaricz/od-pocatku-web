@@ -1,5 +1,5 @@
 <template>
-    <div class="info-container">
+    <div class="info-container" >
         <div class="info-titles">
             <ul>
                 <li 
@@ -13,26 +13,40 @@
                 
             </ul>
         </div>
-        <div class="info-description">
-            <div class="flower"><NuxtImg src="/flower.svg"/></div>
-            <ul class="circle">
-                <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
-                <li 
-                v-for="(card, index) in content"
-                :key="index"
-                :class="{ active: index === activeIndex }"
-                @click="changeActiveIndex(index)"
-                >
-                </li>
-                <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
-            </ul>
-            <h2>{{ content[activeIndex].title }}</h2>
-            <div class="description-wrapper">
-                <ul>
-                    <li v-for="item in content[activeIndex].description">{{ item }}</li>
+        <div class="info-description-wrapper">
+            <div class="info-description">
+                <div class="flower"><NuxtImg src="/flower.svg"/></div>
+
+                <ul class="circle">
+                    <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
+
+                    <li 
+                        v-for="(card, index) in content"
+                        :key="index"
+                        :class="{ active: index === activeIndex }"
+                        @click="changeActiveIndex(index)"
+                    >
+                    </li>
+
+                    <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
                 </ul>
-                <div class="img-wrapper">
-                    <img :src="content[activeIndex].thumbnail" alt="">
+
+
+                <div class="description-wrapper">
+                    <div class="content-description">
+                        <div class="title-wrapper">
+
+                            <h2>{{ content[activeIndex].title }}</h2>
+                        </div>
+                        <ul>
+                            <li v-for="item in content[activeIndex].description">{{ item }}</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="content-image">
+                        <GallerySinglePhoto :photo="content[activeIndex].thumbnail" rotate="left"/>
+                        
+                    </div>
                 </div>
             </div>
 
@@ -83,7 +97,7 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
+
     .info-titles {
         border: 0px solid $gray;
         border-top-left-radius: 10px;
@@ -117,22 +131,10 @@ onUnmounted(() => {
 
         }
     }
-
-    .info-description {
+    .info-description-wrapper {
         position: relative;
-        border: 1px solid $pink-dr;
-        border-radius: 10px;
-        padding: 2rem 4rem;
-        width: 60%;
-        background: $white;
-        min-height: 115%;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+        width: 900px;
 
-        -webkit-box-shadow: 0px 0px 15px 0px $pink-dr;
-        -moz-box-shadow: 0px 0px 15px 0px $pink-dr;
-        box-shadow: 0px 0px 15px 0px $pink-dr;
         .flower {
             position: absolute;
             top: -30px;
@@ -145,53 +147,116 @@ onUnmounted(() => {
                 filter: drop-shadow(2px 4px 6px $pink-dr);
             }
         }
-        .circle {
+        .info-description {
+            display: flex;
+            flex-direction: column;
+            
+            background-color: $white;
+            
+            height: 600px;
+            max-height: 600px;
+            min-height: 600px;
+            
+            padding:  0  0 0 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+
+            -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        
+            .circle {
+                display: none;
+            }
+
+            .description-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                height: 90%;
+                padding: 2rem 1rem;
+                .content-image {
+                    height: 90%;
+                    width: 100%;
+                }
+                .content-description {
+                    width: 100%;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    .title-wrapper {
+                        height: 100px;
+                        min-height: 100px;
+                        max-height: 100px;
+                        h2 {
+                            text-align: center;
+                            font-size: 2rem;
+                            font-weight: 600;
+                        }
+                    }
+                    ul {
+                        list-style: disc;
+                        padding-left: 1.5rem;
+                        line-height: 2rem;
+                        li {
+                            font-style: italic;
+                            font-size: 1.4rem; 
+                            font-weight: 200;
+                            text-wrap: wrap;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium-screen) {
+    .info-container {
+        .info-titles {
             display: none;
         }
-        h2 {
-            padding: 1rem 0 2rem;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 300;
-        }
-        .description-wrapper {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 10px;
-            border-top: 3px solid $black;
-            border-bottom: 3px solid $black;
-            border-color: $pink-dr;
-            height: 100%;
-            padding: 2rem 1rem  ;
-            font-size: 1.1rem; 
-            ul {
-                z-index: 1;
-                display: flex;
-                flex-wrap: wrap;
-                list-style: disc;
-                li {
-                    margin-left: 1.5rem;
-                    padding-left: 0rem;
-                    font-weight: bold;
-                    text-wrap: wrap;
+        .info-description-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+            .info-description {
+                .flower {
+                    top: -35px;
+                    left: -5px;
+                    
                 }
-            }
-            .img-wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                max-height: 320px;
-                border-radius: 10px;
-                overflow: hidden;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
+                .circle {
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    gap:.5rem;
+                    padding: 1rem 0;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    li:first-child,
+                    li:last-child {
+                        font-size: 1.6rem;
+                        .pi {
+                            color: $gray-dr;
+                        }
+
+                    }
+                    li:not(:first-child):not(:last-child){
+                        background-color: $gray-lt;
+                        border-radius: 100%;
+                        width: 1rem;
+                        height: 1rem;
+                        &.active {
+                            background-color: $pink-dr;
+                        }
+                    }
                 }
             }
         }
@@ -200,63 +265,28 @@ onUnmounted(() => {
 
 @media screen and (max-width: $small-screen) {
     .info-container {
-        .info-titles {
-            display: none;
-        }
-        .info-description {
+        width: 100%;
+        padding: 0;
+        .info-description-wrapper {
             width: 100%;
-            min-height: 100%;
-            padding:  2rem 1rem;
-            .flower {
-                position: absolute;
-                top: -20px;
-                left: -20px;
-                background-image: url(flower.svg);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-
-                width: 60px;
-                height: 60px;
-            }
-            .circle {
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            gap:.5rem;
-            padding: 1rem 0;
-            li {
-                display: flex;
-                align-items: center;
-                &:hover {
-                    cursor: pointer;
+            padding: 0;
+            .info-description {
+                padding: 0 ;
+                flex-grow: 1;
+                width: 100%;
+                .flower {
+                    top: -20px;
+                    left: 10px;
+                    width: 60px;
                 }
-            }
-            li:first-child,
-            li:last-child {
-                font-size: 1.6rem;
-                .pi {
-                    color: $gray-dr;
+                .description-wrapper{
+                    .content-image {
+                        display: none;
+                    }
                 }
-
-            }
-            li:not(:first-child):not(:last-child){
-                background-color: $gray-lt;
-                border-radius: 100%;
-                width: 1rem;
-                height: 1rem;
-                &.active {
-                    background-color: $pink-dr;
-                }
+               
             }
         }
-        .description-wrapper {
-            .img-wrapper {
-                max-height: 260px;
-            }
-        }
-        }
-
     }
 }
 

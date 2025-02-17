@@ -1,38 +1,35 @@
 <template>
-    <HeaderContainer :bg-image="'/header_bg.png'">
-        <div class="welcome">
-            <div class="welcome-title-area">
-                <h2>Dula Lucie...</h2>
-                <p>Laktační poradkyně, lektorka Školy pánevního dna a funkční trenérka.</p>
-                <TheButton label="O mně"/>
+    <MainHeaderContainer>
+        <div class="header-container">
+            <div class="welcome">
+                <div class="welcome-title-area">
+                    <h1>Dula Lucie...</h1>
+                    <p>Laktační poradkyně, lektorka Školy pánevního dna a funkční trenérka.</p>
+                    <TheButton label="O mně" @click="$router.push('/about')"/>
+                </div>
             </div>
         </div>
-    </HeaderContainer>
-
-    <SectionsContainer :background-color="'gray-lt'" :justify="'start'" >
-        <template #header>
-                <div class="section-title">
-                    <h2>Jsem v tom s Tebou</h2>
-                    <p>„Protože na počátku záleží.“</p>
-                </div>
-            </template>
-            <template #content>
-                <SideMenuCards 
-                :content="infoCards"
-                />
-            </template>
+    </MainHeaderContainer>
+    <SectionsContainer 
+        :background-color="'gray-lt'" 
+        :justify-header="'start'" 
+        title="Jsem v tom s Tebou" 
+        subtitle="„Protože na počátku záleží.“" 
+    >
+        <template #content>
+            <SideMenuCards 
+            :content="infoCards"
+            />
+        </template>
     </SectionsContainer>
-
-    <SectionsContainer :justify="'center'" >
-        <template #header>
-                <div class="section-title">
-                    <h2>Události </h2>
-                     <p>„..., kterých se můžeš zůčastnit i ty“</p>
-                </div>
-            </template>
-            <template #content>
-                
-            </template>
+    <SectionsContainer 
+        :justify-header="'center'" 
+        title="Události" 
+        subtitle="„..., kterých se můžeš zůčastnit i ty“" 
+    >
+        <template #content>
+            udalosti
+        </template>
     </SectionsContainer>
 
 </template>
@@ -41,10 +38,6 @@
 import TheButton from '~/components/TheButton.vue';
 import SectionsContainer from '@/components/SectionsContainer.vue';
 import HeaderContainer from '~/components/HeaderContainer.vue';
-
-const img = useImage()
-
-const bg = img('/header_bg.png')
 
 const infoCards = [
     {
@@ -109,6 +102,25 @@ const infoCards = [
 
 <style lang="scss" scoped>
 @import '@/assets/scss/base.scss';
+.header-container {
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    max-width: $large-screen;
+    height: 100%;
+    display: flex;
+    color: $pink-dr;
+
+    background-image: url('./img/9454_transparent.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60% center ;
+
+    @media (min-width: $small-screen) {
+        background-size: contain; 
+        background-position:  right; 
+    }
+}
+
 // WELCOME AREA
 .welcome {
     position: relative;
@@ -122,7 +134,7 @@ const infoCards = [
         color: $pink-dr;
         padding-left: 60px;
         gap: 2rem;
-        h2 {
+        h1 {
             font-size: 6.4rem;
             font-weight: 100;
             font-family: Italianno;
@@ -137,20 +149,7 @@ const infoCards = [
     }
     
 }
-.section-title {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    h2 {
-        font-size: 3rem;
-    }
-    p {
-        color: $gray-dr;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-}
+
 
 @media screen and (max-width: 1020px) {
     .welcome {

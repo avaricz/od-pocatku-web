@@ -1,11 +1,18 @@
 
 <template>
-    <section :class="['background-' + backgroundColor]">
+    <section 
+        :class="[
+            { 'shadow': shadow },
+            'background-' + backgroundColor,
+        ]"
+    >
         <div 
         class="container"
-        
+        :class="fullWidth ? 'full-width' : 'large-screen'"
          >
-            <div class="section-header" :class="headerAlignment">
+            <div v-if="title || subtitle" class="section-header">
+                <h2 v-if="title"> {{ title }}</h2>
+                <p v-if="subtitle">{{ subtitle }}</p>
                 <slot name="header" />
             </div>
             <div class="section-content">
@@ -22,29 +29,42 @@
         type: String,
         required: false,
         default: "white",
-        validator: (value: string) => ["gray", "white", "black", "gray-lt", "gray-dr"].includes(value),
+        validator: (value: string) => ["gray", "white", "black", "gray-lt", "gray-dr", "black-dr"].includes(value),
     },
-    justify: {
+    justifyHeader: {
         type: String,
         required: false,
-        default: "left",
+        default: "center",
         validator: (value: string) => ["start", "center", "end"].includes(value)
-    }
+    },
+    justifyContent: {
+        type: String,
+        required: false,
+        default: "center",
+        validator: (value: string) => ["start", "center", "end"].includes(value)
+    },
+    title: {
+        type: String,
+        required: false,
+        default: null
+    },
+    subtitle: {
+        type: String,
+        required: false,
+        default: null
+    },
+    shadow: {
+        type: Boolean
+    },
+    fullWidth: Boolean
  })
 
- const headerAlignment = computed(() => {
-    return {
-        "justify-start": props.justify === "start",
-        "justify-center": props.justify === "center",
-        "justify-end": props.justify === "end",
-    }
-})
+ 
     
 </script>
 
 <style lang="scss" scoped>
 section {
-    //border-bottom: .5px solid $gray;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -58,39 +78,74 @@ section {
     &.background-black {
         background-color: $black;
     }
+    &.background-black-dr {
+        background-color: $black-dr;
+        color: $white;
+    }
     &.background-gray-lt {
         background-color: $gray-lt;
     }
     &.background-gray-dr {
         background-color: $gray-dr;
     }
+    
+
 }
 .container {
-    margin: 0 auto;
-    padding: 6rem 2rem ;
-    max-width: $large-screen;
-
     display: flex;
     flex-direction: column;
-    gap: 5rem
+    gap: 5rem;
+    margin: 0 auto;
+    padding: 6rem 2rem ;
 }
 .section-header {
-    display:flex;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: v-bind(justifyHeader);
+    h2 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: $pink-dr;
+    }
+    p {
+        color: $gray-dr;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
 }
-.justify-start{
-    justify-content: start;
+.section-content {
+    display: flex;
+    justify-content: v-bind(justifyContent);
 }
-.justify-center{
-    justify-content: center;
+.shadow {
+    margin: 3rem 0;
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
-.justify-end{
-    justify-content: end;
+
+.large-screen {
+    max-width: $large-screen;
+    padding: 6rem .5rem;
+}
+
+.full-width {
+    max-width: none;
+    padding: 6rem 0;
 }
 
 @media screen and (max-width: $small-screen) {    
-    .container {
-        padding: 6rem .5rem;
-    }
+    .large-screen {
+    
+    padding: 6rem .5rem;
 }
+
+.full-width {
+    padding: 6rem 0;
+}
+    
+}
+
+
 
 </style>
