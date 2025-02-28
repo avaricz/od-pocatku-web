@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Těhotenské a rebozo masáže" bg-image="/img/9400_transparent_darker.png" />
+    <HeaderContainer title="Těhotenské a rebozo masáže" bg-image="/img/9400_org_transparent.png" />
     <SectionsContainer :justify-header="'center'" title="Vyber si svou masáž">
         <template #content>
             <CardsPanel :data="cardsContent" />

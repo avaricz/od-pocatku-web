@@ -1,6 +1,6 @@
 <template>
     <HeaderContainer 
-        :bg-image="'/img/9400_transparent_darker.png'"
+        :bg-image="'/img/9400_org_transparent.png'"
         title=" Kompletní příprava na porod a péče v těhotenství"
     />
     
@@ -58,7 +58,26 @@
         
     >
         <template #content>
-            <PricePanel :title="'CENA'" :price="'600,- / 60min'"/>
+            <PricePanel 
+                :title="price.title"
+                :subtitle="price.subtitle" 
+                :price="price.price"
+                :slash="price.slash"
+                :content="price.content"
+                :show-flower="price.showFlower"
+                :btn-filled="price.btnFilled"
+            />
+        </template>
+    </SectionsContainer>
+    <SectionsContainer 
+        background-color="white" 
+        :justify-header="'center'" 
+        
+    >
+        <template #content>
+            <PricesContainer
+                :panels="pricePanels"
+            />
         </template>
     </SectionsContainer>
 
@@ -69,6 +88,77 @@
 
 <script setup>
 
+const price = ref({
+    title: "Standard",
+    subtitle: "Nejvýhodnější balíček",
+    price: 600,
+    slash: "hodina",
+    content: [
+        "<b>ULTIMÁTNÍ</b> masáž",
+        "voný oleje",
+        "rebozo šátek",
+        "jak si namíchat <b>rumba koule</b>",
+        "voný oleje",
+        "rebozo šátek",
+        "jak si namíchat rumba koule"
+    ],
+    showFlower:true,
+    btnFilled: true
+})
+const pricePanels = ref([
+    { 
+        title: "Standard",
+        subtitle: "Nejvýhodnější balíček",
+        price: 600,
+        slash: "hodina",
+        content: [
+            "<b>ULTIMÁTNÍ</b> masáž",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat <b>rumba koule</b>",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat rumba koule"
+        ],
+    },
+    { 
+        title: "Standard",
+        subtitle: "Nejvýhodnější balíček",
+        price: 800,
+        slash: "hodina",
+        content: [
+            "<b>ULTIMÁTNÍ</b> masáž",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat <b>rumba koule</b>",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat rumba koule",
+            "jak si namíchat <b>rumba koule</b>",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat rumba koule"
+        ],
+        showFlower:true,
+        btnFilled: true,
+        highlight: true
+    },
+    { 
+        title: "Standard",
+        subtitle: "Nejvýhodnější balíček",
+        price: 1200,
+        slash: "hodina",
+        content: [
+            "<b>ULTIMÁTNÍ</b> masáž",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat <b>rumba koule</b>",
+            "voný oleje",
+            "rebozo šátek",
+            "jak si namíchat rumba koule"
+        ],
+    },
+])
 
 const cardsContent = ref([
     {title: "FYZICKÁ PŘÍPRAVA NA POROD",

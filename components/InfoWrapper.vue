@@ -33,19 +33,20 @@ defineProps({
     text-align: v-bind(textAlign);
     .inner-container {
         @media (max-width: $medium-screen) {
-             padding: 4rem 1rem;
+            padding: 4rem 1rem;
         }
         @media (max-width: $small-screen) {
-             padding: 4rem 0rem;
+            padding: 4rem 0rem;
         }
-
+        
         p {
             padding: 1rem;
             border-radius: 10px;
             line-height: 2.2rem;
+            font-weight: 200;
             font-style: italic;
             span {
-                    font-weight: bold;
+                font-weight: bold;
             }
         }       
     }

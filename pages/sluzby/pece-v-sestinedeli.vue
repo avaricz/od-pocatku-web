@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Péče v šestinedělí" bg-image="/img/7_transparent_darker.png" />
+    <HeaderContainer title="Péče v šestinedělí" bg-image="/img/7_org_transparent.png" />
 
     <SectionsContainer :justify-header="'center'" title="Nabízím">
         <template #content>

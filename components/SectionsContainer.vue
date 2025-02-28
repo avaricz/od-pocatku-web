@@ -69,6 +69,7 @@ section {
     background-size: cover;
     background-position: 50%;
     padding-bottom: 3rem;
+    overflow: hidden;
     &.background-gray {
         background-color: $gray;
     }
@@ -108,11 +109,15 @@ section {
         text-transform: uppercase;
         font-size: 3rem;
         color: $pink-dr;
+        font-weight: 400;
+        letter-spacing: 1px;
     }
     p {
         color: $gray-dr;
         font-size: 1.2rem;
         font-weight: 500;
+        font-style: italic;
+        font-weight: 200;
     }
 }
 .section-content {

@@ -1,6 +1,6 @@
 <template>
     <HeaderContainer 
-        :bg-image="'/img/9103_transparent_darker.png'"
+        :bg-image="'/img/9103_org_transparent.png'"
         :title="'Doprovod k císařskému řezu'" 
     />
     <SectionsContainer :justify-header="'start'" title="Náplní setkávání je:">

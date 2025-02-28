@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <div class="flower"><NuxtImg src="/flower.svg" alt="" /></div>
+        <div class="flower"><NuxtImg src="/flower.svg" alt=""/></div>
         <div class="card-header">
             <div class="card-title">{{ content.title }}</div>
         </div>

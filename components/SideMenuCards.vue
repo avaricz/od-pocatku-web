@@ -1,56 +1,76 @@
 <template>
-    <div class="info-container" >
-        <div class="info-titles">
+    <div class="container" >
+        <div class="titles-wrapper">
             <ul>
                 <li 
-                v-for="(card, index) in content"
-                :key="index"
-                :class="{ active: index === activeIndex }"
-                @click="changeActiveIndex(index)"
+                    v-for="(card, index) in content"
+                    :key="index"
+                    :class="{ active: index === activeIndex }"
+                    @click="changeActiveIndex(index)"
                 >
-                    {{card.title}}
+                    <div class="flower-wrapper">
+                        <NuxtImg src="/flower.svg" alt="flower" format="webp" sizes="60px" densities="1x" />
+                    </div>
+                    <div class="title">
+                        {{card.title}}
+                    </div>
                 </li>
-                
+            
             </ul>
         </div>
-        <div class="info-description-wrapper">
-            <div class="info-description">
-                <div class="flower"><NuxtImg src="/flower.svg"/></div>
 
-                <ul class="circle">
-                    <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
+        <Transition :name="'fade'" mode="out-in" >
+            <div class="content-wrapper" :key="activeIndex">
 
-                    <li 
-                        v-for="(card, index) in content"
-                        :key="index"
-                        :class="{ active: index === activeIndex }"
-                        @click="changeActiveIndex(index)"
-                    >
-                    </li>
-
-                    <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
-                </ul>
-
-
-                <div class="description-wrapper">
-                    <div class="content-description">
-                        <div class="title-wrapper">
-
-                            <h2>{{ content[activeIndex].title }}</h2>
-                        </div>
-                        <ul>
-                            <li v-for="item in content[activeIndex].description">{{ item }}</li>
-                        </ul>
+                <div class="smallscreen-header" >
+                    <ul class="switches">
+                        <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
                         
-                    </div>
-                    <div class="content-image">
-                        <GallerySinglePhoto :photo="content[activeIndex].thumbnail" rotate="left"/>
-                        
-                    </div>
+                        <li 
+                            v-for="(card, index) in content"
+                            :key="index"
+                            :class="{ active: index === activeIndex }"
+                            @click="changeActiveIndex(index)"
+                        >
+                            <span>{{  index + 1 }}</span>
+                        </li>
+        
+                        <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
+                    </ul>
                 </div>
-            </div>
 
-        </div>
+                <div class="descriptions-wrapper" >
+                    <div class="image-wrapper" >
+                        <NuxtImg 
+                            :src="content[activeIndex].img" 
+                            alt="" 
+                            sizes="sm:100vw md:100vw"
+                            format="webp"
+                            quality="90"
+                            densities="1x"
+                        />
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="description-inner-wrapper">
+
+                            <div class="title-header" >
+                                <h3>{{ content[activeIndex].title }}</h3>
+                            </div>
+                            <div class="list-wrapper">
+
+                                <ul >
+                                    <li v-for="item in content[activeIndex].description">{{ item }}</li>
+                                </ul>
+                            </div>
+                    </div>
+                    </div>   
+
+
+                <div class="flower">
+                    <NuxtImg src="/flower.svg" alt="flower" format="webp" sizes="100px" densities="1x" />
+                </div> 
+            </div> 
+        </Transition>
     </div>
 </template>
 
@@ -80,214 +100,281 @@ function previousActiveIndex () {
 
 let interval
 
-onMounted(() => {
-    interval = setInterval(() => {
-        activeIndex.value = (activeIndex.value + 1) % props.content.length;
-    }, 5000);
-});
+//onMounted(() => {
+  //  interval = setInterval(() => {
+ //       activeIndex.value = (activeIndex.value + 1) % props.content.length;
+ //   }, 7000);
+//});
 
-onUnmounted(() => {
-    clearInterval(interval);
-});
+//onUnmounted(() => {
+//    clearInterval(interval);
+//});
 
 </script>
 
 <style lang="scss" scoped>
-.info-container {
+
+.container {
+    // position: relative;
+    // perspective: 1000px;
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    .info-titles {
-        border: 0px solid $gray;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-
-        width: 40%;
-        background: transparent;
+    justify-content: center; 
+    width: 95%;
+    .titles-wrapper {    
+        display: none;
+        @media screen and (min-width: $medium-screen) {
+            display: flex;
+            width: 400px;
+        }
         ul{
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
             li {
-                text-align: center;
-                font-size: 1rem;
+                display: flex;
+                height: 80px;
                 font-weight: 700;
                 text-wrap: wrap;
-                padding:1.6rem 0;
                 cursor: pointer;
-                transition: all .3s ease-in-out;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
-                border-bottom: 0.5px solid $gray;
-                border-left: 0.5px solid $gray;
+                background: $black-dr;
+                color: $white;
+                
+                overflow: hidden;
+                transition: all .3s linear;
+
+                .flower-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100px;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                    text-align: center;
+                }
+                
                 &.active {
+                    background: linear-gradient(90deg, $black-dr, $pink-dr); 
                     color: $white;
-                    background-color: $pink-dr;
                     border-top-left-radius: 10px;
                     border-bottom-left-radius: 10px;
                 }
-            }
-            li:first-child {
-                border-top: 0.5px solid $gray;
-            }
-
+            }            
         }
     }
-    .info-description-wrapper {
-        position: relative;
-        width: 900px;
 
+    .content-wrapper {
+        
+        transform-style: preserve-3d;
+        
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        max-width: 500px;
+        height: 500px;
+        max-height: 500px;
+        min-height: 500px;
+        border-radius: 10px;
+        
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+
+        -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        @media (min-width: $medium-screen) {
+                height: 600px;
+
+                max-height: 600px;
+                min-height: 600px;
+            }
         .flower {
             position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
+            display: none;
+            top: -20px;
+            left: -20px;
+            width: 80px;
+            z-index: 1;
+            @media screen and (min-width: $small-screen) {
+                top: -30px;
+                left: -30px;
+                width: 100px;
+                height: 100px;
+            }
             img {
                 width: 100%;
                 height: auto;
                 filter: drop-shadow(2px 4px 6px $pink-dr);
             }
         }
-        .info-description {
-            display: flex;
-            flex-direction: column;
-            
-            background-color: $white;
-            
-            height: 600px;
-            max-height: 600px;
-            min-height: 600px;
-            
-            padding:  0  0 0 2rem;
-            border-radius: 10px;
-            overflow: hidden;
 
-            -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        
-            .circle {
+        .smallscreen-header {
+            position: absolute;
+            top: -2px;
+            left: 15px;
+            right: 15px;
+            z-index: 1;
+            @media (min-width: $medium-screen) {
                 display: none;
             }
-
-            .description-wrapper {
+            .switches {
                 display: flex;
-                align-items: center;
-                gap: 1rem;
-                height: 90%;
-                padding: 2rem 1rem;
-                .content-image {
-                    height: 90%;
-                    width: 100%;
-                }
-                .content-description {
-                    width: 100%;
-                    height: 90%;
+                justify-content: space-between;
+                height: 60px;
+                li {
                     display: flex;
-                    flex-direction: column;
-                    gap: 3rem;
-                    .title-wrapper {
-                        height: 100px;
-                        min-height: 100px;
-                        max-height: 100px;
-                        h2 {
-                            text-align: center;
-                            font-size: 2rem;
-                            font-weight: 600;
-                        }
-                    }
-                    ul {
-                        list-style: disc;
-                        padding-left: 1.5rem;
-                        line-height: 2rem;
-                        li {
-                            font-style: italic;
-                            font-size: 1.4rem; 
-                            font-weight: 200;
-                            text-wrap: wrap;
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $medium-screen) {
-    .info-container {
-        .info-titles {
-            display: none;
-        }
-        .info-description-wrapper {
-            width: 100%;
-            padding: 0 2rem;
-            .info-description {
-                .flower {
-                    top: -35px;
-                    left: -5px;
-                    
-                }
-                .circle {
                     align-items: center;
                     justify-content: center;
-                    display: flex;
-                    gap:.5rem;
-                    padding: 1rem 0;
-                    li {
-                        display: flex;
-                        align-items: center;
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
-                    li:first-child,
-                    li:last-child {
-                        font-size: 1.6rem;
-                        .pi {
-                            color: $gray-dr;
-                        }
 
+                    width: 50px;
+
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+
+                    background-color: $black-dr;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                    &:hover {
+                        cursor: pointer;
                     }
-                    li:not(:first-child):not(:last-child){
-                        background-color: $gray-lt;
-                        border-radius: 100%;
-                        width: 1rem;
-                        height: 1rem;
-                        &.active {
-                            background-color: $pink-dr;
-                        }
+                }
+                li:first-child,
+                li:last-child {
+                    font-size: 1.6rem;
+                    background-color: $gray;
+                    .pi {
+                        color: $gray-dr;
                     }
+                }
+                li:not(:first-child):not(:last-child){
+                    span {
+                        font-weight: bold;
+                        color:$white;
+                    }
+                    &.active {
+                    background-color: $pink-dr;
+                }
                 }
             }
         }
-    }
-}
 
-@media screen and (max-width: $small-screen) {
-    .info-container {
-        width: 100%;
-        padding: 0;
-        .info-description-wrapper {
-            width: 100%;
-            padding: 0;
-            .info-description {
-                padding: 0 ;
-                flex-grow: 1;
+        .descriptions-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            .image-wrapper{
+                position: relative;
+                display: flex;
                 width: 100%;
-                .flower {
-                    top: -20px;
-                    left: 10px;
-                    width: 60px;
+                height: 60%;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                overflow: hidden;
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: #00000050; 
                 }
-                .description-wrapper{
-                    .content-image {
-                        display: none;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .description-inner-wrapper {
+                display: flex;
+                flex-direction: column;
+                bottom: 0;
+                height: 40%;
+                width: 100%;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+
+                background-color: $black-dr;
+                color: $white;
+                .title-header {
+                    display: flex;   
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    
+                    height: 60px;
+                    min-height: 60px;
+                    max-height: 60px;
+                    
+                    background: linear-gradient(90deg, $pink-dr, $black-dr); 
+                    
+                }
+                .list-wrapper {
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    ul {
+                        display: flex;
+                        list-style: disc;
+                        flex-wrap: wrap;
+                        column-gap: 1.5rem;
+                        padding-left: 1.5rem;
+                        align-items: center;
+                        justify-content: center;
+                        
                     }
                 }
-               
             }
         }
     }
 }
 
+
+
+
+
+
+
+
+.fade-leave-active{
+    transition: all .6s ease-out;
+    backface-visibility: hidden;
+}
+
+.fade-enter-active{
+    transition: all .6s ease-in -.5s;
+    backface-visibility: hidden;
+}
+
+.fade-enter-from {
+    transform: rotateY(180deg);
+}
+.fade-leave-from {
+    transform: rotateY(0deg);
+}
+.fade-leave-to {
+    transform: rotateY(180deg);
+}
+
+ .fade-enter-to {
+     transform: rotateY(360deg);
+}
 </style>

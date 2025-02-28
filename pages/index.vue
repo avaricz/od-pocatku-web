@@ -1,18 +1,9 @@
 <template>
-    <MainHeaderContainer>
-        <div class="header-container">
-            <div class="welcome">
-                <div class="welcome-title-area">
-                    <h1>Dula Lucie...</h1>
-                    <p>Laktační poradkyně, lektorka Školy pánevního dna a funkční trenérka.</p>
-                    <TheButton label="O mně" @click="$router.push('/about')"/>
-                </div>
-            </div>
-        </div>
-    </MainHeaderContainer>
+    <HeroHeader />
+       
     <SectionsContainer 
         :background-color="'gray-lt'" 
-        :justify-header="'start'" 
+        :justify-header="'center'" 
         title="Jsem v tom s Tebou" 
         subtitle="„Protože na počátku záleží.“" 
     >
@@ -22,24 +13,35 @@
             />
         </template>
     </SectionsContainer>
+
     <SectionsContainer 
+        v-if="events"
         :justify-header="'center'" 
         title="Události" 
         subtitle="„..., kterých se můžeš zůčastnit i ty“" 
     >
         <template #content>
-            udalosti
+            <div class="events-container">
+                <EventCard 
+                    v-for="event in events" 
+                    :key="event.id" 
+                    :event="event"
+                />
+            </div>
         </template>
     </SectionsContainer>
 
 </template>
 
 <script setup lang="ts">
-import TheButton from '~/components/TheButton.vue';
-import SectionsContainer from '@/components/SectionsContainer.vue';
-import HeaderContainer from '~/components/HeaderContainer.vue';
+import type { Event, InfoCard } from '~/types/types'; 
+import { EventModel } from '~/models/EventModel';
 
-const infoCards = [
+const  data  = await $fetch<Event[]>('/api/futureEvents')
+
+const events = computed(() => data?.map(event => new EventModel(event)) || [])
+
+const infoCards: InfoCard[] = [
     {
         title: "Předporodní kurzy a péče o těhotné",
         description: [
@@ -50,7 +52,7 @@ const infoCards = [
             "spinning babies",
             "předporodní rituál",
         ],
-        thumbnail: "img/img_9071_thumbnail.jpg"
+        img: "img/9071_org.jpg"
     },
     {
         title: "Laktační poradenství a péče v šestinedělí",
@@ -62,7 +64,7 @@ const infoCards = [
             "masáž bříška bylinnými koulemi",
             "rituál zavírání kostí",
         ],
-        thumbnail: "img/img_lp_thumbnail.jpg"
+        img: "img/7_org.png"
     },
     {
         title: "Zpracování placenty",
@@ -72,7 +74,7 @@ const infoCards = [
             "kapsle",
             "tinktura",
         ],
-        thumbnail: "img/img_5481_thumbnail.jpeg"
+        img: "img/36_org.jpeg"
     },
     {
         title: "Kurzy zaměřené na zdravý pohyb",
@@ -83,7 +85,7 @@ const infoCards = [
             "individuální cvičební plány",
             "diagnostika",
         ],
-        thumbnail: "img/img_9320_thumbnail.jpg"
+        img: "img/9320_org.jpg"
     },
     {
         title: "Vzdělávání",
@@ -94,98 +96,17 @@ const infoCards = [
             "předporodní kurzy",
             "e-booky",
         ],
-        thumbnail: "img/img_9249_thumbnail.jpg"
+        img: "img/9249_org.jpg"
     },
 ]
-
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/base.scss';
-.header-container {
-    margin: 0 auto;
-    padding: 6rem 2rem;
-    max-width: $large-screen;
-    height: 100%;
-    display: flex;
-    color: $pink-dr;
-
-    background-image: url('./img/9454_transparent.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 60% center ;
-
-    @media (min-width: $small-screen) {
-        background-size: contain; 
-        background-position:  right; 
-    }
+pre{
+    max-width: 600px;
 }
-
-// WELCOME AREA
-.welcome {
-    position: relative;
-    display: flex;
-    width: 100%;
-    justify-content: start;
-    min-height: 30vh;
-    .welcome-title-area{
-        display: flex;
-        flex-direction: column;
-        color: $pink-dr;
-        padding-left: 60px;
-        gap: 2rem;
-        h1 {
-            font-size: 6.4rem;
-            font-weight: 100;
-            font-family: Italianno;
-            line-height: 4.5rem;
-        }
-        p {
-            color: $white;
-            font-size: 1.3rem;
-            font-weight: 500;
-            font-style: italic;
-        }
-    }
-    
+.events-container {
+    display:flex;
+    gap: 2rem;
 }
-
-
-@media screen and (max-width: 1020px) {
-    .welcome {
-        .welcome-title-area {
-            max-width: 70%;
-            padding-left: 0;
-        }
-        .welcome-flower-area {
-            img {
-            width: 560px;
-            height: auto;
-        }
-        }
-
-    }
-}
-
-
-@media screen and (max-width: $small-screen) {
-    .welcome {
-        .welcome-title-area {
-            max-width: 100%;
-        }
-        .welcome-flower-area {
-            display: none;
-        }
-
-    }
-    .section-title {
-        margin-bottom: 3rem;
-    }
-}
-
-
-
- 
-
-
 </style>

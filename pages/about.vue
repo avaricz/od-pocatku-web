@@ -1,5 +1,9 @@
 <template>
-    <SectionsContainer background-color="black-dr">
+    <HeaderContainer
+        :bg-image="'/img/9452_org_thin_transparent.png'"
+        title="Jmenuji se Lucie"
+    />
+    <SectionsContainer background-color="gray-lt">
         <template #content>
             <div class=" introduce-container">
                 <div class="introduce-header">
@@ -22,7 +26,7 @@
                     </InfoWrapper>
                 </div>
             </div>
-            </template>
+        </template>
     </SectionsContainer>
      <SectionsContainer background-color="gray-lt">
         <template #content>
@@ -47,7 +51,7 @@
         <template #content>
             <div class="section-2">
                 <div class="left">
-                    <GallerySinglePhoto :photo="'/img/8_org.jpeg'"  rotate="right" :position="'vertical'"/>
+                    <GallerySinglePhoto :photo="'/img/8_org.jpeg'"  rotate="right" :position="'horizontal'"/>
                 </div>
                 <div class="right">
                     <InfoWrapper>
@@ -149,9 +153,7 @@ const images5 = ref([
         color: $pink-dr;
         
         h2 {
-            span {
-                font-weight: bold;
-            }
+            font-weight: 400;
         }
         p {
             font-style: italic;

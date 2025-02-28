@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Bylinná napářka" bg-image="/img/9480_transparent_darker.png" />
+    <HeaderContainer title="Bylinná napářka" bg-image="/img/9480_org_transparent.png" />
     <SectionsContainer >
         <template #content>
             <div class="section-1">
@@ -36,11 +36,6 @@
             <CardsPanel :data="cardsContent" />
         </template>
     </SectionsContainer>
-    <SplitedSection>
-        <template #left>
-            <SectionGallery :media="images" />
-        </template>
-    </SplitedSection>
     <SectionsContainer>
         <template #content>
             <RecipeBlock :img="recipe.img" :steps="recipe.steps" :title="recipe.title"/>
@@ -130,15 +125,20 @@ const images1 =ref([
 </script>
 <style lang="scss" scoped>
     
-.section-1 {
+.section-1, .section-2, .section-5 {
     display: flex;
     align-items: center;
+    @media (max-width: $large-screen) {
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
+.section-1 {
     .left, .right {
         max-width: 50%;
     }
     @media (max-width: $large-screen) {
-        flex-direction: column;
-        gap: 5rem;
         .left,.right {
             width: 100%;
             max-width: none;
@@ -146,19 +146,10 @@ const images1 =ref([
     }
 }
 
-.section-2 {
-    display: flex;
-    @media (max-width: $medium-screen) {
-        flex-direction: column;
-        gap: 5rem;
-    }
-}
 
 .section-5 {
-    display: flex;
     gap:2rem;
     @media (max-width: $large-screen) {
-        flex-direction: column;
         gap: 8rem;
     }
     .next-info {

@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Rituály" bg-image="/img/9483_transparent_darker.png" />
+    <HeaderContainer title="Rituály" bg-image="/img/9483_org_transparent.png" />
     <SectionsContainer :background-color="'gray-lt'">
         <template #content>
             <div class="section-1">

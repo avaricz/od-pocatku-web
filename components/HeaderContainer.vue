@@ -1,11 +1,17 @@
 <template>
     <section>
+        <div class="overlay"></div>
         <div class="header-container"
-            :style="{backgroundImage: `url('${bgImage}')`}"
         >
+            <NuxtImg 
+                :src="bgImage" 
+                densities="1x"
+                sizes="sm:100vw md:100vw lg:100vw"
+                format="webp"
+                quality="90"
+            />
             <div class="header">
                 <h1>{{ title }}</h1>
-                <p>{{ subtitle }}</p>
             </div>
         </div>
     </section>
@@ -21,45 +27,51 @@ defineProps({
 
 <style lang="scss" scoped>
 section {
+    position: relative;
     background-color: $black-dr;
-    height: 600px;
-    //height: 100vh;
-    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-    
+    height: 400px;
+    overflow: hidden;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #00000090;
+        z-index: 1;
+    }
     .header-container {
-        margin: 0 auto;
-        padding: 6rem 2rem;
-        max-width: $large-screen;
-        height: 100%;
+        position: relative;
+
         display: flex;
         align-items: center;
         justify-content: center;
 
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        margin: 0 auto;
+        height: 100%;
+        max-width: $large-screen;
+        
+        img {
+            position: absolute;
+            object-fit: cover;
+            max-width: 100%;
+            min-height: 100%;
+        }
         .header{
             display: flex;
-            flex: 1;
-            gap: 4rem;
-            flex-direction: column;
             align-items: center;
-            justify-content: start;
-            height: 100%;
-            max-width: 800px;
+            justify-content: center;
+            
+            z-index: 2;
             h1 {
-                display: flex;
-                text-align: center;
                 font-size: 3.8rem;
-                font-weight: 500;
+                font-weight: 200;
                 line-height: 4.5rem;
+
+                text-align: center;
+                max-width: 800px;
+
                 color: $white;
-            }
-            p {
-                align-self: flex-start;
-                color: $white;
-                max-width: 500px
             }
         }
         }

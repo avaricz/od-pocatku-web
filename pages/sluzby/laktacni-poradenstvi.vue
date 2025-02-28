@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Laktační poradenství" :bg-image="'/img/20_transparent.png'"/>
+    <HeaderContainer title="Laktační poradenství" :bg-image="'/img/20_org_transparent.png'"/>
     <SectionsContainer :justify-header="'center'" title="V čem ti poradenství pomůže">
         <template #content>
             <CardsPanel :data="cardsContent" />

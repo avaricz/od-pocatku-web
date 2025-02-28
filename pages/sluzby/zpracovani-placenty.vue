@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Zpracování placenty" bg-image="/img/13_transparent_darker.png" />
+    <HeaderContainer title="Zpracování placenty" bg-image="/img/36_org_transparent.png" />
     <SectionsContainer background-color="gray-lt">
         <template #content>
             <div class="section-1">

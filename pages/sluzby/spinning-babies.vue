@@ -1,5 +1,5 @@
 <template>
-    <HeaderContainer title="Spinning babies" bg-image="/img/9175_transparent_darker.png" />
+    <HeaderContainer title="Spinning babies" bg-image="/img/9175_org_transparent.png" />
     <SectionsContainer>
         <template #content>
             <InfoWrapper :text-align="'center'">

@@ -1,7 +1,7 @@
 <template>
     <HeaderContainer 
         title="Individuální funkční cvičební plán"
-        bg-image="/img/9297_transparent_darker.png"
+        bg-image="/img/9297_org_thin_transparent.png"
     />
     <SectionsContainer   :background-color="'gray-lt'">
         <template #content>
