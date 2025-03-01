@@ -5,6 +5,25 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/flower.svg' }]
     }
   },
+  image: {
+    screens: {
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      '2xl': 1536
+    },
+    format: ['webp'],
+    quality: 90,
+    presets: {
+      default: {
+        modifiers: {
+          format: 'webp',
+          quality: 100,
+        },
+      },
+    },
+  },
   css: ['~/assets/scss/main.scss'],
   vite: {
     css: {

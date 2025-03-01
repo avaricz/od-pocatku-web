@@ -2,12 +2,11 @@
     <div class="card-container">
         <div class="wrapper">
             <div class="img-wrapper">
-                <!-- <NuxtImg v-if="event.image_url" :src="event.image_url" alt="" /> -->
                 <NuxtImg 
                     src="/img/9103_org.jpg" 
                     alt="" 
                     densities="1x"
-                    sizes="sm:100vw md:100vw lg:100vw"
+                    sizes="sm:400px"
                     format="webp"
                     quality="100"
                  />
@@ -162,7 +161,7 @@ defineProps({
     }
 
     &:hover,:active{
-        .img-wrapper,{
+        .img-wrapper{
             transform: translateY(-300px);
         }
         .header {

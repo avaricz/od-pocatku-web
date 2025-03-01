@@ -2,7 +2,7 @@
 <template>
     <section 
         :class="[
-            { 'shadow': shadow },
+            { 'shadow': shadow,},
             'background-' + backgroundColor,
         ]"
     >
@@ -56,7 +56,7 @@
     shadow: {
         type: Boolean
     },
-    fullWidth: Boolean
+    fullWidth: Boolean,
  })
 
  
@@ -89,9 +89,8 @@ section {
     &.background-gray-dr {
         background-color: $gray-dr;
     }
-    
-
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -111,6 +110,7 @@ section {
         color: $pink-dr;
         font-weight: 400;
         letter-spacing: 1px;
+        text-align: center;
     }
     p {
         color: $gray-dr;

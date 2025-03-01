@@ -14,11 +14,12 @@
         </template>
     </SectionsContainer>
 
-    <SectionsContainer 
+    <ScrollableContainer 
         v-if="events"
         :justify-header="'center'" 
         title="Události" 
         subtitle="„..., kterých se můžeš zůčastnit i ty“" 
+        scrollable
     >
         <template #content>
             <div class="events-container">
@@ -29,7 +30,7 @@
                 />
             </div>
         </template>
-    </SectionsContainer>
+    </ScrollableContainer>
 
 </template>
 

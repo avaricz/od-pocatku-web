@@ -10,7 +10,7 @@
                 alt="" 
                 format="webp"
                 densities="1x"
-                sizes="840px"
+                sizes="sm:100vw md:100vw lg:100vw"
             />
         </div>
     </div>

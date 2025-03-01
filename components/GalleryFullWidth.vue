@@ -3,7 +3,13 @@
 
         <div  class="gallery-container" >
             <div v-for="img in images" class="img-wrapper">
-                <NuxtImg :src="img.src" alt=""/>
+                <NuxtImg 
+                    :src="img.src" 
+                    alt=""
+                    format="webp"
+                    densities="1x"
+                    sizes="sm:100vw md:100vw lg:100vw"
+                />
             </div>
         </div>
     </div>
