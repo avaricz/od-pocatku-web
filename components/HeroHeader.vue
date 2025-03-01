@@ -94,7 +94,7 @@ section {
         p {
             color: $white;            
             font-size: 1.3rem;
-            font-weight: 200;
+            font-weight: 500;
             font-style: italic;
         }
     }

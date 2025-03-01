@@ -17,9 +17,6 @@
                     <span>Místo</span><span>{{ event?.adress }}</span>
                 </div>
             </div>
-            <div class="button-area" @click="$emit('openEvent')">
-                +
-            </div>
         </div>
         <div class="content-smallscreen">
             <div class="time">
@@ -35,22 +32,20 @@
 
 <script setup lang="ts">
 import { EventModel } from '~/models/EventModel';
-
 import type { PropType } from 'vue';
-defineEmits(['openEvent'])
 
 defineProps({
     event: {
         type: Object as PropType<EventModel> 
     }
 })
+
 </script>
 
 <style lang="scss" scoped>
 .event-container {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     height: 100%;
 
@@ -138,29 +133,6 @@ defineProps({
                         padding-top: 0.3rem ;
                     }
                 }
-            }
-        }
-        .button-area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            height: 100%;
-            width: 100px;
-
-            background: $gray-lt;
-            
-            font-size: 3rem;
-            transition: all .3s linear;
-            cursor: pointer;
-            &:hover {
-            background: $gray;
-                
-
-            }
-            &:active {
-                box-shadow: none
-
             }
         }
     }

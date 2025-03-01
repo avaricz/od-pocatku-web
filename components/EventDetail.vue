@@ -21,8 +21,10 @@
                     </div>
                 </div>
                 <div class="buttons-container-largescreen">
-                    <TheButton label="first" filled/>
-                    <TheButton label="second" filled/>
+                    <a :href="event?.reservation_link">
+                        <TheButton label="Rezervovat" filled @click.stop="() => console.log('')"/>
+                    </a>
+                   <!--  <TheButton label="second" filled @click.stop="() => console.log('')"/> -->
                 </div>
             </div>
             <div class="description">
@@ -32,10 +34,12 @@
                 
                 </div>
             <div class="buttons-container-smallscreen">
-                <TheButton label="first" filled/>
-                <TheButton label="second" filled/>
-            </div>
+                <a :href="event?.reservation_link">
 
+                    <TheButton label="Rezervovat" filled @click.stop="() => console.log('')"/>
+                </a>
+                <!-- <TheButton label="second" filled @click.stop="() => console.log('')"/> -->
+            </div>
 
             <!-- <div class="map-wrapper">
                 <NuxtImg :src="'/maps/map_klubicko.png'" />
@@ -61,7 +65,6 @@ defineProps({
     display: flex;
     flex-direction: column;
     width: 100%;
-    
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -116,7 +119,6 @@ defineProps({
         height: 100%;
         width: 100%;
         background: $white;
-        
         .wrapper {
             display: flex;
             flex-direction: column;
@@ -191,6 +193,9 @@ defineProps({
             max-width: 400px;
             min-width: 400px;
             width: 400px;
+            a, button{
+               width: 100%;
+            }
             @media (min-width: $small-screen) {
                     display:none;
                 }

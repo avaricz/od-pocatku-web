@@ -56,7 +56,6 @@ defineProps({
             font-size: 1.2rem;
             font-weight: 500;
             font-style: italic;
-            font-weight: 200;
         }
     }
     .section-content {
