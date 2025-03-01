@@ -1,15 +1,15 @@
 <template>
     <header>
         <nav>
-        <NuxtLink :to="logo.link" class="logo-wrapper">
-                <img :src="logo.logo" alt="">
-                <div class="logo-title">{{ logo.title}}</div>
+        <NuxtLink to="/" class="logo-wrapper">
+                <NuxtImg src="./logo.svg" alt="" />
+                <div class="logo-title">Od počátku</div>
         </NuxtLink>
 
         <div class="navigation-wrapper" :class="{'visible': isMenuOpen}">
             <ul>
                 <li 
-                    v-for="link in navigation" 
+                    v-for="link in navigationLinks" 
                     :key="link.label"
                     class="nav-item" 
                     @click="isMenuOpen=false"
@@ -26,10 +26,15 @@
             </ul>
 
             <div class="socials">
-                <NuxtLink v-for="social in socials"
-                :to="social.url"
+                <NuxtLink 
+                :to="socialLinks.instagram.link"
                 >
-                    <NuxtImg :src="social.icon" height="32px"/>
+                    <NuxtImg :src="socialLinks.instagram.icon" height="32px"/>
+                </NuxtLink>
+                <NuxtLink 
+                :to="socialLinks.facebook.link"
+                >
+                    <NuxtImg :src="socialLinks.facebook.icon" height="32px"/>
                 </NuxtLink>
             </div>
         </div>   
@@ -42,42 +47,13 @@
 </template>
 
 <script setup lang="ts">
-const img = useImage()
+import { navigationLinks, socialLinks } from '@/utils/navigation'
 const isMenuOpen = ref(false)
 
 function openMenu () {
     isMenuOpen.value = !isMenuOpen.value
 }
 
-const logo = ref({
-    link: '/',
-    logo: img('./logo.svg'),
-    title: 'Od počátku',
-})
-
-const navigation = ref([
-    { label: 'Home', link: '/' },
-    { label: 'O mně', link: '/about' },
-    { label: 'Služby', link: '/sluzby', innerLinks: [
-        { label: 'Kompletní příprava na porod a péče v těhotenství', link: '/sluzby/kompletni-priprava-na-porod-a-pece-v-tehotenstvi' },
-        { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
-
-        { label: 'Péče v šestinedělí', link: '/sluzby/pece-v-sestinedeli' },
-        { label: 'Laktační poradenství', link: '/sluzby/laktacni-poradenstvi' },
-        { label: 'Těhotenské a rebozo masáže', link: '/sluzby/tehotenske-a-rebozo-masaze' },
-        { label: 'Individuální funkční cvičební plán', link: '/sluzby/individualni-funkcni-cvicebni-plan' },
-        { label: 'Bylinná napářka', link: '/sluzby/bylinna-naparka' },
-        { label: 'Spinning babies', link: '/sluzby/spinning-babies' },
-        { label: 'Zpracování placenty', link: '/sluzby/zpracovani-placenty' },
-        { label: 'Rituály', link: '/sluzby/ritualy' },
-    ]},
-    { label: 'Události', link: '/events' },
-])
-
-const socials = ref([
-    {icon: '/icon/instagram-colored-filled.png', url: 'https://www.instagram.com/od_pocatku_s_dulou_lucii/'},
-    {icon: '/icon/facebook-colored-filled.png', url: 'https://www.facebook.com/profile.php?id=100087763303156'}
-])
 
 </script>
 

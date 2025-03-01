@@ -69,7 +69,7 @@
             />
         </template>
     </SectionsContainer>
-    <SectionsContainer 
+<!--     <SectionsContainer 
         background-color="white" 
         :justify-header="'center'" 
         
@@ -79,7 +79,7 @@
                 :panels="pricePanels"
             />
         </template>
-    </SectionsContainer>
+    </SectionsContainer> -->
 
 
 
@@ -90,17 +90,17 @@
 
 const price = ref({
     title: "Standard",
-    subtitle: "Nejvýhodnější balíček",
+    subtitle: "",
     price: 600,
     slash: "hodina",
     content: [
-        "<b>ULTIMÁTNÍ</b> masáž",
-        "voný oleje",
-        "rebozo šátek",
-        "jak si namíchat <b>rumba koule</b>",
-        "voný oleje",
-        "rebozo šátek",
-        "jak si namíchat rumba koule"
+        // "<b>ULTIMÁTNÍ</b> masáž",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat <b>rumba koule</b>",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat rumba koule"
     ],
     showFlower:true,
     btnFilled: true

@@ -40,17 +40,17 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/'],
-      ignore: ['/api/**']  
+      ignore: ['/api/**', '/doprovod-k-cisarskemu-rezu']  
     },
-    experimental: {
-      database: true,
-    },
-    database: {
-      events: {
-        connector: 'sqlite',
-        options: { name: 'events-db' }
-      },
-    },
+    // experimental: {
+    //   database: true,
+    // },
+    // database: {
+    //   events: {
+    //     connector: 'sqlite',
+    //     options: { name: 'events-db' }
+    //   },
+    // },
     // runtimeConfig: {
     //   databasePath: '.data/events-db.sqlite' // Nastav cestu k databázi
     // }

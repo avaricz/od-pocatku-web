@@ -56,7 +56,15 @@
     </SectionsContainer>
     <SectionsContainer>
         <template #content>
-            <PricePanel :title="'CENA'" :price="'600,- / 1 hodina'"/>
+            <PricePanel 
+                :title="price.title"
+                :subtitle="price.subtitle" 
+                :price="price.price"
+                :slash="price.slash"
+                :content="price.content"
+                :show-flower="price.showFlower"
+                :btn-filled="price.btnFilled"
+            />
         </template>
     </SectionsContainer>
 
@@ -64,6 +72,23 @@
 
 <script setup>
 import SectionsContainer from '~/components/SectionsContainer.vue';
+const price = ref({
+    title: "Standard",
+    subtitle: "",
+    price: 600,
+    slash: "hodina",
+    content: [
+        // "<b>ULTIMÁTNÍ</b> masáž",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat <b>rumba koule</b>",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat rumba koule"
+    ],
+    showFlower:true,
+    btnFilled: true
+})
 
 const cardsContent = ref([
     {title: "Znalosti",

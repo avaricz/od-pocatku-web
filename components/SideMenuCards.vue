@@ -19,58 +19,53 @@
             </ul>
         </div>
 
-        <Transition :name="'fade'" mode="out-in" >
-            <div class="content-wrapper" :key="activeIndex">
-
-                <div class="smallscreen-header" >
-                    <ul class="switches">
-                        <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
-                        
-                        <li 
-                            v-for="(card, index) in content"
-                            :key="index"
-                            :class="{ active: index === activeIndex }"
-                            @click="changeActiveIndex(index)"
-                        >
-                            <span>{{  index + 1 }}</span>
-                        </li>
+        <div class="content-wrapper" >
+            
+            <div class="smallscreen-header" >
+                <ul class="switches">
+                    <li @click="previousActiveIndex"><i class="pi pi-arrow-circle-left" /></li>
+                    
+                    <li 
+                    v-for="(card, index) in content"
+                    :key="index"
+                    :class="{ active: index === activeIndex }"
+                    @click="changeActiveIndex(index)"
+                    >
+                    <span>{{  index + 1 }}</span>
+                </li>
+                
+                <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
+            </ul>
+        </div>
         
-                        <li  @click="nextActiveIndex"><i class="pi pi-arrow-circle-right" /></li>
-                    </ul>
+        <Transition :name="'fade'" mode="out-in">
+            <div class="descriptions-wrapper" :key="activeIndex" >
+                <div class="image-wrapper" >
+                    <NuxtImg 
+                    :src="content[activeIndex].img" 
+                    alt="" 
+                    sizes="sm:100vw md:100vw"
+                    format="webp"
+                    quality="90"
+                    densities="1x"
+                    />
+                    <div class="overlay"></div>
                 </div>
-
-                <div class="descriptions-wrapper" >
-                    <div class="image-wrapper" >
-                        <NuxtImg 
-                            :src="content[activeIndex].img" 
-                            alt="" 
-                            sizes="sm:100vw md:100vw"
-                            format="webp"
-                            quality="90"
-                            densities="1x"
-                        />
-                        <div class="overlay"></div>
+                <div class="description-inner-wrapper">
+                    
+                    <div class="title-header" >
+                        <h3>{{ content[activeIndex].title }}</h3>
                     </div>
-                    <div class="description-inner-wrapper">
-
-                            <div class="title-header" >
-                                <h3>{{ content[activeIndex].title }}</h3>
-                            </div>
-                            <div class="list-wrapper">
-
-                                <ul >
-                                    <li v-for="item in content[activeIndex].description">{{ item }}</li>
-                                </ul>
-                            </div>
+                    <div class="list-wrapper">
+                        
+                        <ul >
+                            <li v-for="item in content[activeIndex].description">{{ item }}</li>
+                        </ul>
                     </div>
-                    </div>   
-
-
-                <div class="flower">
-                    <NuxtImg src="/flower.svg" alt="flower" format="webp" sizes="100px" densities="1x" />
-                </div> 
-            </div> 
+                </div>
+            </div>
         </Transition>
+            </div> 
     </div>
 </template>
 
@@ -100,23 +95,21 @@ function previousActiveIndex () {
 
 let interval
 
-//onMounted(() => {
-  //  interval = setInterval(() => {
- //       activeIndex.value = (activeIndex.value + 1) % props.content.length;
- //   }, 7000);
-//});
+onMounted(() => {
+   interval = setInterval(() => {
+       activeIndex.value = (activeIndex.value + 1) % props.content.length;
+   }, 5000);
+});
 
-//onUnmounted(() => {
-//    clearInterval(interval);
-//});
+onUnmounted(() => {
+   clearInterval(interval);
+});
 
 </script>
 
 <style lang="scss" scoped>
 
 .container {
-    // position: relative;
-    // perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -176,9 +169,6 @@ let interval
     }
 
     .content-wrapper {
-        
-        transform-style: preserve-3d;
-        
         position: relative;
         display: flex;
         flex-direction: column;
@@ -188,12 +178,7 @@ let interval
         max-height: 500px;
         min-height: 500px;
         border-radius: 10px;
-        
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
-        // height: 100%;
+        overflow: hidden;
 
         -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -204,25 +189,7 @@ let interval
                 max-height: 600px;
                 min-height: 600px;
             }
-        .flower {
-            position: absolute;
-            display: none;
-            top: -20px;
-            left: -20px;
-            width: 80px;
-            z-index: 1;
-            @media screen and (min-width: $small-screen) {
-                top: -30px;
-                left: -30px;
-                width: 100px;
-                height: 100px;
-            }
-            img {
-                width: 100%;
-                height: auto;
-                filter: drop-shadow(2px 4px 6px $pink-dr);
-            }
-        }
+
 
         .smallscreen-header {
             position: absolute;
@@ -349,12 +316,30 @@ let interval
 
 
 
+.fade-leave-active {
+    transition: transform .6s ease-in;
+}
+.fade-enter-active {
+    transition: transform .6s ease-out ;
+}
+.fade-enter-from {
+    transform: translateX(-100%); /* Start off-screen on the left */
+}
+
+.fade-enter-to {
+    transform: translateX(0); /* Move to the normal position */
+}
+
+.fade-leave-from {
+    transform: translateX(0); /* Start from the current position */
+}
+
+.fade-leave-to {
+    transform: translateX(-100%); /* Slide off-screen to the right */
+}
 
 
-
-
-
-.fade-leave-active{
+/* .fade-leave-active{
     transition: all .6s ease-out;
     backface-visibility: hidden;
 }
@@ -362,19 +347,18 @@ let interval
 .fade-enter-active{
     transition: all .6s ease-in -.5s;
     backface-visibility: hidden;
-}
+} */
+// .fade-enter-from {
+//     transform: rotateY(180deg);
+// }
+// .fade-leave-from {
+//     transform: rotateY(0deg);
+// }
+// .fade-leave-to {
+//     transform: rotateY(180deg);
+// }
 
-.fade-enter-from {
-    transform: rotateY(180deg);
-}
-.fade-leave-from {
-    transform: rotateY(0deg);
-}
-.fade-leave-to {
-    transform: rotateY(180deg);
-}
-
- .fade-enter-to {
-     transform: rotateY(360deg);
-}
+//  .fade-enter-to {
+//      transform: rotateY(360deg);
+// }
 </style>

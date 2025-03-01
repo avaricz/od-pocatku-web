@@ -41,14 +41,37 @@
             </div>
         </template>
     </SectionsContainer>
-    <SectionsContainer>
+    <SectionsContainer 
+        background-color="white" 
+        :justify-header="'center'" 
+        
+    >
         <template #content>
-            <PricePanel :title="'CENA'" content="Cena rituálu se odvíjí od počtu osob a jeho časové i materiální náročnosti. " :price="'Základ: 2000,-'" />
+            <PricePanel 
+                :title="price.title"
+                :subtitle="price.subtitle" 
+                :price="price.price"
+                :slash="price.slash"
+                :content="price.content"
+                :show-flower="price.showFlower"
+                :btn-filled="price.btnFilled"
+            />
         </template>
     </SectionsContainer>
 </template>
 
 <script setup>
+const price = ref({
+    title: "Rituál",
+    subtitle: "Základní cena",
+    price: 2000,
+    slash: "hodina",
+    content: [
+        "Cena rituálu se odvíjí od počtu osob a jeho časové i materiální náročnosti."
+    ],
+    showFlower:true,
+    btnFilled: true
+})
 const cardsContent = ref([
     {title: "Předporodní rituál",
      description: [

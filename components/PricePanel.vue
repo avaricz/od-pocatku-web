@@ -8,10 +8,15 @@
             
             <div class="price">
                 <span>{{ price }}</span>
-                <span>Kč {{'/' + slash }}</span>
+                <span>Kč {{ slash ? `/  ${slash}` : "" }}</span>
             </div>
             
-            <TheButton :label="'Vyber'" :font-weight="200" :filled="btnFilled"/>
+            <TheButton 
+                :label="'Napiš mi'" 
+                :font-weight="200" 
+                :filled="btnFilled"
+                @click="openMail"
+            />
         </div>
 
       
@@ -36,6 +41,10 @@ defineProps({
     showFlower: Boolean,
     btnFilled: Boolean
 })
+
+const openMail = () => {
+    window.location.href = "mailto:lucieodpocatku@gmail.com";
+};
 </script>
 
 <style lang="scss" scoped>

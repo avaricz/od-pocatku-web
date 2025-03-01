@@ -21,10 +21,9 @@
                     </div>
                 </div>
                 <div class="buttons-container-largescreen">
-                    <a :href="event?.reservation_link">
-                        <TheButton label="Rezervovat" filled @click.stop="() => console.log('')"/>
-                    </a>
-                   <!--  <TheButton label="second" filled @click.stop="() => console.log('')"/> -->
+                    <NuxtLink :to="event?.reservation_link" target="_blank">
+                        <TheButton label="Rezervovat" filled />
+                    </NuxtLink>
                 </div>
             </div>
             <div class="description">
@@ -34,16 +33,23 @@
                 
                 </div>
             <div class="buttons-container-smallscreen">
-                <a :href="event?.reservation_link">
+                <NuxtLink :to="event?.reservation_link" target="_blank">
 
-                    <TheButton label="Rezervovat" filled @click.stop="() => console.log('')"/>
-                </a>
-                <!-- <TheButton label="second" filled @click.stop="() => console.log('')"/> -->
+                    <TheButton label="Rezervovat" filled />
+                </NuxtLink>
             </div>
 
-            <!-- <div class="map-wrapper">
-                <NuxtImg :src="'/maps/map_klubicko.png'" />
-            </div> -->
+            <div class="map-wrapper">
+                <NuxtLink :to="event.map_url" target="_blank">
+                    <NuxtImg 
+                        :src="'/maps/map_klubicko.png'" 
+                        densities="1x"
+                        sizes="sm:100vw md:100vw lg:100vw xl:100vw"
+                        format="webp"
+                        quality="100"
+                    />
+                </NuxtLink>
+            </div>
         </div>
     </div>
 </template>

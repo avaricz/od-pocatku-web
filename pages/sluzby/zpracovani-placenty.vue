@@ -36,15 +36,63 @@
             <RecipeBlock :title="recipe.title" :steps="recipe.steps" :img="'/img/36_org.jpeg'"/>
         </template>
     </SectionsContainer>
-    <SectionsContainer >
+    <SectionsContainer 
+        background-color="white" 
+        :justify-header="'center'" 
+        
+    >
         <template #content>
-            <PricePanel :title="'Kapsle'"  :price="'1800,-'"/>
-            <PricePanel :title="'Tinktura'" :price="'1500,-'"/>
+            <PricesContainer
+                :panels="pricePanels"
+            />
         </template>
     </SectionsContainer>
 </template>
 
 <script setup>
+
+const pricePanels = ref([
+    { 
+        title: "Kapsle",
+        subtitle: "",
+        price: 1800,
+        slash: "balení",
+        content: [
+            // "<b>ULTIMÁTNÍ</b> masáž",
+            // "voný oleje",
+            // "rebozo šátek",
+            // "jak si namíchat <b>rumba koule</b>",
+            // "voný oleje",
+            // "rebozo šátek",
+            // "jak si namíchat rumba koule"
+        ],
+        showFlower: true,
+        btnFilled: true,
+    },
+    { 
+        title: "Tinktura",
+        subtitle: "",
+        price: 1500,
+        slash: "lahvička",
+        content: [
+            // "<b>ULTIMÁTNÍ</b> masáž",
+            // "voný oleje",
+            // "rebozo šátek",
+            // "jak si namíchat <b>rumba koule</b>",
+            // "voný oleje",
+            // "rebozo šátek",
+            // "jak si namíchat rumba koule",
+            // "jak si namíchat <b>rumba koule</b>",
+            // "voný oleje",
+            // "rebozo šátek",
+            // "jak si namíchat rumba koule"
+        ],
+        showFlower: true,
+        btnFilled: true,
+        highlight: false
+    }
+])
+
 const cardsContent = ref([
     {title: "Placenta obsahuje",
      description: [

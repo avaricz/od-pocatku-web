@@ -28,7 +28,9 @@
                         <span>Místo</span><span>{{ event.adress }}</span>
                     </div>
                 </div>
-                    <TheButton label="Info" filled />
+                    <NuxtLink :to="`/events?eventId=${event.id}`">
+                        <TheButton label="Info" filled />
+                    </NuxtLink>
             </div>
         </div>
     </div>

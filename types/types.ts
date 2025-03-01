@@ -8,6 +8,8 @@ export interface Event {
     image_url?: string;
     description?: string;
     reservation_link?: string;
+    map_image?: string;
+    map_url?: string
 }
 
 export interface InfoCard {

@@ -29,7 +29,15 @@
     </SectionsContainer>
     <SectionsContainer  >
         <template #content>
-           <PricePanel :price="'600,- / 1 hodina'" title="CENA" />
+            <PricePanel 
+                :title="price.title"
+                :subtitle="price.subtitle" 
+                :price="price.price"
+                :slash="price.slash"
+                :content="price.content"
+                :show-flower="price.showFlower"
+                :btn-filled="price.btnFilled"
+            />
         </template>
     </SectionsContainer>
 
@@ -37,6 +45,24 @@
 </template>
 
 <script setup>
+
+const price = ref({
+    title: "Standard",
+    subtitle: "",
+    price: 600,
+    slash: "hodina",
+    content: [
+        // "<b>ULTIMÁTNÍ</b> masáž",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat <b>rumba koule</b>",
+        // "voný oleje",
+        // "rebozo šátek",
+        // "jak si namíchat rumba koule"
+    ],
+    showFlower:true,
+    btnFilled: true
+})
 const cardsContent = ref([
     {title: "SPRÁVNÁ TECHNIKA KOJENÍ",
      description: [
