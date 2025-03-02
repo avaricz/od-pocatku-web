@@ -48,12 +48,13 @@ defineProps({
     flex-direction: column;
     width: 100%;
     height: 100%;
-
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-
+    transition: all .3s linear;
     overflow: hidden;
+    &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+    }
     .header {
         display: flex;
         .date {

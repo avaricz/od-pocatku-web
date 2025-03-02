@@ -29,7 +29,7 @@
                     </div>
                 </div>
                     <NuxtLink :to="`/events?eventId=${event.id}`">
-                        <TheButton label="Info" filled />
+                        <TheButton label="Info" filled pulse/>
                     </NuxtLink>
             </div>
         </div>

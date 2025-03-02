@@ -22,7 +22,7 @@
                 </div>
                 <div class="buttons-container-largescreen">
                     <NuxtLink :to="event?.reservation_link" target="_blank">
-                        <TheButton label="Rezervovat" filled />
+                        <TheButton label="Rezervovat" filled pulse/>
                     </NuxtLink>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="buttons-container-smallscreen">
                 <NuxtLink :to="event?.reservation_link" target="_blank">
 
-                    <TheButton label="Rezervovat" filled />
+                    <TheButton label="Rezervovat" filled pulse/>
                 </NuxtLink>
             </div>
 

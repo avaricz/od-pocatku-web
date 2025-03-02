@@ -14,14 +14,33 @@
                     class="nav-item" 
                     @click="isMenuOpen=false"
                 >
-                    <NuxtLink :to="link.link" class="links">{{link.label}}</NuxtLink>
-                    <div v-if="link.innerLinks" class="dropdown">
-                        <ul>
-                            <li v-for="innerLink in link.innerLinks" :key="innerLink.label">
-                            <NuxtLink :to="innerLink.link" class="inner-links">{{ innerLink.label }}</NuxtLink>
-                            </li>
-                        </ul>
+                    <NuxtLink v-if="link.link" :to="link.link" class="links">
+                        <span>
+                            {{link.label}} 
+                            <i v-if="link.innerLinks" class="pi pi-angle-down"></i>
+                        </span>
+                        <div v-if="link.innerLinks" class="dropdown">
+                            <ul>
+                                <li v-for="innerLink in link.innerLinks" :key="innerLink.label">
+                                    <NuxtLink :to="innerLink.link" class="inner-links">{{ innerLink.label }}</NuxtLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </NuxtLink>
+                    <div v-else :to="link.link" class="links">
+                        <span>
+                            {{link.label}} 
+                            <i v-if="link.innerLinks" class="pi pi-angle-down"></i>
+                        </span>
+                        <div v-if="link.innerLinks" class="dropdown">
+                            <ul>
+                                <li v-for="innerLink in link.innerLinks" :key="innerLink.label">
+                                    <NuxtLink :to="innerLink.link" class="inner-links">{{ innerLink.label }}</NuxtLink>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    
                 </li>
             </ul>
 
@@ -103,54 +122,65 @@ nav {
             display: flex;
             position: relative;
             .links {
+                display: flex;
+                gap:1rem;
                 padding: .3rem .5rem;
                 border-radius: 10px;
-                font-weight: 700;
+                font-weight: 600;
                 color: $white;
                 transition: all .3s linear;
                 &:hover {
                     color:$black;
-
                 }
-            } 
-            .dropdown {
-                display: none;
-                position: absolute;
-                width: 360px;
-                max-width: 360px;
-                top: 100%;
-                right: -160%;
-                background: $white;
-                box-shadow: 0 4px 6px $gray;
-                border-radius: 10px;
-                padding: 2rem;
-                z-index: 2;
-
-                ul {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
+                span {
                     display: flex;
-                    flex-direction: column;
-                    li {
+                    align-items: center;
+                    gap: .2rem
+                }
+                .dropdown {
+                    display: none;
+                    position: absolute;
+                    width: 360px;
+                    max-width: 360px;
+                    top: 100%;
+                    left: 0%;
+                    background: $white;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    z-index: 2;
+                    font-size: .9rem;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                    ul {
+                        list-style: none;
                         margin: 0;
                         padding: 0;
-                        .inner-links {
-                            color: $black;
-                            text-decoration: none;
-                            transition: color 0.3s;
-                            text-wrap: wrap;
-                            font-weight: 500;
-                            &:hover {
-                                color: $pink-dr;
+                        display: flex;
+                        flex-direction: column;
+                        gap:1rem;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                            .inner-links {
+                                color: $black;
+                                text-decoration: none;
+                                transition: color 0.3s;
+                                text-wrap: wrap;
+                                font-weight: 500;
+                                &:hover {
+                                    color: $pink-dr;
+                                }
                             }
+                        }
+                        li:not(:last-child) {
+                            padding: 0 0 1rem 0;
+                            border-bottom: .5px solid $gray-lt;
                         }
                     }
                 }
-            }
-            &:hover .dropdown {
-                display: block;
-            }
+                &:hover .dropdown {
+                    display: block;
+                }
+            } 
         }
     
     }
@@ -212,38 +242,44 @@ nav {
                 display: flex;
                 flex-direction: column;
                 .links {
-                    font-size: 1.1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    font-size: 1rem;
                     padding: .5rem;
                     color: $white;
                     width: 100%;
                     &:hover {
-                      color: $black;
+                      color: $white;
                     }
-                }
-                .dropdown {
-                    display: flex;
-                    position: static;
-                    background: transparent;
-                    box-shadow: none;
-                    padding: 0;
-                    max-width: 100%;
-                    width: 100%;
-                    ul {
+                    .dropdown {
                         display: flex;
-                        gap:.5rem;
+                        position: static;
+                        background: transparent;
+                        box-shadow: none;
+                        padding: 0;
+                        max-width: 100%;
                         width: 100%;
-                        align-items: start;
-                        padding-left: 2rem;
-                        li {
-                            .inner-links {
+                        
+                        ul {
+                            display: flex;
+                            gap:.5rem;
+                            width: 100%;
+                            align-items: start;
+                            padding-left: 2rem;
+                            li {
+                                border: 0px solid $pink-dr !important;
+                                padding: 0 !important;
+                                .inner-links {
+                                    color: $white;
+                                    &:hover {
+                                    color: $black;
+                                }
+                                }
+                            }
+                            li::marker {
                                 color: $white;
-                                &:hover {
-                                color: $black;
                             }
-                            }
-                        }
-                        li::marker {
-                            color: $white;
                         }
                     }
                 }

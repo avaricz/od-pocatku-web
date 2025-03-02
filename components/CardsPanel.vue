@@ -1,11 +1,11 @@
 <template>
     <div class="cards-container">
-                <InfoCard
-                    v-for="card in data"
-                    :key="card.title"
-                    :content="card"
-                />
-            </div>
+        <InfoCard
+            v-for="card in data"
+            :key="card.title"
+            :content="card"
+        />
+    </div>
 </template>
 
 <script setup>

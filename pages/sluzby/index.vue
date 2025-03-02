@@ -1,6 +1,6 @@
 <template>
     <div>
-        Sluzby
+        
     </div>
 </template>
 

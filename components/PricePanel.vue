@@ -16,6 +16,7 @@
                 :font-weight="200" 
                 :filled="btnFilled"
                 @click="openMail"
+                pulse
             />
         </div>
 

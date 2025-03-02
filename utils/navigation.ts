@@ -1,7 +1,7 @@
 export const navigationLinks = [
     { label: 'Home', link: '/' },
     { label: 'O mně', link: '/about' },
-    { label: 'Služby', link: '/sluzby', innerLinks: [
+    { label: 'Služby', link: '', innerLinks: [
         { label: 'Kompletní příprava na porod a péče v těhotenství', link: '/sluzby/kompletni-priprava-na-porod-a-pece-v-tehotenstvi' },
         // { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
 
@@ -13,6 +13,10 @@ export const navigationLinks = [
         { label: 'Spinning babies', link: '/sluzby/spinning-babies' },
         { label: 'Zpracování placenty', link: '/sluzby/zpracovani-placenty' },
         { label: 'Rituály', link: '/sluzby/ritualy' },
+    ]},
+    { label: 'Kurzy a Workshopy', link: '', innerLinks: [
+        { label: 'Předporodní kurzy', link: '/kurzy-a-workshopy/predporodni-kurzy' },
+        
     ]},
     { label: 'Události', link: '/events' },
 ]
@@ -31,11 +35,17 @@ export const footerLinks = [
         { label: 'Zpracování placenty', link: '/sluzby/zpracovani-placenty' },
         { label: 'Rituály', link: '/sluzby/ritualy' },
     ]},
+    { label: 'Kurzy a Workshopy', link: '', innerLinks: [
+        { label: 'Předporodní kurzy', link: '/kurzy-a-workshopy/predporodni-kurzy' },
+        
+    ]},
 ]
 
 export const socialLinks = {
     mail: {
-        link: 'mailto:lucieodpocatku@gmail.com', icon:""
+        label: "lucieodpocatku@gmail.com",
+        link: 'mailto:lucieodpocatku@gmail.com', 
+        icon:"pi-envelope"
     },
     instagram: {
         link: 'https://www.instagram.com/od_pocatku_s_dulou_lucii/',

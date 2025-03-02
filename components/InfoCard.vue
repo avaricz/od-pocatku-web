@@ -1,6 +1,15 @@
 <template>
     <div class="card">
-        <div class="flower"><NuxtImg src="/flower.svg" alt=""/></div>
+        <div class="flower">
+            <NuxtImg 
+                src="/flower.svg" 
+                alt=""
+                densities="1x"
+                sizes="100px"
+                format="webp"
+                quality="100"
+            />
+        </div>
         <div class="card-header">
             <div class="card-title">{{ content.title }}</div>
         </div>

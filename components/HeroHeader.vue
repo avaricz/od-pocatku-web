@@ -14,7 +14,7 @@
                 <div class="welcome-title-area">
                     <h1>Dula Lucie...</h1>
                     <p>Laktační poradkyně, lektorka Školy pánevního dna a funkční trenérka.</p>
-                    <TheButton label="O mně" @click="$router.push('/about')" filled/>
+                    <TheButton label="O mně" @click="$router.push('/about')" filled pulse />
                 </div>
             </div>
         </div>

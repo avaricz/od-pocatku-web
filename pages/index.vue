@@ -15,7 +15,7 @@
     </SectionsContainer>
 
     <ScrollableContainer 
-        v-if="events"
+        v-if="events.length"
         :justify-header="'center'" 
         title="Události" 
         subtitle="„..., kterých se můžeš zůčastnit i ty“" 
@@ -31,6 +31,16 @@
             </div>
         </template>
     </ScrollableContainer>
+    <SectionsContainer 
+        v-else
+        :justify-header="'center'" 
+        title="žádné Události" 
+        subtitle="" 
+    >
+        <template #content>
+           <NoEvents />
+        </template>
+    </SectionsContainer>
 
 </template>
 

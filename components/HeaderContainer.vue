@@ -5,10 +5,11 @@
         >
             <NuxtImg 
                 :src="bgImage" 
+                alt=""
                 densities="1x"
                 sizes="sm:100vw md:100vw lg:100vw"
                 format="webp"
-                quality="90"
+                quality="100"
             />
             <div class="header">
                 <h1>{{ title }}</h1>

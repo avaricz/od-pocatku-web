@@ -24,3 +24,6 @@ logs
 !.env.example
 
 TODO.md
+
+public/img
+public/maps
