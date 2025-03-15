@@ -1,164 +1,102 @@
 <template>
-    <HeaderContainer 
+    <HeaderContainerRounded 
         :bg-image="'/img/9400_org_transparent.png'"
-        title=" Kompletní příprava na porod a péče v těhotenství"
-    />
+        
+        title="Kompletní příprava na porod a péče v těhotenství"
+        description="Kompletní příprava na porod, která zahrnuje vše, co potřebuješ k tomu, abys byla na porod připravená nejen fyzicky, ale i psychicky."
+    >
+        <template #button>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+        </template>
+    </HeaderContainerRounded>
     
-    <SectionsContainer :justify-header="'center'" title="Náplň setkávání" :justify-content="'center'">
-        <template #content>
+    <SectionsContainer bg-color="bg-gray-50">
+            <div class="flex flex-col items-center gap-24 p-4 xl:p-0">
+                <div class="flex flex-col items-center">
+                    <h2>Individuální setkávání</h2>
+                    <p class="highlighted-text text-center max-w-[800px]">
+                        "Během <span>individuálních setkávání</span> Ti pomůžu připravit se na porod po všech stránkách tak, abys k němu šla <span>klidná a sebevědomá</span>. Díky kombinaci <span>praktických cvičení</span>, <span>dechových technik</span> a <span>mentální přípravy</span> budeš připravena na každou fázi porodu s <span>důvěrou ve své tělo i sebe samu</span>."
+                    </p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex rounded-xl overflow-hidden">
+                        <NuxtImg src="/img/9357_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw "
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                    <div class="flex rounded-xl overflow-hidden">
+                        <NuxtImg src="/img/9364_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw"
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                </div>
+            </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-pink-100">
+        <div class="flex w-full w-full flex-col items-center justify-center gap-16">
+            <div class="flex flex-col items-center">
+                <h2>Porod je cesta</h2>
+                <p class="max-w-[800px] text-center">Připrav se na ni s péčí, jistotou a vnitřním klidem. Pomůžeme ti najít sílu, pochopení a důvěru v sebe sama.</p>
+            </div>
             <CardsPanel :data="cardsContent" />
-        </template>
-    </SectionsContainer>
-    <SectionsContainer shadow background-color="black-dr">
-        <template #content>
-            <div class="section-1">
-                <div class="left">
-                    <InfoWrapper>
-                        <p>"Během <span>individuálních setkávání</span> Ti pomůžu připravit se na porod po všech stránkách tak, abys k němu šla <span>klidná a sebevědomá</span>. Díky kombinaci <span>praktických cvičení</span>, <span>dechových technik</span> a <span>mentální přípravy</span> budeš připravena na každou fázi porodu s <span>důvěrou ve své tělo i sebe samu</span>."</p>
-                    </InfoWrapper>
-                </div>
-                <div class="right">
-                    <GalleryTwoPhotos :images="images1"/>
-                </div>
-            </div>
-        </template>
+        </div>
     </SectionsContainer>
     <SectionsContainer 
-        background-color="white" 
-        :justify-header="'center'" 
-        
+        bg-color="bg-gray-100"
     >
-        <template #content>
-            <div class="section-2">
-
-                <GallerySinglePhoto :photo="'/img/9175_org.jpg'" :rotate="'right'"/>
-                <div class="next-info">
-                    <h2>Dále ti nabízím</h2>
-                    <ul>
-                        <li>
-                            rozvolňující masáže před porodem
-                        </li>
-                        <li>
-                            práci s rebozem, spinning babies
-                        </li>
-                        <li>
-                            celotělovou práci na protažení svalů a kompletní přípravu těla pro porod
-                        </li>
-                        <li>
-                            rituál s bylinnou vaginální napářkou
-                        </li>
-                    </ul>
-                </div>
+        <div class="flex flex-col-reverse items-center lg:flex-row gap-8 p-4 xl:p-0">
+            <div class="flex flex-1 rounded-xl overflow-hidden">
+                <NuxtImg 
+                    src="/img/9175_org.jpg"
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw md:100vw"
+                    format="webp"
+                    quality="100"
+                />
             </div>
-        </template>
+            <div class="flex flex-1 max-w-[600px] flex-col items-center justify-center md:p-4 gap-12">
+                    <InfoList title="Dále nabízím" :content="infoList"/>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink>
+            </div>
+        </div>
+            
     </SectionsContainer>
     <SectionsContainer 
-        background-color="white" 
-        :justify-header="'center'" 
+        bg-color="bg-gray-50" 
         
     >
-        <template #content>
-            <PricePanel 
-                :title="price.title"
-                :subtitle="price.subtitle" 
-                :price="price.price"
-                :slash="price.slash"
-                :content="price.content"
-                :show-flower="price.showFlower"
-                :btn-filled="price.btnFilled"
-            />
-        </template>
+        <PricePanel 
+            :title="price.title"
+            :subtitle="price.subtitle" 
+            :price="price.price"
+            :slash="price.slash"
+            :content="price.content"
+            :show-flower="price.showFlower"
+            :btn-filled="price.btnFilled"
+        />
     </SectionsContainer>
-<!--     <SectionsContainer 
-        background-color="white" 
-        :justify-header="'center'" 
-        
-    >
-        <template #content>
-            <PricesContainer
-                :panels="pricePanels"
-            />
-        </template>
-    </SectionsContainer> -->
-
-
-
-
 </template>
 
 <script setup>
-
-const price = ref({
-    title: "Standard",
-    subtitle: "",
-    price: 600,
-    slash: "hodina",
-    content: [
-        // "<b>ULTIMÁTNÍ</b> masáž",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat <b>rumba koule</b>",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat rumba koule"
-    ],
-    showFlower:true,
-    btnFilled: true
-})
-const pricePanels = ref([
-    { 
-        title: "Standard",
-        subtitle: "Nejvýhodnější balíček",
-        price: 600,
-        slash: "hodina",
-        content: [
-            "<b>ULTIMÁTNÍ</b> masáž",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat <b>rumba koule</b>",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat rumba koule"
-        ],
-    },
-    { 
-        title: "Standard",
-        subtitle: "Nejvýhodnější balíček",
-        price: 800,
-        slash: "hodina",
-        content: [
-            "<b>ULTIMÁTNÍ</b> masáž",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat <b>rumba koule</b>",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat rumba koule",
-            "jak si namíchat <b>rumba koule</b>",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat rumba koule"
-        ],
-        showFlower:true,
-        btnFilled: true,
-        highlight: true
-    },
-    { 
-        title: "Standard",
-        subtitle: "Nejvýhodnější balíček",
-        price: 1200,
-        slash: "hodina",
-        content: [
-            "<b>ULTIMÁTNÍ</b> masáž",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat <b>rumba koule</b>",
-            "voný oleje",
-            "rebozo šátek",
-            "jak si namíchat rumba koule"
-        ],
-    },
-])
+import { socialLinks } from '#imports'
 
 const cardsContent = ref([
     {title: "FYZICKÁ PŘÍPRAVA NA POROD",
@@ -184,7 +122,25 @@ const cardsContent = ref([
     ]}
 ])
 
-const images1 = ref([
+const infoList = ref([
+    {description: "rozvolňující masáže před porodem"},
+    {description: "práci s rebozem, spinning babies"},
+    {description: "celotělovou práci na protažení svalů a kompletní přípravu těla pro porod"},
+    {description: "rituál s bylinnou vaginální napářkou"}
+])
+
+const price = ref({
+    title: "Standard",
+    subtitle: "",
+    price: 600,
+    slash: "hodina",
+    content: [
+    ],
+    showFlower:true,
+    btnFilled: true
+})
+
+/* const images1 = ref([
     {src: '/img/9357_org.jpg', position: 'horizontal'},
     {src: '/img/9364_org.jpg', position: 'vertical'},
 ])
@@ -197,56 +153,6 @@ const images2 = ref([ // TODO: zakomponovat tyto foto?
 const images3 = ref([ // TODO: zakomponovat tyto foto?
     {src: '/img/9400_org.jpg'},
     {src: '/img/9412_org.jpg'},
-])
+]) */
 
 </script>
-
-<style lang="scss" scoped>
-// SECTIONS
-.section-1 {
-    display: flex;
-    align-items: center;
-    @media (max-width: $large-screen) {
-        flex-direction: column-reverse;
-        gap: 5rem;
-    }
-    .left {
-        flex: 1;
-    }
-}
-.section-2 {
-    display: flex;
-    align-items: center;
-    @media (max-width: $large-screen) {
-        flex-direction: column-reverse;
-        gap: 5rem;
-    }
-    .next-info {
-        position: relative;
-        padding: 0 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
-        h2 {
-            font-size: 2.2rem;
-            color: $pink-dr;
-            text-transform: uppercase;
-        }
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: left;
-            list-style-type: disc;
-            padding-left: 2rem;
-            li {
-                font-size: 1.8rem;
-                font-weight: 200;
-                font-style: italic;
-            }
-        }
-    }
-}
-
-</style>

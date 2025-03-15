@@ -1,40 +1,84 @@
 <template>
-    <HeaderContainer title="Těhotenské a rebozo masáže" bg-image="/img/9400_org_transparent.png" />
-    <SectionsContainer :justify-header="'center'" title="Vyber si svou masáž">
-        <template #content>
-            <CardsPanel :data="cardsContent" />
+    <HeaderContainerRounded
+        title="Těhotenské a rebozo masáže" 
+        description="Pro nastávající maminky, které přinášejí úlevu, relaxaci a příjemné propojení s miminkem. Dopřej si zaslouženou péči a harmonii těla i mysli."
+        bg-image="/img/9400_org_transparent.png" 
+    >
+        <template #button>
+            <NuxtLink :to="socialLinks.mail.link">
+             <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
         </template>
-    </SectionsContainer>
-    <SectionsContainer background-color="gray-lt">
-        <template #content>
-            <div class="section-1">
-                <InfoWrapper>
-                    <p>
-                        V <span>příjemné atmosféře</span> Ti dopřeju <span>relax</span> pro Tvé unavené a namáhané tělo a to i v <span>pohodlí Tvého domova</span>. Masáže Ti pomohou se <span>zrelaxovat</span>, na chvíli vypnout hlavu, <span>uvolnit</span> zatuhlé svaly a lépe <span>připravit</span> celé tělo <span>na porod</span>. 
-                    </p>
-                </InfoWrapper>
-                 <GallerySinglePhoto :photo="'/img/9175_org.jpg'" position="horizontal" rotate="left"/>
+    </HeaderContainerRounded>
+
+    <SectionsContainer >
+        <div class="flex flex-col gap-12 items-center p-4">
+            <div class="flex flex-col items-center">
+                <h2>Vyber si svou masáž</h2>
+                <p class="highlighted-text text-center max-w-[800px]">
+                    V <span>příjemné atmosféře</span> Ti dopřeju <span>relax</span> pro Tvé unavené a namáhané tělo a to i v <span>pohodlí Tvého domova</span>. Masáže Ti pomohou se <span>zrelaxovat</span>, na chvíli vypnout hlavu, <span>uvolnit</span> zatuhlé svaly a lépe <span>připravit</span> celé tělo <span>na porod</span>. 
+                </p>
             </div>
-        </template>
+            <div class="flex rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] overflow-hidden">
+                <NuxtImg src="/img/9175_org.jpg" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                />
+            </div>
+        </div>
     </SectionsContainer>
 
-    <SectionsContainer  background-color="black-dr">
-        <template #content>
-            <div class="section-2">
-                <GalleryTwoPhotos :images="images1" />
-                <InfoWrapper text-align="center">
-                    <p> <span>Masáž</span> si můžeš dopřát v <span>pohodlí svého domova</span> nebo přijet za mnou do <span>Kroměříže</span>.</p>
-                </InfoWrapper>
+    <SectionsContainer >
+        <CardsPanel :data="cardsContent" />
+    </SectionsContainer>
+
+    <SectionsContainer  bg-color="bg-gray-100">
+        <div class="flex flex-col items-center gap-12 p-4">
+            <div class="flex flex-col items-center">
+                <h2>V pohodlí</h2>
+                <p class="highlighted-text text-center max-w-[800px]"> 
+                    <span>Masáž</span> si můžeš dopřát v <span>pohodlí svého domova</span> nebo přijet za mnou do <span>Kroměříže</span>.
+                </p>
+    
             </div>
-        </template>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+            <div class="flex flex-col lg:flex-row gap-8 ">
+                <div class="flex rounded-xl overflow-hidden max-h-[400px] max-w-[400px] lg:max-w-none">
+                    <NuxtImg src="/img/29_org.jpeg" 
+                        class="w-full object-cover object-center"
+                        alt=""
+                        densities="1x"
+                        sizes="sm:100vw "
+                        format="webp"
+                        quality="90"
+                    />
+                </div>
+                <div class="flex rounded-xl overflow-hidden max-h-[400px] max-w-[400px] lg:max-w-none">
+                    <NuxtImg src="/img/28_org.jpeg" 
+                        class="w-full object-cover object-center"
+                        alt=""
+                        densities="1x"
+                        sizes="sm:100vw md:100vw "
+                        format="webp"
+                        quality="90"
+                    />
+                </div>
+            </div>
+        </div>
     </SectionsContainer>
     <SectionsContainer full-width>
-        <template #content>
-            <GalleryFullWidth :images="fourImages" />
-        </template>
+            <div class="flex flex-col gap-12 items-center">
+                <h2>Měj představu toho co tě čeká</h2>
+                <GalleryFullWidth :images="fourImages" />
+            </div>
     </SectionsContainer>
     <SectionsContainer >
-        <template #content>
             <PricePanel 
                 :title="price.title"
                 :subtitle="price.subtitle" 
@@ -44,7 +88,6 @@
                 :show-flower="price.showFlower"
                 :btn-filled="price.btnFilled"
             />
-        </template>
     </SectionsContainer>
 </template>
 
@@ -56,13 +99,6 @@ const price = ref({
     price: 600,
     slash: "hodina",
     content: [
-        // "<b>ULTIMÁTNÍ</b> masáž",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat <b>rumba koule</b>",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat rumba koule"
     ],
     showFlower:true,
     btnFilled: true
@@ -97,12 +133,6 @@ const cardsContent = ref([
         ]
     }
 ])
-const images1 = ref([
-    { src: '/img/29_org.jpeg', position: "horizontal"},
-    { src: '/img/28_org.jpeg', position: "horizontal"},
-
-])
-
 const fourImages = ref([
     { src: '/img/9412_org.jpg' },
     { src: '/img/9409_org.jpg' },
@@ -113,28 +143,5 @@ const fourImages = ref([
     { src: '/img/9149_org.jpg' },
     { src: '/img/9128_org.jpg' },
     { src: '/img/9134_org.jpg' },
-
-
 ])
-
 </script>
-
-<style lang="scss">
-    .section-1,.section-2 {
-        display: flex;
-        @media (max-width: $large-screen) {
-            flex-direction: column;
-            gap:5rem
-        }
-        :last-child {
-           max-width: 600px;
-        }
-    }
-    .section-1 {
-        display: flex;
-        @media (max-width: $large-screen) {
-            flex-direction: column-reverse;
-            gap:5rem
-        }
-    }
-</style>

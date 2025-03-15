@@ -1,51 +1,108 @@
 <template>
-    <HeaderContainer title="Zpracování placenty" bg-image="/img/36_org_transparent.png" />
-    <SectionsContainer background-color="gray-lt">
-        <template #content>
-            <div class="section-1">
-                <GallerySinglePhoto photo="/img/38_org.jpeg" position="horizontal" rotate="right" />
+    <HeaderContainerRounded
+        title="Zpracování placenty" 
+        description="Šetrné zpracování placenty pro podporu regenerace, hormonální rovnováhy a energie po porodu."
+        bg-image="/img/36_org_transparent.png" 
+    >
+        <template #button>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+        </template>
+    </HeaderContainerRounded>
 
-                <InfoWrapper text-align="center">
-                    <p>
-                        Je čím dál běžnější, že si rodiče odnášejí z porodnice domů placentu pro další <span>zpracování</span> či <span>rituální zakopání</span> do země. Placenta pro nás už dávno není pouhý biologický materiál. Nahlížíme na ni s velkým <span>respektem</span>, jelikož je to orgán, který celých 9 měsíců <span>vyživuje</span> dítě v děloze, a který <span>obsahuje spoustu výživných látek pro hojení matky po porodu</span>. 
-                    </p>
-                </InfoWrapper>
+    <SectionsContainer>
+            <div class="flex flex-col gap-8 lg:flex-row-reverse items-center p-4">
+                <div class="flex flex-1 flex-col items-center gap-12">
+
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-center">Dar života a regenerace</h2>
+                        <p class="highlighted-text text-center max-w-[800px]">
+                            Je čím dál běžnější, že si rodiče odnášejí z porodnice domů placentu pro další <span>zpracování</span> či <span>rituální zakopání</span> do země. Placenta pro nás už dávno není pouhý biologický materiál. Nahlížíme na ni s velkým <span>respektem</span>, jelikož je to orgán, který celých 9 měsíců <span>vyživuje</span> dítě v děloze, a který <span>obsahuje spoustu výživných látek pro hojení matky po porodu</span>. 
+                        </p>
+                    </div>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink >
+                </div>
+                <div class="flex flex-1 items-center justify-center">
+
+                    <div class="flex rounded-full aspect-square overflow-hidden max-w-[500px]">
+                        <NuxtImg src="/img/38_org.jpeg" 
+                        class="w-full object-cover object-center"
+                        alt=""
+                        densities="1x"
+                        sizes="sm:100vw "
+                        format="webp"
+                        quality="90"
+                        />
+                    </div>
+                </div>
             </div>
-            </template>
     </SectionsContainer>
-    <SectionsContainer background-color="black-dr">
-        <template #content>
-            <div class="section-2">
-                <InfoWrapper text-align="center">
-                    <p>
+    <SectionsContainer bg-color="bg-gray-200">
+        <div class="flex flex-col-reverse gap-8 lg:flex-row-reverse items-center">
+
+            <div class="flex flex-1 items-center justify-center">
+                <div class="flex rounded-full aspect-square overflow-hidden max-w-[500px]">
+                    <NuxtImg src="/img/37_org.jpeg" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-12 p-4">
+
+                <div class="flex flex-col items-center">
+                    <h2 class="text-center">Placenta jako přírodní životabudič</h2>
+                    <p class="highlighted-text text-center max-w-[800px]">
                         Placenta tak působí jako <span>životabudič</span>, který dodá po porodu do těla ztracenou <span>energii</span>, vyváží <span>hormonální hladiny</span> a pomáhá <span>regeneraci</span>. Zpracovává se a užívá v pohodlné formě <span>kapslí</span> nebo <span>tinktury</span>.
                     </p>
-                </InfoWrapper>
-                <GallerySinglePhoto photo="/img/37_org.jpeg" position="horizontal" rotate="left" />
+                </div>
+                <NuxtLink :to="socialLinks.mail.link">
+                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                </NuxtLink >
             </div>
-        </template>
+        </div>
     </SectionsContainer>
-    <SectionsContainer :justify-content="'center'">
-        <template #content>
+    <SectionsContainer bg-color="bg-pink-100">
             <CardsPanel :data="cardsContent" />
-        </template>
     </SectionsContainer>
    
-    <SectionsContainer :justify-content="'center'">
-        <template #content>
-            <RecipeBlock :title="recipe.title" :steps="recipe.steps" :img="'/img/36_org.jpeg'"/>
-        </template>
+    <SectionsContainer bg-color="bg-gray-100">
+        <div class="flex flex-col-reverse lg:flex-row gap-12 p-4">
+            <div class="flex flex-1 justify-center">
+
+                <div class="flex rounded-full overflow-hidden max-w-[500px]">
+                    <NuxtImg src="/img/36_org.jpeg" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw"
+                    format="webp"
+                    quality="90"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-12">
+                <div class="flex flex-col max-w-[500px]">
+                    <h2 class="text-center">Jak to probíhá</h2>
+                    <InfoList :content="recipe"/>
+                </div>
+                <NuxtLink :to="socialLinks.mail.link">
+                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                </NuxtLink >
+            </div>
+        </div>
     </SectionsContainer>
-    <SectionsContainer 
-        background-color="white" 
-        :justify-header="'center'" 
-        
-    >
-        <template #content>
+    <SectionsContainer>
             <PricesContainer
                 :panels="pricePanels"
             />
-        </template>
     </SectionsContainer>
 </template>
 
@@ -58,13 +115,6 @@ const pricePanels = ref([
         price: 1800,
         slash: "balení",
         content: [
-            // "<b>ULTIMÁTNÍ</b> masáž",
-            // "voný oleje",
-            // "rebozo šátek",
-            // "jak si namíchat <b>rumba koule</b>",
-            // "voný oleje",
-            // "rebozo šátek",
-            // "jak si namíchat rumba koule"
         ],
         showFlower: true,
         btnFilled: true,
@@ -75,17 +125,6 @@ const pricePanels = ref([
         price: 1500,
         slash: "lahvička",
         content: [
-            // "<b>ULTIMÁTNÍ</b> masáž",
-            // "voný oleje",
-            // "rebozo šátek",
-            // "jak si namíchat <b>rumba koule</b>",
-            // "voný oleje",
-            // "rebozo šátek",
-            // "jak si namíchat rumba koule",
-            // "jak si namíchat <b>rumba koule</b>",
-            // "voný oleje",
-            // "rebozo šátek",
-            // "jak si namíchat rumba koule"
         ],
         showFlower: true,
         btnFilled: true,
@@ -120,48 +159,11 @@ const cardsContent = ref([
     ]}
 ])
 
-const recipe = ref({
-    title:'Jak to probíhá',
-    img: '/img/36_org.jpeg',
-    steps: [
-        "<span>Objednáš</span> si u mě zpracování placenty a domluvíme si podrobnosti.",
-        "<span>Při porodu</span> odevzdáš krabičku s víčkem o objemu alespoň 1,5l se svým jménem s <span>žádostí o vydání placenty</span>.",
-        "<span>Po porodu mi placentu předáte</span> (většinou se o to stará partner), nebo si ji vezmu přímo z porodnice. ",
-        "<span>Kapsle</span> zpracovávám do 3 dnů, <span>tinkturu</span> do 6 týdnů.",
-        "Spolu s kapslemi ode mě <span>dostaneš doporučení</span> na užívání a skladování, i jak změnit <span>dávkování</span> při možných potížích. ",
-    ]
-})
-
-const images = ref([
-    {src: '/img/36_org.jpeg'},
-    {src: '/img/37_org.jpeg'},
-    {src: '/img/38_org.jpeg'},
-    {src: '/img/39_org.jpeg'},
-    {src: '/img/40_org.jpeg'},
-    {src: '/img/41_org.jpeg'},
-    {src: '/img/42_org.jpeg'},
-])
-const images1 = ref([
-    {src: '/img/37_org.jpeg'},
-    {src: '/img/38_org.jpeg'},
+const recipe = ref([
+    { description: "<span>Objednáš</span> si u mě zpracování placenty a domluvíme si podrobnosti." },
+    { description: "<span>Při porodu</span> odevzdáš krabičku s víčkem o objemu alespoň 1,5l se svým jménem s <span>žádostí o vydání placenty</span>." },
+    { description: "<span>Po porodu mi placentu předáte</span> (většinou se o to stará partner), nebo si ji vezmu přímo z porodnice." },
+    { description: "<span>Kapsle</span> zpracovávám do 3 dnů, <span>tinkturu</span> do 6 týdnů." },
+    { description: "Spolu s kapslemi ode mě <span>dostaneš doporučení</span> na užívání a skladování, i jak změnit <span>dávkování</span> při možných potížích." }
 ])
 </script>
-
-<style lang="scss" scoped>
-.section-1, .section-2 {
-    display: flex;
-    @media (max-width: $large-screen) {
-        gap: 5rem;
-    }
-   
-}
-@media (max-width: $large-screen) {
-    .section-1 {
-        flex-direction: column-reverse;
-    }
-    .section-2 {
-        flex-direction: column;
-    }
-}
-
-</style>

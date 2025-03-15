@@ -12,11 +12,10 @@
             </div>
             
             <TheButton 
-                :label="'Napiš mi'" 
-                :font-weight="200" 
-                :filled="btnFilled"
+                :label="'Napiš mi'"
                 @click="openMail"
                 pulse
+                icon="fa:envelope-o"
             />
         </div>
 

@@ -1,84 +1,45 @@
 <template>
-    <div class="button-wrapper">
-
-        <button :class="{'filled': filled, 'neon-pulse': pulse, 'bordered': bordered}" >
-            {{ label }}
+    <div class="relative">
+        <button 
+            class="
+                flex items-center justify-center 
+                px-8 py-2
+                gap-2
+                rounded-xl
+                transition-all duration-300 linear
+                cursor-pointer
+                border-2 border-pink-700
+                bg-pink-700
+                text-gray-50 text-md font-semibold
+                "
+            :class="{
+                'neon-pulse': pulse,
+                'bg-transparent text-pink-700': bordered
+                }" 
+            @click.stop=""
+        >
+                <Icon v-if="icon" :name="icon" size="15px"/>
+                <span >{{ label }}</span>
         </button>
     </div>
 </template>
 
 <script setup>
+import { Icon } from '#components';
+
 defineProps ({
-    label: String,
-    fontWeight: {
-        type: Number,
+    icon: {
+        type: String,
         required: false,
-        default: 600,
-        validator: (v) => v >= 100 || v <= 900
+        default: null
     },
-    filled: Boolean,
+    label: String,
     pulse: Boolean,
     bordered: Boolean
 })
 </script>
 
 <style lang="scss" scoped>
-.button-wrapper {
-    position: relative;
-}
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .4rem 3rem;
-    border: 0;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: v-bind(fontWeight);
-    font-family: sans-serif;
-    cursor: pointer;
-    border: 2px solid $pink-dr;
-    
-    transition: all .3s linear;
-    
-}
-
-.bordered {
-    background: transparent;
-    color: $pink-dr;
-    &:hover {
-        background-color: $pink-dr;
-        color: $white
-    }
-    &:active {
-        background-color:transparent;
-        color: $pink-dr
-    }
-}
-
-.bordered.neon-pulse:hover {
-    background-color:transparent;
-    color: $pink-dr;
-}
-
-.filled {
-    background-color: $pink-dr;
-    color: $white;
-    &:hover {
-         background-color: transparent;
-         color: $pink-dr
-    }
-    &:active {
-        background-color: $pink-dr;
-        box-shadow: none;
-        color: $white
-    }
-}
-
-.filled.neon-pulse:hover {
-    background-color: $pink-dr !important;
-    color: $white;
-}
 
 .neon-pulse {
     box-shadow: 0 0 5px 5px $pink-dr-30;
@@ -88,8 +49,8 @@ button {
             content: "";
             position: absolute;
             inset: -4px;
-            border: 1.5px solid $pink-dr;
-            border-radius: inherit;
+            border: 2px solid var(--color-pink-700);
+            border-radius: 12px;
             animation: pulse 2s ease-out infinite;
             opacity: 0;
         }

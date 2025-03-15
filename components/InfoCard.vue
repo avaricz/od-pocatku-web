@@ -1,8 +1,11 @@
 <template>
-    <div class="card">
-        <div class="flower">
+    <div class="
+        relative flex flex-col gap-4 w-[340px] max-w-[340px] rounded-xl bg-gray-50 shadow-lg transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-102
+    ">
+        <div class="absolute top-[-20px] left-[-20px] w-[60px] h-auto">
             <NuxtImg 
                 src="/flower.svg" 
+                class="w-full h-auto flower-drop-shadow"
                 alt=""
                 densities="1x"
                 sizes="100px"
@@ -10,12 +13,28 @@
                 quality="100"
             />
         </div>
-        <div class="card-header">
-            <div class="card-title">{{ content.title }}</div>
+        <div class="
+            card-header 
+            bg-[url('/img/9103_small_darker.jpg')] bg-no-repeat bg-cover bg-gray-950 rounded-t-xl
+        ">
+            <div class="
+            flex items-center justify-center h-[180px] p-4 
+            tracking-[1px] text-2xl text-center font-medium text-gray-50 uppercase
+            ">
+                {{ content.title }}
+            </div>
         </div>
-        <ul>
-            <li v-for="item in content.description">
-                {{item}}
+        <ul class="flex flex-col h-full list-none px-8 pb-8 m-0 gap-2">
+            <li 
+                v-for="item in content.description"
+                class="flex gap-4 leading-6 text-lg font-normal text-gray-700 italic"
+            >
+                <div class="flex pt-1.5">
+                    <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="18px"/>
+                </div>
+                <div class="flex "> 
+                    {{ item }}
+                </div>
             </li>
         </ul>
     </div>
@@ -31,70 +50,3 @@ defineProps({
 })
 
 </script>
-
-<style lang="scss" scoped>
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 340px;
-    max-width: 340px;
-    border-radius: 10px;
-    background: transparent;
-    -webkit-box-shadow: 0px 0px 15px 0px $gray;
-    -moz-box-shadow: 0px 0px 15px 0px $gray;
-    box-shadow: 0px 0px 15px 0px $gray;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    .flower {
-        position: absolute;
-        top:-20px;
-        left: -20px;
-        width: 60px;
-        height: auto;
-        img {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(2px 4px 6px $pink-dr);
-        }
-    }
-    .card-header {
-        background-image: url('/img/9103_small_darker.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: $black-dr;
-        border-radius: 10px 10px 0 0;
-        .card-title{
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            letter-spacing: 1px;
-            font-size: 1.5rem;
-            text-align: center;
-            font-weight: 500;
-            color: $white;
-            text-transform: uppercase;
-            padding: 1rem;
-        }
-    }
-    ul {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        list-style: none;
-        padding: 0 1.5rem 2rem 1.5rem;
-        margin: 0;
-        list-style-type:disc;
-        padding-left: 3rem;
-        li {
-            font-size: 1.1rem;
-            font-weight: 400;
-            font-style: italic;
-            color: $gray-dr;
-            line-height: 1.5;
-        }
-
-    }
-}
-</style>

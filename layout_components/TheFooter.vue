@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="contact">
-                        <h3>Lucie Machalová</h3>
+                        <h3 class="text-gray-50">Lucie Machalová</h3>
                         <h5>Dula pro Kroměříž a okolí</h5>
                         <NuxtLink :to="socialLinks.mail.link" class="mail">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

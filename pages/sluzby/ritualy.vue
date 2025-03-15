@@ -1,52 +1,125 @@
 <template>
-    <HeaderContainer title="Rituály" bg-image="/img/9483_org_transparent.png" />
-    <SectionsContainer :background-color="'gray-lt'">
-        <template #content>
-            <div class="section-1">
-                <GallerySinglePhoto :photo="'/img/9425_org.jpg'" :position="'horizontal'" :rotate="'right'" />
-                <InfoWrapper>
-                    <p>
-                        <span>Přechodové rituály</span> slouží k <span>přijetí</span> a plnému <span>prožití</span> důležitých <span>životních momentů</span> Často jsou spojovány s oslavou, dají se však provádět i zcela o samotě a pomáhají <span>překonat</span> i těžké životní situace. Jsem tu pro ženy <span>ve všech ohledech</span> proto připravuji nejen předporodní rituály, ale i soukromý rituál pro pomoc při ztrátě. 
-                    </p>
-                </InfoWrapper>
-            </div>
-            </template>
-    </SectionsContainer>
-    <SectionsContainer :justify-header="'center'" title="Náplň setkávání" :justify-content="'center'">
-        <template #content>
-            <CardsPanel :data="cardsContent" />
-        </template>
-    </SectionsContainer>
-    <SectionsContainer background-color="gray-lt">   
-        <template #content>
-            <div class="section-3">
-
-                <InfoWrapper>
-                    <p>S <span>respektem</span> k životu ve všech jeho <span>aspektech</span> a s respektem ke všemu, co nás v něm <span>potkává</span>.</p>
-                </InfoWrapper>
-                <GalleryTwoPhotos :images="images3" />
-            </div>
-        </template>
-    </SectionsContainer>
-    <SectionsContainer :background-color="'black-dr'">
-        <template #content>
-            <div class="section-4">
-
-                <GallerySinglePhoto :photo="'/img/9070_org.jpg'" :position="'horizontal'" :rotate="'right'" />
-                <InfoWrapper>
-                    <p>
-                        Rituály jsou vytvářeny <span>na míru</span>, po konzultaci, <span>individuálně</span> či pro <span>skupinu</span> lidí, je možno je <span>darovat</span> blízké osobě.
-                    </p>
-                </InfoWrapper>
-            </div>
-        </template>
-    </SectionsContainer>
-    <SectionsContainer 
-        background-color="white" 
-        :justify-header="'center'" 
-        
+    <HeaderContainerRounded 
+        title="Rituály" 
+        description="Rituály pro přijetí a prožití důležitých životních momentů s respektem a péčí."
+        bg-image="/img/9483_org_transparent.png" 
     >
-        <template #content>
+        <template #button>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+        </template>
+    </HeaderContainerRounded>
+
+    <SectionsContainer>
+        <div class="flex flex-col-reverse lg:flex-row gap-12 p-4">
+            <div class="flex flex-1 items-center justify-center">
+                <div class="flex rounded-xl overflow-hidden max-w-[600px]">
+                    <NuxtImg src="/img/9425_org.jpg" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center flex-1 gap-12">
+                <div class="flex flex-col items-center">
+                    <h2 class="text-center">Přechodové rituály</h2>
+                    <p class="highlighted-text text-center">
+                        Slouží k <span>přijetí</span> a plnému <span>prožití</span> důležitých <span>životních momentů</span> Často jsou spojovány s oslavou, dají se však provádět i zcela o samotě a pomáhají <span>překonat</span> i těžké životní situace. Jsem tu pro ženy <span>ve všech ohledech</span> proto připravuji nejen předporodní rituály, ale i soukromý rituál pro pomoc při ztrátě. 
+                    </p>
+                </div>
+                <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+            </div>
+        </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-pink-100">
+        <div class="flex flex-col items-center gap-24 p-4">
+
+            <div class="flex flex-col items-center">
+                <h2 class="text-center">Pro důležité životní okamžiky</h2>
+                <p class="highlighted-text text-center max-w-[800px]">
+                    <span>Každý přechod</span> v životě si zaslouží pozornost, <span>péči a podporu</span>. Nabízím rituály, které pomáhají oslavit <span>příchod nového života</span>, uzavřít jednu etapu a vstoupit do další, nebo <span>najít klid</span> a přijetí v náročných chvílích.
+                </p>
+            </div>
+            <CardsPanel :data="cardsContent" />
+        </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-pink-200">   
+            <div class="flex flex-col items-center gap-12 p-4">
+                <div class="flex flex-col items-center gap-12">
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-center">S respektem</h2>
+                        <p class="highlighted-text text-center max-w-[800px]">S <span>respektem</span> k životu ve všech jeho <span>aspektech</span> a s respektem ke všemu, co nás v něm <span>potkává</span>.</p>
+                    </div>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink >
+                </div>
+
+
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex rounded-xl overflow-hidden max-w-[400px]">
+                        <NuxtImg src="/img/9101_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw "
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                    <div class="flex rounded-xl overflow-hidden max-w-[400px]">
+                        <NuxtImg src="/img/9134_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw"
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                </div>
+            </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-gray-100">
+            <div class="flex flex-col-reverse items-center lg:flex-row gap-12 p-4">
+                <div class="flex flex-1 items-center justify-center">
+                    <div class="flex rounded-full aspect-square overflow-hidden max-w-[500px]">
+                        <NuxtImg src="/img/9070_org.jpg" 
+                        class="w-full object-cover object-center"
+                        alt=""
+                        densities="1x"
+                        sizes="sm:100vw"
+                        format="webp"
+                        quality="90"
+                        />
+                    </div>
+                </div>
+                <div class="flex flex-1 flex-col gap-12 items-center">
+                    <div class="flex flex-1 flex-col items-center">
+
+                        <h2 class="text-center">Pro koho jsou</h2>
+                        <p class="highlighted-text text-center max-w-[800px]">
+                            Rituály jsou vytvářeny <span>na míru</span>, po konzultaci, <span>individuálně</span> či pro <span>skupinu</span> lidí, je možno je <span>darovat</span> blízké osobě.
+                        </p>
+                    </div>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink >
+                </div>
+            </div>
+    </SectionsContainer>
+
+    <SectionsContainer>
             <PricePanel 
                 :title="price.title"
                 :subtitle="price.subtitle" 
@@ -56,7 +129,6 @@
                 :show-flower="price.showFlower"
                 :btn-filled="price.btnFilled"
             />
-        </template>
     </SectionsContainer>
 </template>
 
@@ -72,6 +144,7 @@ const price = ref({
     showFlower:true,
     btnFilled: true
 })
+
 const cardsContent = ref([
     {title: "Předporodní rituál",
      description: [
@@ -110,22 +183,4 @@ const images = ref([
     {src: '/img/14_org.jpeg'},
 ])
 
-const images3 = ref([
-    {src: '/img/9101_org.jpg', position: "horizontal"},
-    {src: '/img/9134_org.jpg', position: "vertical"},
-])
 </script>
-<style lang="scss" scoped>
-.section-1, .section-3, .section-4 {
-    display: flex;
-    @media(max-width:$large-screen){
-        flex-direction: column-reverse;
-        gap: 5rem
-    }
-}
-.section-3 {
-    @media(max-width:$large-screen){
-        flex-direction: column;
-    }
-}
-</style>

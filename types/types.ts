@@ -16,4 +16,9 @@ export interface InfoCard {
     title: string;
     description: string | string[];
     img: string;
+    overlayColor?: string;
+    btnLabel: string;
+    btnLink: string;
+    btnIcon?: string;
+    textColor?: string
 }

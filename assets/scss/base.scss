@@ -10,41 +10,16 @@ $pink-dr-30: #AB3B6350;
 
 $purple: #3D0B37;
 
-
 // Variables for screen width
 $small-screen: 768px;
 $medium-screen: 1024px;
 $large-screen: 1280px;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 body {
   min-height: 100vh;
   min-width: 100%;
-  font-family:  Inter var,
-  ui-sans-serif,
-  system-ui,
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  Segoe UI Symbol,
-   "Noto Color Emoji";
-   color: $black;
-   background: $white
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
 

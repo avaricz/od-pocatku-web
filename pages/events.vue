@@ -1,16 +1,13 @@
 <template>
     <SectionsContainer :title="'Nejbližší událost'" background-color="gray-lt">
-        <template #content>
             <EventDetail v-if="events.length" :event="events[0]"/>
             <NoEvents v-else/>
-        </template>
     </SectionsContainer>
     <SectionsContainer 
         v-if="events.length" 
         :title="'Následující událost'"
         background-color="white"
     >
-        <template #content>
             <div class="next-events">
                 <EventViewSwitcher 
                     v-for="(event, index) in events.slice(1)"
@@ -21,7 +18,6 @@
                     :id="`event-${event.id}`"
                 />
             </div>
-        </template>
     </SectionsContainer>
 </template>
 

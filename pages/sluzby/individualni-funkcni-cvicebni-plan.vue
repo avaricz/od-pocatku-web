@@ -1,61 +1,165 @@
 <template>
-    <HeaderContainer 
+    <HeaderContainerRounded
         title="Individuální funkční cvičební plán"
+        description="Každá žena by měla znát své tělo a umět s ním pracovat. Naučím Tě, jak ho posílit, stabilizovat a vnímat, aby ses v něm cítila skvěle každý den."
         bg-image="/img/9297_org_thin_transparent.png"
-    />
-    <SectionsContainer   :background-color="'gray-lt'">
-        <template #content>
-            <div class="section-1">
-                <GallerySinglePhoto photo="/img/34_org.png" :position="'horizontal'" rotate="right"/>
-                <InfoWrapper>
-                    <p>
-                        Jako <span>funkční trenérka</span> se zabývám posilováním <span>pánevního dna</span> a <span>středu těla</span> s komplexním zaměřením na celý <span>hluboký stabilizační systém</span>.  
+        overlay
+    >
+        <template #button>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+        </template>
+    </HeaderContainerRounded>
+    <SectionsContainer >
+            <div class="flex flex-col lg:flex-row items-center gap-12 p-4">
+                <div class="flex flex-1 flex-col items-center gap-12">
+                    <div class="flex flex-col items-center">
+                        <h2>Zaměření</h2>
+                        <p class="highlighted-text text-center max-w-[800px]">
+                            Jako <span>funkční trenérka</span> se zabývám posilováním <span>pánevního dna</span> a <span>středu těla</span> s komplexním zaměřením na celý <span>hluboký stabilizační systém</span>.  
+                        </p>
+                    </div>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink >
+                </div>
+                <div class="flex flex-1 items-center justify-center">
+                    <div class="flex rounded-full aspect-square max-w-[480px] overflow-hidden">
+                        <NuxtImg src="/img/34_org.png" 
+                        class="w-full object-cover object-center"
+                        alt=""
+                        densities="1x"
+                        sizes="sm:100vw "
+                        format="webp"
+                        quality="90"
+                        />
+                    </div>
+                </div>
+            </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-gray-100">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-12 p-4">
+            <div class="flex flex-1 items-center justify-center max-w-[400px]">
+
+                <div class="flex rounded-xl overflow-hidden  ">
+                    <NuxtImg src="/img/9437_org.jpg" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                    />
+                </div>
+                
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-8">
+                <div class="flex flex-1 flex-col items-center">
+                    <h2 class="text-center">Individuální přístup přesně pro Tebe</h2>
+                    <p class="highlighted-text text-center ">
+                        Kromě pravidelných <span>skupinových kurzů</span> poskytuji i <span>individuální přístup</span>, kdy je prostor na konkrétní <span>diagnostiku</span> a <span>zacílení</span> na základě Tvých <span>preferencí a potřeb</span>. Jsi ve II. trimestru <span>těhotenství</span>, máš <span>po porodu</span>, či už delší dobu víš, že chceš se sebou <span>začít něco dělat</span> - jsi u mě správně!
                     </p>
-                </InfoWrapper>
-            </div>
-        </template>
-    </SectionsContainer>
+                </div>
+                <div class="flex gap-8">
 
-    <SectionsContainer   :background-color="'white'">
-    <template #content>
-        <div class="section-2">
-        <InfoWrapper :text-align="'center'">
-            <p>
-                Kromě pravidelných <span>skupinových kurzů</span> poskytuji i <span>individuální přístup</span> kdy je prostor na konkrétní <span>diagnostiku</span> a <span>zacílení</span> na základě Tvých <span>preferencí a potřeb</span>. Jsi ve II. trimestru <span>těhotenství</span> máš <span>po porodu</span> či už delší dobu víš, že chceš se sebou <span>začít něco dělat</span> - jsi u mě správně!
-            </p>
-        </InfoWrapper>
-        <GalleryTwoPhotos :images="images2"/>
+                    <NuxtLink :to="socialLinks.mail.link">
+                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                    </NuxtLink >
+                    <NuxtLink to="/events">
+                        <TheButton label="Kurzy" icon="fa:calendar" pulse bordered/>
+                    </NuxtLink >
+                </div>
+                
+            </div>
         </div>
-    </template>
     </SectionsContainer>
 
-    <SectionsContainer   :background-color="'black-dr'">
-    <template #content>
-        <InfoWrapper :text-align="'center'">
-            <p>
-                Pracuji se ženami <span>všech věkových kategorií</span>. Pomáhám <span>poznat</span> a <span>pochopit</span> svoje <span>tělo</span> udělat ho <span>funkční</span> a <span>cítíš se</span> v něm <span>dobře</span>.
-            </p>
-        </InfoWrapper>
-    </template>
-    </SectionsContainer>
-
-    <SectionsContainer :justify-header="'center'" title="Získáš" >
-        <template #content>
-            <CardsPanel :data="cardsContent" />
-        </template>
-    </SectionsContainer>
     <SectionsContainer>
-        <template #content>
-            <div class="section-5">
-            <GalleryTwoPhotos :images="images5"/>
-            <InfoWrapper :text-align="'center'">
-                <p>Důležitá je <span>návaznost a kontinuální podpora</span>, proto spolu budeme sledovat <span>výsledky</span> a pozorovat Tvůj <span>progres</span>, na základě kterého budeme postupně upravovat <span>cvičební plán</span> přesně na míru, aby pro Tebe mělo cvičení co nejlepší <span>dlouhodobý efekt</span>.</p>
-            </InfoWrapper>
+        <div class="flex flex-col items-center gap-12 p-4">
+            <div class="flex flex-col items-center">
+                <h2>Poznej své tělo</h2>
+                <p class="highlighted-text text-center max-w-[800px]">
+                    Pracuji se ženami <span>všech věkových kategorií</span>. Pomáhám <span>poznat</span> a <span>pochopit</span> svoje <span>tělo</span> udělat ho <span>funkční</span> a <span>cítíš se</span> v něm <span>dobře</span>.
+                </p>
             </div>
-        </template>
+            <NuxtLink :to="socialLinks.mail.link">
+                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+            </NuxtLink >
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex rounded-full overflow-hidden max-h-[320px] lg:max-h-[380px] max-w-[400px] lg:max-w-none">
+                    <NuxtImg src="/img/33_org.jpeg" 
+                    class="w-full object-cover object-[25%_75%] "
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                    />
+                </div> 
+                <div class="flex rounded-full overflow-hidden max-h-[320px] lg:max-h-[380px] max-w-[400px] lg:max-w-none">
+                    <NuxtImg src="/img/35_org.png" 
+                    class="w-full object-cover object-center"
+                    alt=""
+                    densities="1x"
+                    sizes="sm:100vw "
+                    format="webp"
+                    quality="90"
+                    />
+                </div> 
+            </div>
+        </div>
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-pink-100">
+        <div class="flex flex-col gap-20 items-center p-4">
+
+            <div class="flex flex-col items-center max-w-[800px]">
+                <h2 class="text-center">Znalosti, plán, výsledky – cesta ke změně</h2>
+                <p class="highlighted-text text-center"><span>Porozumíš</span> svému tělu, získáš <span>cvičební plán</span> na míru a postupně dosáhneš <span>viditelných výsledků</span>. Funkční trénink Ti pomůže nejen <span>cítit se lépe</span>, ale i pochopit, jak správně pracovat se svým tělem <span>v každodenním životě</span>.</p>
+            </div>
+            <CardsPanel :data="cardsContent" />
+        </div>
+
+    </SectionsContainer>
+
+    <SectionsContainer bg-color="bg-pink-200">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-16 p-4">
+            <div class="flex flex-col items-center gap-8">
+                <div class="flex flex-col items-center">
+                    <h2 class="text-center">Cvičební plán, který roste s Tebou</h2>
+                    <p class="highlighted-text text-center">Důležitá je <span>návaznost a kontinuální podpora</span>, proto spolu budeme sledovat <span>výsledky</span> a pozorovat Tvůj <span>progres</span>, na základě kterého budeme postupně upravovat <span>cvičební plán</span> přesně na míru, aby pro Tebe mělo cvičení co nejlepší <span>dlouhodobý efekt</span>.</p>
+                </div>
+                <NuxtLink :to="socialLinks.mail.link">
+                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse/>
+                </NuxtLink >
+            </div>
+            <div class="flex flex-row gap-8">
+                    <div class="flex rounded-xl overflow-hidden max-h-[400px]">
+                        <NuxtImg src="/img/9309_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw "
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                    <div class="flex rounded-xl overflow-hidden max-h-[400px]">
+                        <NuxtImg src="/img/9312_org.jpg" 
+                            class="w-full object-cover object-center"
+                            alt=""
+                            densities="1x"
+                            sizes="sm:100vw"
+                            format="webp"
+                            quality="90"
+                        />
+                    </div>
+                </div>
+        </div>
     </SectionsContainer>
     <SectionsContainer>
-        <template #content>
             <PricePanel 
                 :title="price.title"
                 :subtitle="price.subtitle" 
@@ -65,9 +169,7 @@
                 :show-flower="price.showFlower"
                 :btn-filled="price.btnFilled"
             />
-        </template>
     </SectionsContainer>
-
 </template>
 
 <script setup>
@@ -78,13 +180,6 @@ const price = ref({
     price: 600,
     slash: "hodina",
     content: [
-        // "<b>ULTIMÁTNÍ</b> masáž",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat <b>rumba koule</b>",
-        // "voný oleje",
-        // "rebozo šátek",
-        // "jak si namíchat rumba koule"
     ],
     showFlower:true,
     btnFilled: true
@@ -113,60 +208,4 @@ const cardsContent = ref([
         "motivace"
     ]}
 ])
-
-
-const images2 = ref([
-    {src: '/img/9437_org.jpg', position:'vertical'},
-    {src: '/img/33_org.jpeg', position:'horizontal'},
-])
-
-const images5 = ref([
-    {src: '/img/9309_org.jpg', position: 'horizontal'},
-    {src: '/img/9312_org.jpg', position: 'vertical'},
-])
 </script>
-
-<style lang="scss" scoped>
-.section-1 {
-    display: flex;
-    @media (max-width: $large-screen) {
-        flex-direction: column-reverse;
-        gap: 5rem;
-    }
-    :last-child {
-        text-align: center;
-    }
-}
-.section-2  {
-    display:flex;
-    :last-child {
-           max-width: 600px;
-        }
-    @media (max-width: $large-screen) {
-        flex-direction: column;
-        gap:5rem;
-        :last-child {
-           max-width: none;
-        }
-    }
-    
-    
-}
-
-.section-5  {
-    display:flex;
-    :last-child {
-           max-width: 1000px;
-        }
-    @media (max-width: $large-screen) {
-        flex-direction: column;
-        gap:5rem;
-        :last-child {
-           max-width: none;
-        }
-    }
-    
-    
-}
-
-</style>

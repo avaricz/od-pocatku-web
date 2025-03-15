@@ -1,21 +1,42 @@
 <template>
-    <div class="container">
-        <div v-for="card in content" class="card">
-            <div class="top">
-                <div class="img-wrapper">
+    <div class="flex flex-wrap justify-center gap-8">
+        <div 
+            v-for="card in content" 
+            class="
+                flex flex-col 
+                rounded-xl w-[340px] md:w-[380px] bg-gray-50 shadow 
+                transition-all duration-300 linear
+                hover:shadow-xl hover:scale-105"
+            >
+            <div class="flex justify-center p-4">
+                <div class="border-4 border-pink-300 p-2 rounded-full bg-pink-200 ">
                     <NuxtImg 
                         src="flower.svg" 
                         alt=""
                         format="webp"
                         densities="1x"
-                        sizes="80px"
+                        sizes="40px"
+                        quality="100"
                     />
                 </div>
             </div>
-            <div class="title">{{ card.title }}</div>
-            <ul class="list">
-                <li v-for="item in card.description"> {{  item }}</li>
-            </ul>
+            <div class="flex flex-col px-8 pb-8">
+                <h3 class="flex items-center h-14">{{ card.title }}</h3>
+                <ul class="flex flex-col gap-2 text-gray-700">
+                    <li 
+                        v-for="item in card.description"
+                        class="flex items-start gap-4"
+                    >
+                        <div class="flex pt-1">
+                            <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="18px"/>
+                        </div>
+                        <div class="flex "> 
+                            {{ item }}
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
         </div>
     </div>
 </template>
@@ -28,48 +49,3 @@ defineProps({
     }
 })
 </script>
-
-<style lang="scss" scoped>
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    .card{
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        overflow: hidden;
-        // background: $black-dr;
-        box-shadow: rgba(98, 98, 98, 0.1) 0px 48px 100px 0px;
-        // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        transition: all .3s linear;
-        padding: 2rem;
-        width: 400px;
-        &:hover {
-            background: #AB3B6390;
-            box-shadow: #AB3B6340 0px 48px 100px 0px;
-
-        }
-        .top {
-            display: flex;
-            justify-content: end;            
-            .img-wrapper{
-                opacity: .3;
-            }
-        }
-        .title {
-            display: flex;
-            align-items: center;
-            height: 80px;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        .list {
-            li {
-                letter-spacing: .5px;
-            }
-        }
-    }
-}
-</style>

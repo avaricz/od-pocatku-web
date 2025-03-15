@@ -1,21 +1,33 @@
 <template>
-    <div class="container">
-        <h1>{{ title }}</h1>
-        <ul class="topics">
-            <li v-for="(topic, index) in content">
-                <div class="header">
-                    <div class="order">{{ index + 1 }}</div> <div class="title">{{ topic.header }}</div>
+    <div class="flex flex-col items-center lg:items-start gap-2">
+        <h2 class="text-center">{{ title }}</h2>
+
+        <ul class="flex flex-col gap-8">
+
+            <li 
+                v-for="(topic, index) in content"
+                class="flex gap-8"
+            >
+                <div v-if="icon" class="flex pt-1.5">
+                    <Icon  :name="icon" class="text-pink-500" size="24px"/>
                 </div>
-                <p>{{ topic.description }}</p>
-                <!-- <ul>
-                    <li v-for="item in topic.items"> {{ item }}</li>
-                </ul> -->
+                <div v-else class="
+                    flex flex-none items-center justify-center 
+                    w-8 h-8 rounded-full border-2 border-pink-500
+                    bg-pink-200 text-lg font-bold text-pink-700
+                    ">{{ index + 1 }}
+                </div> 
+
+                <div class="flex flex-col items-start gap-4">
+                    <h3 v-if="topic.header">{{ topic.header }}</h3>
+                    <p 
+                        v-if="topic.description" 
+                        v-html="topic.description" 
+                        class="highlighted-text" 
+                    />
+                </div>
             </li>
         </ul>
-        <div class="buttons-area">
-            <slot name="buttons" />
-            
-        </div>
     </div>
 </template>
 
@@ -29,53 +41,11 @@ defineProps({
     content: {
         type: Array,
         required: true
+    },
+    icon: {
+        type: String,
+        required: false,
+        default:null
     }
 })
-
 </script>
-
-<style lang="scss" scoped>
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap:  2rem;
-    h1 {
-        font-size: 2.4rem;
-    }
-    .topics {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        li {
-            .header{
-                display: flex;
-                align-items: center;
-                gap: .5rem;
-                .order {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 32px;
-                    height: 32px;
-                    background: $pink-dr;
-                    border-radius: 50%;
-                    color: $white;
-                    font-weight: 600;
-                }
-                .title {
-                    font-size: 1.4rem;
-                    font-weight: 600;
-
-                }
-            }
-            p{
-                margin-left: 40px;
-            }
-        }
-    }
-    .buttons-area {
-        display: flex;
-    }
-}
-</style>

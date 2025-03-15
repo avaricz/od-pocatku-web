@@ -8,7 +8,8 @@
                     alt=""
                     format="webp"
                     densities="1x"
-                    sizes="sm:100vw md:100vw lg:100vw"
+                    sizes="400px"
+                    quality="90"
                 />
             </div>
         </div>

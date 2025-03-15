@@ -3,88 +3,74 @@
         bg-image="/img/9071_org.jpg" 
         title="Předporodní kurzy"
         description="Nabízím několik typů předporodních kurzů, ze kterých si můžeš vybrat. Aktuální termíny kurzů najdeš v událostech."
-        btn-label="Události"
-        btn-link="/events"
-    />
-    <SectionsContainer>
-        <template #content>
-            <InfoWrapper>
-                <p>
-                    Na mých předporodních kurzech si projdeš kompletní přípravou na porod ve všech jeho aspektech. Připravíš se po stránce fyzické i mentální tak, že půjdeš k porodu sebevědomá, budeš správně motivovaná a budeš porod vnímat jako zážitek, který v sobě nese obrovský potenciál pro další osobnostní růst. 
-                </p>
-                    
-                </InfoWrapper>
-        </template>
+        overlay
+    >
+      <template #button>
+            <NuxtLink to="/events">
+              <TheButton label="Kurzy" icon="fa:calendar" pulse/>
+            </NuxtLink >
+      </template>
+    </HeaderContainerRounded>
+    <SectionsContainer bg-color="bg-gray-50">
+          <div class="flex flex-1 flex-col lg:flex-row gap-4 md:gap-0 w-full h-full">
+            <div class="flex flex-1  items-center justify-center p-4">
+              <NuxtImg 
+                src="img/9249_org.jpg"  
+                width="400px" 
+                height="400px" 
+                class="rounded-full"
+                densities="1x"
+                sizes="400px"
+                format="webp"
+                quality="100"
+              />
+            </div>
+            <div class="
+              flex flex-col flex-1 
+              items-center md:items-start justify-center 
+              p-4 md:p-8 
+              text-center lg:text-left"
+            >
+              <h2>Kompletní příprava na porod</h2>
+              <p>
+                Na mých předporodních kurzech si projdeš kompletní přípravou na porod ve všech jeho aspektech. Připravíš se po stránce fyzické i mentální tak, že půjdeš k porodu sebevědomá, budeš správně motivovaná a budeš porod vnímat jako zážitek, který v sobě nese obrovský potenciál pro další osobnostní růst. 
+              </p>
+            </div>
+          </div>
     </SectionsContainer>
-    <SectionsContainer :title="'Probíraná témata:'" background-color="gray-lt">
-        <template #content>
+    <SectionsContainer  bg-color="bg-pink-50">
+          <div class="flex flex-col items-center p-4">
+            <h2 class="text-center">Témata, která společně probereme</h2>
+            <p class="text-center mb-24 max-w-[800px]">
+              Získejte ucelený přehled o fyzické i psychické přípravě na porod. Od dechových technik po práci s emocemi – vše, co potřebujete k hladkému průběhu porodu i šestinedělí.
+            </p>
             <CardsPanelSimple :content="cards"/>
-        </template>
+          </div>
     </SectionsContainer>
-    <SectionsContainer>
-        <template #content>
-            <div class="section3">
-                <div class="img-wrapper">
+    <SectionsContainer bg-color="bg-pink-100">
+            <div class="flex flex-col items-stratch lg:flex-row p-4 gap-8">
+                <div class="flex flex-1 rounded-xl overflow-hidden">
                     <NuxtImg 
                         src="/img/31_org.jpeg"
+                        class="w-full object-cover"
                         alt=""
                         format="webp"
                         densities="1x"
                         sizes="sm:100vw md:100vw lg:100vw"
                     />
                 </div>
-                <InfoList 
-                title="Druhy předporodních kurzů"
-                :content="topics"
-                >
-                <template #buttons>
-                    <NuxtLink to="/events">
-                        <TheButton label="Události" filled pulse/>
-                    </NuxtLink>
-                </template>
-            </InfoList>
+                <div class="flex flex-col flex-1 items-center justify-center md:p-4 gap-12">
+                  <InfoList 
+                  title="Druhy předporodních kurzů"
+                  :content="topics"
+                  >
+                  </InfoList>
+                  <NuxtLink to="/events">
+                      <TheButton label="Kurzy" icon="fa:calendar" filled pulse/>
+                  </NuxtLink>
+                </div>
         </div>
-            
-        </template>
     </SectionsContainer>
-    <div>
-
-FOTKY
-
-9436
-
-9425
-
-9249
-
-9071
-
-9063
-
-63
-
-31
-
-1
-
-61
-
-62
-
-63
-
-Předporodní kurz pro páry
-
-15
-
-45
-
-44
-
-43
-
-31
-    </div>
 </template>
 
 <script setup>
@@ -152,29 +138,3 @@ const cards = [
 ];
 
 </script>
-
-<style lang="scss" scoped>
-.section3 {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 3rem;
-    padding: .5rem;
-    @media (min-width:$medium-screen) {
-        flex-direction: row;
-        padding: 2rem;
-
-    }
-    &* {
-        width: 50%;
-    }
-    .img-wrapper {
-        display: flex;
-        border-radius: 10px;
-        overflow: hidden;
-        img {
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-}
-</style>
