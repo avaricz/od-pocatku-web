@@ -42,10 +42,10 @@
                 <h2 class="text-center">Události</h2>
                 <p class="text-center">„..., kterých se můžeš zůčastnit i ty“</p>
             </div>
-            <div v-if="events.length" class="flex gap-8">
+            <div v-if="events" class="flex gap-8">
                 <EventCard 
-                    v-for="event in events" 
-                    :key="event.id" 
+                    v-for="(event, index) in events" 
+                    :key="index" 
                     :event="event"
                 />
             </div>
@@ -73,10 +73,23 @@
 import type { Event, InfoCard } from '~/types/types'; 
 import { EventModel } from '~/models/EventModel';
 import { socialLinks } from '#imports';
+import rawEvents from '@/data/events.json'
 
-const  data  = await $fetch<Event[]>('/api/futureEvents')
+const events = computed(() => {
+    const filteredEvents = rawEvents.filter(event => {
+        const now = new Date()
+        const eventEnd = new Date(event.date_end )
+        return eventEnd > now
+        
+    }).map(event => new EventModel(event))
 
-const events = computed(() => data?.map(event => new EventModel(event)) || [])
+    return filteredEvents
+})
+
+
+/* const  data  = await $fetch<Event[]>('/api/futureEvents')
+
+const events = computed(() => data?.map(event => new EventModel(event)) || []) */
 
 const infoCards: InfoCard[] = [
     {
@@ -90,7 +103,7 @@ const infoCards: InfoCard[] = [
             "předporodní rituál",
         ],
         img: "img/9071_org.jpg",
-        overlayColor: "bg-pink-900",
+        overlayColor: "bg-gray-950",
         textColor: "text-gray-50",
         btnLabel: "Kurzy",
         btnLink: "/events",
@@ -122,8 +135,8 @@ const infoCards: InfoCard[] = [
             "rituál zavírání kostí",
         ],
         img: "img/7_org.png",
-        overlayColor: "bg-pink-400",
-        textColor: "text-pink-950",
+        overlayColor: "bg-gray-950",
+        textColor: "text-gray-50",
         btnLabel:"Napiš mi",
         btnLink: socialLinks.mail.link,
         btnIcon: "fa:envelope-o"
@@ -139,7 +152,7 @@ const infoCards: InfoCard[] = [
             "e-booky",
         ],
         img: "img/9249_org.jpg",
-        overlayColor: "bg-gray-900",
+        overlayColor: "bg-gray-950",
         textColor: "text-gray-50",
         btnLabel: "Události",
         btnLink: "events",
@@ -155,7 +168,7 @@ const infoCards: InfoCard[] = [
             "diagnostika",
         ],
         img: "img/9320_org.jpg",
-        overlayColor: "bg-pink-900",
+        overlayColor: "bg-gray-950",
         textColor: "text-gray-50",
         btnLabel: "Události",
         btnLink: "events",
@@ -172,7 +185,7 @@ const infoCards: InfoCard[] = [
         ],
         img: "img/9452_org.jpg",
         overlayColor: "bg-gray-950",
-        textColor: "text-pink-700",
+        textColor: "text-gray-50",
         btnLabel:"Více",
         btnLink: "/about"
     },

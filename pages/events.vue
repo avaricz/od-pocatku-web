@@ -25,11 +25,23 @@
 import type { Event } from '~/types/types';
 import { EventModel } from '~/models/EventModel';
 import { useRoute } from 'vue-router';
+import rawEvents from '@/data/events.json'
 
 const route = useRoute();
 
-const data = ref<Event[]>([]);
-const events = computed(() => (data || []).value.map(event => new EventModel(event)) || [])
+const events = computed(() => {
+    const filteredEvents = rawEvents.filter(event => {
+        const now = new Date()
+        const eventEnd = new Date(event.date_end )
+        return eventEnd > now
+        
+    }).map(event => new EventModel(event))
+
+    return filteredEvents
+})
+
+// const data = ref<Event[]>([]);
+// const events = computed(() => (data || []).value.map(event => new EventModel(event)) || [])
 const eventsViewType = ref<boolean[]>([])
 const toggleEventDetail = (index: number) => {
     eventsViewType.value[index] = !eventsViewType.value[index];
@@ -52,20 +64,20 @@ const openEventById = (eventId: string | null) => {
     }
 };
 
-const fetchEvents = async () => {
-    try {
-        const response = await $fetch<Event[]>('/api/futureEvents');
-        data.value = response || [];
-        eventsViewType.value = new Array(data.value.length).fill(false);
-        openEventById(route.query.eventId as string);
-    } catch (error) {
-        console.error("Chyba při načítání událostí:", error);
-    }
-};
+// const fetchEvents = async () => {
+//     try {
+//         const response = await $fetch<Event[]>('/api/futureEvents');
+//         data.value = response || [];
+//         eventsViewType.value = new Array(data.value.length).fill(false);
+//         openEventById(route.query.eventId as string);
+//     } catch (error) {
+//         console.error("Chyba při načítání událostí:", error);
+//     }
+// };
 
-onMounted(async()=>{
-    await fetchEvents()
-})
+// onMounted(async()=>{
+//     await fetchEvents()
+// })
 </script>
 
 <style lang="scss" scoped>
