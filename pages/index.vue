@@ -40,7 +40,7 @@
         <div class="flex flex-col items-center gap-16">
             <div class="flex flex-col items-center">
                 <h2 class="text-center">Události</h2>
-                <p class="text-center">„..., kterých se můžeš zůčastnit i ty“</p>
+                <p class="text-center">„..., kterých se můžeš zúčastnit i ty“</p>
             </div>
             <div v-if="events" class="flex gap-8">
                 <EventCard 
