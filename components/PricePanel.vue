@@ -3,7 +3,7 @@
         <div class="header">
             <div class="title">
                 <h4>{{ title }} </h4>
-                <p>{{ subtitle }}</p>
+                <p class="text-center">{{ subtitle }}</p>
             </div>
             
             <div class="price">
@@ -19,7 +19,7 @@
             />
         </div>
 
-      
+        <div>{{ listTitle }}</div>
          <ul class="content">
             <li 
                 v-for="(item, index) in content"
@@ -35,6 +35,7 @@
 defineProps({
     title: String,
     subtitle: String,
+    listTitle: String,
     price: Number,
     slash: String,
     content: Array,
