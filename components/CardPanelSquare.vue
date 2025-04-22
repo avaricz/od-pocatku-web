@@ -69,8 +69,8 @@
                         v-for="item in description"
                         class="flex items-start gap-2"
                     >
-                    <div class="">
-                        <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="24px"/>
+                        <div class="pt-1">
+                            <Icon  name="material-symbols:circle" class="text-pink-700" size="18px"/>
                         </div>
                         <p class="text-base font-semibold text-gray-800">{{ item }}</p>
                     </li>
