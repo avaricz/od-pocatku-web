@@ -97,7 +97,7 @@
 const price = ref({
     title: "Standard",
     subtitle: "",
-    price: 600,
+    price: 800,
     priceLabel: "hodina",
     content: [
     ],

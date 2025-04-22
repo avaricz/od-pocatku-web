@@ -79,7 +79,7 @@
                 <NuxtImg src="/img/9103_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
                     sizes="sm:100vw " format="webp" quality="90" />
             </div>
-            <InfoList :content="recipe.steps" :title="recipe.title" />
+            <InfoList :content="recipe.steps" :title="recipe.title"/>
         </div>
     </SectionsContainer>
     <SectionsContainer bg-color="bg-pink-100">
@@ -90,7 +90,7 @@
                     Vaginální napářku je možné si připravovat kdykoliv i mimo těhotenství, jelikož je prospěšná v mnoha
                     směrech a pomáhá řešit mnohé obtíže, mezi které patří:
                 </p>
-                <InfoList :content="issues" icon="ic:twotone-check-circle" />
+                <InfoList :content="issues" icon="flower" />
                 <p class="mt-12">A tak dále…</p>
             </div>
             <div class="flex flex-1 justify-center items-center">

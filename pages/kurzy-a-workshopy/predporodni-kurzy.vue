@@ -63,6 +63,7 @@
                   <InfoList 
                   title="Druhy předporodních kurzů"
                   :content="topics"
+                  icon="flower"
                   >
                   </InfoList>
                   <NuxtLink to="/events">

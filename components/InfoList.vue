@@ -15,8 +15,7 @@
                     <IconFlower class="w-8 h-8" />
                 </div>
                 <div v-else class="
-                    flex flex-none items-center justify-
-                    center 
+                    flex flex-none items-center justify-center 
                     w-8 h-8 rounded-full border-2 border-pink-500
                     bg-pink-200 text-lg font-bold text-pink-700
                     ">{{ index + 1 }}

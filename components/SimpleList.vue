@@ -7,7 +7,7 @@
                 class="flex items-start gap-4"
             >
                 <div class="flex pt-1">
-                    <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="18px"/>
+                    <Icon  name="material-symbols:circle" class="text-pink-700" size="12px"/>
                 </div>
                 <div class="flex "> 
                     {{ item }}
