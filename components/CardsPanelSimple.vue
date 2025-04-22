@@ -10,7 +10,7 @@
             >
             <div class="flex justify-center p-4">
                 <div class="border-4 border-pink-300 p-2 rounded-full bg-pink-200 ">
-                    <IconFlower class="w-12 h-12"/>
+                    <IconFlower class="w-12 h-12 flower-drop-shadow"/>
                 </div>
             </div>
             <div class="flex flex-col px-8 pb-8">

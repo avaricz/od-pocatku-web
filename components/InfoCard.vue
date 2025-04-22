@@ -3,15 +3,7 @@
         relative flex flex-col gap-4 w-[340px] max-w-[340px] rounded-xl bg-gray-50 shadow-lg transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-102
     ">
         <div class="absolute top-[-20px] left-[-20px] w-[60px] h-auto">
-            <NuxtImg 
-                src="flower.svg" 
-                class="w-full h-auto flower-drop-shadow"
-                alt=""
-                densities="1x"
-                sizes="100px"
-                format="webp"
-                quality="100"
-            />
+            <IconFlower class="w-full h-full flower-drop-shadow"/>
         </div>
         <div class="
             card-header 
