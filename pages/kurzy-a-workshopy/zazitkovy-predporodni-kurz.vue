@@ -122,7 +122,7 @@ const list = ref([
   "bylinkový workshop",
   "vše o kojení a šestinedělí",
   "přednáška o znakování s miminky",
-  "lekce těhotesnkých cviků, které tě připraví na porod",
+  "lekce těhotenských cviků, které tě připraví na porod",
   "rebozo masáž",
   "míchání bachových esencí",
 ]);

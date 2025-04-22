@@ -5,7 +5,7 @@
         :class="[bgColor]"
     >
         <div 
-            class="flex w-full py-24 mx-auto justify-center"
+            class="flex w-full py-24 mx-auto justify-center "
             :class="fullWidth ? 'max-w-none' : 'max-w-[1280px]'"
          >
             

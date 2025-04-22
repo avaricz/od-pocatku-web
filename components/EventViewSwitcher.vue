@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="flex w-full transition-all duration-1000 cursor-pointer">
         <EventDetail v-if="isDetailOpen " :event="event"/>
         <EventThin v-else :event="event"/>
     </div>
@@ -15,12 +15,3 @@ defineProps({
     isDetailOpen: Boolean
 })
 </script>
-
-<style lang="scss" scoped>
-.container {
-    display: flex;
-    width: 100%;
-    transition: all 1s linear;
-    cursor: pointer;
-}
-</style>

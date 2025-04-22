@@ -1,23 +1,12 @@
 <template>
     <div class="panels-container">
-        <div 
-            v-for="panel in panels"
-            class="panel-wrapper"
-            :class="{'highlight': panel.highlight}"
-        >
-            <span >{{panel.highlight ? "Nejvýhodnější" : ""}}</span>
-           
+        <div v-for="panel in panels" class="panel-wrapper" :class="{ 'highlight': panel.highlight }">
+            <span>{{ panel.highlight ? "Nejvýhodnější" : "" }}</span>
 
-                <PricePanel 
-                
-                :title="panel.title"
-                :subtitle="panel.subtitle" 
-                :price="panel.price"
-                :slash="panel.slash"
-                :content="panel.content"
-                :show-flower="panel.showFlower"
-                :btn-filled="panel.btnFilled"
-                />
+
+            <PricePanel :title="panel.title" :subtitle="panel.subtitle" :price="panel.price"
+                :priceLabel="panel.priceLabel" :content="panel.content" :show-flower="panel.showFlower"
+                :btn-filled="panel.btnFilled" :link="panel.link" />
         </div>
     </div>
 </template>
@@ -33,17 +22,19 @@ defineProps({
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap:1rem;
+    gap: 1rem;
+
     @media (min-width: $small-screen) {
         flex-direction: row;
     }
 
     .panel-wrapper {
-        
+
         display: flex;
         flex-direction: column;
         border-radius: 10px;
         flex: 1;
+
         span {
             display: flex;
             align-items: center;
@@ -63,6 +54,4 @@ defineProps({
     background-color: $pink-dr;
 
 }
-
-
 </style>

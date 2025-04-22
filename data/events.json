@@ -24,5 +24,70 @@
         "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
         "description": "<p><strong>Co nás čeká:</strong></p><ul><li>Vše o čtyřech dobách porodních</li><li>Jak se na porod co nejvíc připravit po fyzické i mentální stránce</li><li>Jak poznat začátek porodu a co dělat pro hladký start</li><li>Jak k porodu zapojit partnera</li><li>Vše o bondingu i porodu placenty</li><li>Jak se zbavit strachu a úzkosti – jak s těmito emocemi pracovat</li><li>Jak si porod užít tak, aby byl pro tebe nezapomenutelným zážitkem</li></ul>",
         "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-04-04;viewMode=7-days"
-      }      
+      },
+      {
+        "id": 3,
+        "title": "Šestinedělí, kojení a rané mateřství",
+        "date_start": "2025-04-25 15:30:00",
+        "date_end": "2025-04-25 18:30:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "250,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Co tě na workshopu čeká:</p><br><ul class='list-disc pl-5'><li>vše o bondingu a samopřisátí</li><li>vše o správné technice kojení</li><li>jak řešit nejrůznější situace i jak jim předejít</li><li>jak o sebe pečovat v šestinedělí a jak se postarat o co nejlepší regeneraci těla po porodu</li><li>zpracování placenty</li><li>vše o pláči miminka – jak mu porozumět, a o „setkání ženy s vlastním stínem“</li><li>jak začít mateřství tak, abys byla v co největší pohodě</li></ul>",
+        "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-04-25;viewMode=7-days"
+      },
+      {
+        "id": 4,
+        "title": "Předporodní kurz pro páry",
+        "date_start": "2025-05-09 17:30:00",
+        "date_end": "2025-05-09 19:00:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "400,- / pár",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Vše, co potřebujete vědět k porodu a šestinedělí – jasně, výstižně a prakticky.</p><br><ul class='list-disc pl-5'><li>praktický kurz zaměřený na muže, aby byli při porodu i po něm tou nejlepší oporou</li><li>společný nácvik úlevových technik, masáží a porodních pozic v páru</li><li>co dělat od první kontrakce až po bonding</li><li>téma šestinedělí – nástin ženské psychiky, co žena prožívá a co potřebuje</li></ul>",
+        "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-05-09;viewMode=7-days"
+      },
+      {
+        "id": 5,
+        "title": "Beseda o skloubení podnikání a mateřství",
+        "date_start": "2025-05-12 16:00:00",
+        "date_end": "2025-05-12 18:00:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "50,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Dnešní setkání je na téma hojnost, finance a zacházení s penězi. Jak žít v pocitu dostatku a hojnosti a otevřít se tak možnostem. Jak zacházet s penězi tak, aby nám přinášely užitek, a jak i z mála začít budovat pevnou základnu pro budoucí roky.</p>",
+        "reservation_link": "mailto:lucieodpocatku@gmail.com"
+      },
+      {
+        "id": 6,
+        "title": "Fyzická příprava na porod bez obav",
+        "date_start": "2025-05-17 09:30:00",
+        "date_end": "2025-05-17 11:00:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "400,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Pro fit těhotenství, snadný porod, rychlý návrat do kondice!</p><br><ul class='list-disc pl-5'><li>prevence diastázy, povoleného pánevního dna, bolestí zad a kloubů</li><li>dechové techniky pro pevný core i jednotlivé porodní fáze</li><li>cviky na mobilitu pánve pro snadnější porod</li><li>série vhodných těhotenských cvičení</li><li>aktivace i relaxace</li></ul><br><p>Vhodné pro ženy ve II. trimestru.</p>",
+        "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-05-17;viewMode=7-days"
+      },
+      {
+        "id": 7,
+        "title": "Porod a vše kolem něj",
+        "date_start": "2025-05-30 15:30:00",
+        "date_end": "2025-05-30 18:30:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "250,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Co tě na workshopu čeká:</p><br><ul class='list-disc pl-5'><li>vše o čtyřech dobách porodních</li><li>jak se na porod co nejvíc připravit po fyzické i mentální stránce</li><li>jak poznat začátek porodu a co dělat pro hladký start</li><li>jak k porodu zapojit partnera</li><li>úlevové techniky a nácvik dýchání i porodních poloh</li><li>vše o bondingu i porodu placenty</li><li>jak se zbavit strachu a úzkosti – jak s těmito emocemi pracovat</li><li>jak si porod užít tak, aby byl pro tebe nezapomenutelným zážitkem</li></ul>",
+        "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-05-30;viewMode=7-days"
+      } 
 ]

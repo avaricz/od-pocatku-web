@@ -1,23 +1,25 @@
 <template>
-    <SectionsContainer :title="'Nejbližší událost'" background-color="gray-lt">
+    <SectionsContainer background-color="gray-lt">
+        <div class="flex flex-1 gap-8 px-2 w-full">
             <EventDetail v-if="events.length" :event="events[0]"/>
             <NoEvents v-else/>
+
+        </div>
     </SectionsContainer>
     <SectionsContainer 
         v-if="events.length" 
-        :title="'Následující událost'"
         background-color="white"
     >
-            <div class="next-events">
-                <EventViewSwitcher 
-                    v-for="(event, index) in events.slice(1)"
-                    :key="event.id"
-                    :event
-                    :is-detail-open="eventsViewType[index+1]"
-                    @click="toggleEventDetail(index +1)"
-                    :id="`event-${event.id}`"
-                />
-            </div>
+        <div class="flex flex-1 flex-col gap-8 px-2 w-full">
+            <EventViewSwitcher 
+            v-for="(event, index) in events.slice(1)"
+            :key="event.id"
+            :event
+            :is-detail-open="eventsViewType[index+1]"
+            @click="toggleEventDetail(index +1)"
+            :id="`event-${event.id}`"
+            />
+        </div>
     </SectionsContainer>
 </template>
 
@@ -75,16 +77,8 @@ const openEventById = (eventId: string | null) => {
 //     }
 // };
 
-// onMounted(async()=>{
-//     await fetchEvents()
-// })
+onMounted(async()=>{
+//   await fetchEvents()
+    openEventById(route.query.eventId as string);
+})
 </script>
-
-<style lang="scss" scoped>
-.next-events {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 2rem;
-}
-</style>

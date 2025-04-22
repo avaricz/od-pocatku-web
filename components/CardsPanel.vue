@@ -1,5 +1,5 @@
 <template>
-    <div class="cards-container">
+    <div class="flex gap-16 flex-wrap justify-evenly">
         <InfoCard
             v-for="card in data"
             :key="card.title"
@@ -16,15 +16,4 @@ defineProps ({
         default: []
     }
 })
-
-
 </script>
-
-<style lang="scss" scoped>
-.cards-container {
-    display: flex ;
-    gap: 4rem;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-</style>

@@ -5,27 +5,32 @@
                 <h4>{{ title }} </h4>
                 <p class="text-center">{{ subtitle }}</p>
             </div>
-            
-            <div class="price">
-                <span>{{ price }}</span>
-                <span>Kč {{ slash ? `/  ${slash}` : "" }}</span>
+
+            <div class="flex flex-col items-center">
+                <span v-if="priceLabel" class="text-[0.8rem] ">{{ priceLabel }}</span>
+                <div>
+                    <span class="text-[3rem] font-extrabold text-gray-800 leading-none">{{ price }}</span>
+                    <span class="text-[0.8rem]">Kč</span>
+
+                </div>
             </div>
-            
-            <TheButton 
-                :label="'Napiš mi'"
-                @click="openMail"
-                pulse
-                icon="fa:envelope-o"
-            />
+
+            <div v-if="additionalPrice">
+                <span v-if="additionalPrice && additionalPriceLabel"
+                    class="text-[0.8rem]">{{ additionalPriceLabel }}</span>
+                <div>
+                    <span class="text-[2.5rem] font-extrabold text-gray-700 leading-none">{{ additionalPrice }}</span>
+                    <span class="text-[0.8rem]">Kč</span>
+
+                </div>
+            </div>
+
+            <TheButton :label="'Napiš mi'" pulse icon="fa:envelope-o" :link="link" />
         </div>
 
         <div>{{ listTitle }}</div>
-         <ul class="content">
-            <li 
-                v-for="(item, index) in content"
-                :key="index"
-                v-html="item"
-            >
+        <ul class="content flex flex-col w-full gap=[.7rem] text-[.9rem] font-[300] p-0">
+            <li v-for="(item, index) in content" :key="index" v-html="item">
             </li>
         </ul>
     </div>
@@ -37,15 +42,15 @@ defineProps({
     subtitle: String,
     listTitle: String,
     price: Number,
-    slash: String,
+    additionalPrice: Number,
+    priceLabel: String,
+    additionalPriceLabel: String,
     content: Array,
     showFlower: Boolean,
-    btnFilled: Boolean
+    btnFilled: Boolean,
+    link: String
 })
 
-const openMail = () => {
-    window.location.href = "mailto:lucieodpocatku@gmail.com";
-};
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +62,7 @@ const openMail = () => {
     height: 100%;
     width: 240px;
     border-radius: 10px;
-    padding: 2rem 1rem ;
+    padding: 2rem 1rem;
     gap: 2rem;
 
     background: $white;
@@ -71,44 +76,27 @@ const openMail = () => {
         align-items: center;
         gap: 2rem;
         width: 100%;
-        padding:  1rem 0 3rem 0;
+        padding: 1rem 0 3rem 0;
         border-bottom: .5px solid $gray;
-        
-        
+
+
         .title {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: .5rem;
+
             h4 {
                 font-size: 1.3rem;
             }
+
             p {
                 font-weight: 200;
             }
         }
-        .price {
-            :first-child {
-                font-size: 3rem;
-                font-weight: 800;
-                color: $black-dr;
-            }
-            :last-child {
-                font-size: .8rem;
-            }
-        }
-    
-    }
-    .content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
 
-        gap: .7rem;
-        font-size: .9rem;
-        font-weight: 300;
-        padding: 0;
     }
+
     &.flower-active::before {
         content: "";
         position: absolute;
@@ -120,9 +108,11 @@ const openMail = () => {
         background-repeat: no-repeat;
         background-position: left;
         background-size: cover;
-        opacity: 0.3; /* Pouze pozadí bude průhledné */
-        z-index: 0; /* Posune pozadí pod text */
+        opacity: 0.3;
+        /* Pouze pozadí bude průhledné */
+        z-index: 0;
+        /* Posune pozadí pod text */
     }
-  
+
 }
 </style>

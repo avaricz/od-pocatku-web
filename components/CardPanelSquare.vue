@@ -46,8 +46,9 @@
                 :class="overlayColor"
             ></div>
             <h3 class="text-center z-10"
-                :class="textColor"
-            >{{ title }}</h3>
+                :class="textColor,
+                {'text-transparent' : isActive && isMobile}"
+            >{{ title, isMobile }}</h3>
         </div>
         
         <!-- Zadní strana -->
@@ -65,8 +66,8 @@
 
                 <ul class="flex flex-col gap-2 px-4 ">
                     <li 
-                    v-for="item in description"
-                    class="flex items-start gap-2"
+                        v-for="item in description"
+                        class="flex items-start gap-2"
                     >
                     <div class="">
                         <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="24px"/>
@@ -117,6 +118,12 @@ import { ref } from 'vue';
 const cardRef = ref<HTMLElement | null>(null);
 
 const isActive = ref(false);
+const isMobile = ref(false);
+
+const checkIsMobile = () => {
+  isMobile.value = window.matchMedia("(max-width: 768px)").matches;
+};
+console.log(isMobile)
 
 const toggleActive = () => {
     isActive.value = !isActive.value;
@@ -130,9 +137,11 @@ const handleClickOutside = (event: MouseEvent) => {
 
 onMounted(() => {
     window.addEventListener("click", handleClickOutside);
+    window.addEventListener("resize", checkIsMobile);
 });
 
 onUnmounted(() => {
     window.removeEventListener("click", handleClickOutside);
+    window.removeEventListener("resize", checkIsMobile);
 });
 </script>

@@ -38,16 +38,16 @@
             </div>
           </div>
     </SectionsContainer>
-    <SectionsContainer  bg-color="bg-pink-50">
+    <SectionsContainer  bg-color="bg-gray-100">
           <div class="flex flex-col items-center p-4">
             <h2 class="text-center">Témata, která společně probereme</h2>
             <p class="text-center mb-24 max-w-[800px]">
-              Získejte ucelený přehled o fyzické i psychické přípravě na porod. Od dechových technik po práci s emocemi – vše, co potřebujete k hladkému průběhu porodu i šestinedělí.
+              Získej ucelený přehled o fyzické i psychické přípravě na porod. Od dechových technik po práci s emocemi – vše, co potřebuješ k hladkému průběhu porodu i šestinedělí.
             </p>
             <CardsPanelSimple :content="cards"/>
           </div>
     </SectionsContainer>
-    <SectionsContainer bg-color="bg-pink-100">
+    <SectionsContainer bg-color="bg-gray-200">
             <div class="flex flex-col items-stratch lg:flex-row p-4 gap-8">
                 <div class="flex flex-1 rounded-xl overflow-hidden">
                     <NuxtImg 
@@ -81,7 +81,7 @@ const topics = [
   },
   {
     header: "Zážitkový předporodní kurz",
-    description: "víkendový kurz, jeho součástí jsou pohybové lekce, muzikoterapie, rebozo masáž, bylinkový workshop, přednáška o znakování s miminky, vedené meditace k porodu, a mnoho dalšího" // TODO PROKLIK na stránku
+    description: "víkendový kurz, jehož součástí jsou pohybové lekce, muzikoterapie, rebozo masáž, bylinkový workshop, přednáška o znakování s miminky, vedené meditace k porodu, a mnoho dalšího" // TODO PROKLIK na stránku
   },
   {
     header: "Předporodní kurz pro páry ",
@@ -113,7 +113,7 @@ const cards = [
     description: [
       "co dělat v jeho začátku a během I. doby porodní",
       "jak pracovat s tělem a dechem během II. doby porodní",
-      "porodu placenty",
+      "porod placenty",
       "bonding = zlatá hodinka"
     ]
   },

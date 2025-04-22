@@ -8,11 +8,15 @@
                 v-for="(topic, index) in content"
                 class="flex gap-8"
             >
-                <div v-if="icon" class="flex pt-1.5">
+                <div v-if="icon && icon !== 'flower'" class="flex pt-1.5">
                     <Icon  :name="icon" class="text-pink-500" size="24px"/>
                 </div>
+                <div v-else-if="icon && icon === 'flower'" class="flex shrink-0 w-8 h-8">
+                    <IconFlower class="w-8 h-8" />
+                </div>
                 <div v-else class="
-                    flex flex-none items-center justify-center 
+                    flex flex-none items-center justify-
+                    center 
                     w-8 h-8 rounded-full border-2 border-pink-500
                     bg-pink-200 text-lg font-bold text-pink-700
                     ">{{ index + 1 }}

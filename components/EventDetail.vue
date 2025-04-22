@@ -1,11 +1,11 @@
 <template>
-    <div class="event-container">
-        <div class="header">
-            <div class="date">
-                <span>{{ event?.date_start_day}}</span>
-                <span>. {{event?.date_start_month}}</span>
+    <div class="event-container flex-1">
+        <div class="flex flex-col bg-pink-700 p-4 md:items-start md:min-w-[260px] md:w-[260px] md:max-w-[260px]">
+            <div class="flex items-end justify-start pr-4 text-white">
+                <span class="leading-none font-medium text-[7rem]">{{ event?.date_start_day}}</span>
+                <span class="leading-none font-medium text-[1.6rem] pb-4 whitespace-nowrap">. {{event?.date_start_month}}</span>
             </div>
-            <h3 class="title">{{ event?.title}} </h3>
+            <h3 class="text-[1.4rem] font-bold flex-1">{{ event?.title}} </h3>
         </div>
         <div class="content">
             <div class="wrapper">
@@ -26,10 +26,10 @@
                     </NuxtLink>
                 </div>
             </div>
-            <div class="description">
+            <div class="flex flex-col md:flex-row gap-2 py-[.7rem] px-4 md:px-8 md:pb-6">
 
-                <span>Popis</span>
-                <div v-html="event?.description" />
+                <span class="text-gray-400 font-bold md:basis-[80px] shrink-0">Popis</span>
+                <div class="pl-[.3rem]" v-html="event?.description" />
                 
                 </div>
             <div class="buttons-container-smallscreen">
@@ -39,10 +39,12 @@
                 </NuxtLink>
             </div>
 
-            <div class="map-wrapper">
+            <div class="flex justify-center items-center w-full h-[180px] overflow-hidden">
                 <NuxtLink :to="event.map_url" target="_blank">
                     <NuxtImg 
                         :src="'/maps/map_klubicko.png'" 
+                        class="w-full h-full object-cover object-center transition-all duration-300 ease-in-out 
+                                hover:cursor-pointer md:grayscale hover:grayscale-0"
                         densities="1x"
                         sizes="sm:100vw md:100vw lg:100vw xl:100vw"
                         format="webp"
@@ -70,54 +72,19 @@ defineProps({
 .event-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-
 
     @media (min-width: $small-screen) {
         flex-direction: row;
     }
 
-    .header {
-        display: flex;
-        flex-direction: column;
-        background: $pink-dr;
-        padding: 1rem;
-        @media (min-width: $small-screen) {
-            align-items: start;
-            min-width: 260px;
-            width: 260px;
-            max-width: 260px;
-        }
 
-        .date {
-            display: flex;
-            align-items: end;
-            justify-content: start;
-            padding-right: 1rem;
-            color: $white;
-          
-            :first-child {
-                line-height: 1;
-                font-weight:  500;
-                font-size: 7rem;
-            }
-            :last-child {
-                white-space: nowrap;
-                padding-bottom: 1rem;
-                line-height: 1;
-                font-weight:  500;
-                font-size: 1.6rem;
-            }
-        }
-        .title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            flex:1;    
-        }
-    }
+
+ 
+    
 
     .content {
         display: flex;
@@ -166,28 +133,7 @@ defineProps({
             }
         }
         
-        .description {
-            display: flex;
-            gap: .5rem;
-            padding: .7rem 1rem;
-            span {
-                color: $gray;
-                font-weight: bold;
-                flex-basis: 80px;
-                flex-shrink: 0; /* Zabrání zmenšování */
-            }
-            div {
-                padding-left: .3rem;
-            }
-
-            
-            @media (min-width: $small-screen) {
-                padding-left: 2rem;
-                padding-right: 2rem;
-                padding-bottom: 1.5rem;
-            }
-
-        }
+    
         
         .buttons-container-smallscreen {
             display: flex; 
@@ -197,8 +143,6 @@ defineProps({
             gap: 1rem;
             align-self: center;
             max-width: 400px;
-            min-width: 400px;
-            width: 400px;
             a, button{
                width: 100%;
             }
@@ -208,28 +152,7 @@ defineProps({
             }
         
 
-        .map-wrapper {
-            display: flex;
-            justify-content: center;  /* Vycentrování horizontálně */
-            align-items: center;      /* Vycentrování vertikálně */
-            width: 100%;              /* Aby zůstala flexibilní šířka */
-            height: 180px;            /* Maximální výška */
-            overflow: hidden;         
-            img {
-                width: 100%;          /* Obrázek se roztáhne přes celou šířku */
-                height: 100%; 
-                object-fit: cover;
-                object-position: center;
-                transition: all .3s ease;
-                &:hover {
-                    cursor: pointer;
-                    filter: none;
-                }  
-                @media (min-width: $small-screen) {
-                    filter: grayscale(1);
-                }
-            }
-        }
+        
     }
 
 }

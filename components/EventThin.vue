@@ -96,7 +96,7 @@ defineProps({
             align-items: center;
             justify-content: center;
             text-align: center;
-           
+            width: 100%;
             font-size: 1.2rem;
             font-weight: 600;
             background: linear-gradient(120deg, $gray, $gray-lt); 

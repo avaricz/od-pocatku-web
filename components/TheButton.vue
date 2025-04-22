@@ -1,6 +1,27 @@
 <template>
     <div class="relative">
-        <button 
+        <a v-if="link" :href="link"
+            class="
+                flex items-center justify-center 
+                px-8 py-2
+                gap-2
+                rounded-xl
+                transition-all duration-300 linear
+                cursor-pointer
+                border-2 border-pink-700
+                bg-pink-700
+                text-gray-50 text-md font-semibold
+                "
+            :class="{
+                'neon-pulse': pulse,
+                'bg-transparent text-pink-700': bordered
+                }" 
+            @click.stop=""
+        >
+                <Icon v-if="icon" :name="icon" size="15px"/>
+                <span >{{ label }}</span>
+        </a>
+        <button v-else
             class="
                 flex items-center justify-center 
                 px-8 py-2
@@ -35,7 +56,8 @@ defineProps ({
     },
     label: String,
     pulse: Boolean,
-    bordered: Boolean
+    bordered: Boolean,
+    link: String,
 })
 </script>
 

@@ -4,7 +4,7 @@
     ">
         <div class="absolute top-[-20px] left-[-20px] w-[60px] h-auto">
             <NuxtImg 
-                src="/flower.svg" 
+                src="flower.svg" 
                 class="w-full h-auto flower-drop-shadow"
                 alt=""
                 densities="1x"
@@ -15,7 +15,7 @@
         </div>
         <div class="
             card-header 
-            bg-[url('/img/9103_small_darker.jpg')] bg-no-repeat bg-cover bg-gray-950 rounded-t-xl
+            bg-[url('/9103_small_darker.jpg')] bg-no-repeat bg-cover bg-gray-950 rounded-t-xl
         ">
             <div class="
             flex items-center justify-center h-[180px] p-4 
@@ -30,11 +30,9 @@
                 class="flex gap-4 leading-6 text-lg font-normal text-gray-700 italic"
             >
                 <div class="flex pt-1.5">
-                    <Icon  name="ic:twotone-check-circle" class="text-pink-500" size="18px"/>
+                    <Icon  name="material-symbols:circle" class="text-pink-700" size="12px"/>
                 </div>
-                <div class="flex "> 
-                    {{ item }}
-                </div>
+                <div class="flex gap-1" v-html="item" />
             </li>
         </ul>
     </div>
