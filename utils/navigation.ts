@@ -39,6 +39,14 @@ export const navigationLinks = [
         label: "Zážitkový předporodní kurz",
         link: "/kurzy-a-workshopy/zazitkovy-predporodni-kurz",
       },
+      {
+        label: "Fyzická příprava na porod",
+        link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
+      },
+      {
+        label: "Kurz posilování středu těla a pánevního dna",
+        link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
+      },
     ],
   },
   { label: "Události", link: "/events" },
@@ -82,6 +90,14 @@ export const footerLinks = [
       {
         label: "Zážitkový předporodní kurz",
         link: "/kurzy-a-workshopy/zazitkovy-predporodni-kurz",
+      },
+      {
+        label: "Fyzická příprava na porod",
+        link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
+      },
+      {
+        label: "Kurz posilování středu těla a pánevního dna",
+        link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
       },
     ],
   },

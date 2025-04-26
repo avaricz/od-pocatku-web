@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="flex flex-col px-8 pb-8">
-                <h3 class="flex items-center h-14">{{ card.title }}</h3>
+                <h3 class="flex w-full items-center h-14 justify-center text-center">{{ card.title }}</h3>
                 <ul class="flex flex-col gap-2 text-gray-700">
                     <li 
                         v-for="item in card.description"
