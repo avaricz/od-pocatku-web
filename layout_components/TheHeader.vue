@@ -67,7 +67,6 @@
 
 <script setup lang="ts">
 import { navigationLinks, socialLinks } from '@/utils/navigation'
-import TheLogo from '~/components/TheLogo.vue';
 const isMenuOpen = ref(false)
 
 function openMenu () {

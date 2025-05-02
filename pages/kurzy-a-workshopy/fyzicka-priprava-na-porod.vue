@@ -2,7 +2,7 @@
     <HeaderContainerRounded 
         bg-image="/img/9320_org.jpg" 
         title="Fyzická příprava na porod"
-        description="Nabízím několik typů předporodních kurzů, ze kterých si můžeš vybrat. Aktuální termíny kurzů najdeš v událostech."
+        description="Workshop pro ženy ve II. trimestru, který dokonale připraví na porod po fyzické stránce."
         overlay
     >
       <template #button>
@@ -113,24 +113,6 @@ const cards = [
       "nepřirozenému těžišti těla",
       "nepřiměřenému zatěžování kloubů",
       "povolování či přetěžování určitých svalových skupin"
-    ]
-  },
-  {
-    title: "Kojení a šestinedělí",
-    description: [
-      "jak dobře nastartovat kojení",
-      "jak podpořit samopřisátí miminka",
-      "vše o technice kojení",
-      "jak o sebe pečovat v šestinedělí"
-    ]
-  },
-  {
-    title: "O porodu a jeho potenciálu",
-    description: [
-      "porod jako přechodový rituál",
-      "role dítěte během porodu",
-      "nerodí se jen matka, ale i nová žena",
-      "jak z porodu vytěžit maximum pro svůj rozvoj"
     ]
   }
 ];

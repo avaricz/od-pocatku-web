@@ -59,7 +59,6 @@
 
             <p class="highlighted-text text-center">
               Kromě posilky bříška zařazujeme i cviky na <span>posílení zádových svalů a hýždí</span>. 
-              Nechybí <span>strečink</span> ani cviky na <span>mobilitu</span>.
             </p>
             <p class="highlighted-text text-center  ">
               Nechybí <span>strečink</span> ani cviky na <span>mobilitu</span>.
@@ -130,7 +129,7 @@
         <div class="flex flex-col items-center p-4 gap-4">
           <h2 class="text-center">Kurzy</h2>
           <p class="text-center">Kurzy probíhají v Kroměříži každou středu a čtvrtek.</p>
-          <p class="text-center">Aktuálně kurzy zaplněny - možno si rezervovat místo od září 2025</p>
+          <p class="text-center">Aktuálně kurzy zaplněny - možno si rezervovat místo od září 2025.</p>
         </div>
         <PricePanel 
           title="Standard"

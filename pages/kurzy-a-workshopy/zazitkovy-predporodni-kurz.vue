@@ -1,6 +1,6 @@
 <template>
   <HeaderContainerRounded bg-image="/img/9071_org.jpg" title="Zážitkový předporodní kurz"
-    description="Nabízím několik typů předporodních kurzů, ze kterých si můžeš vybrat. Aktuální termíny kurzů najdeš v událostech."
+    description="Kurz, kdy pro Tebe příprava na porod bude skutečným zážitkem."
     overlay>
     <template #button>
       <NuxtLink to="/events">

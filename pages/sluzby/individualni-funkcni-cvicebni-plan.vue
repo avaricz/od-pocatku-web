@@ -153,7 +153,7 @@ import SectionsContainer from '~/components/SectionsContainer.vue';
 const price = ref({
     title: "Standard",
     subtitle: "",
-    price: 800,
+    price: 600,
     priceLabel: "hodina",
     content: [
     ],
