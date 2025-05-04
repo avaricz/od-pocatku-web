@@ -1,109 +1,99 @@
-export const navigationLinks = [
-  { label: "Home", link: "/" },
-  { label: "O mně", link: "/about" },
+import { type ValidPaths } from "@/utils/validPaths";
+
+export interface NavigationLink {
+  label: string;
+  type: "link"
+  link: ValidPaths;
+  showInFooter: boolean;
+}
+
+export interface NavigationCategory {
+  label: string;
+  type: "category"
+  innerLinks?: NavigationLink[];
+  showInFooter: boolean;
+}
+
+export type NavigationItem = NavigationLink |  NavigationCategory;
+
+export const navigation: NavigationItem[] = [
+  { label: "Home", type: "link", link: "/", showInFooter: false},
+  { label: "O mně", type: "link", link: "/about", showInFooter: false },
   {
     label: "Služby",
-    link: "",
+    showInFooter: true,
+    type: "category",
     innerLinks: [
       {
         label: "Kompletní příprava na porod a péče v těhotenství",
+        type: "link",
         link: "/sluzby/kompletni-priprava-na-porod-a-pece-v-tehotenstvi",
+        showInFooter: true,
       },
       // { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
-
-      { label: "Péče v šestinedělí", link: "/sluzby/pece-v-sestinedeli" },
-      { label: "Laktační poradenství", link: "/sluzby/laktacni-poradenstvi" },
+      { label: "Péče v šestinedělí", type: "link", link: "/sluzby/pece-v-sestinedeli", showInFooter: true },
+      { label: "Laktační poradenství", type: "link", link: "/sluzby/laktacni-poradenstvi", showInFooter: true },
       {
         label: "Těhotenské a rebozo masáže",
         link: "/sluzby/tehotenske-a-rebozo-masaze",
+        type: "link",
+        showInFooter: true
       },
       {
         label: "Individuální funkční cvičební plán",
         link: "/sluzby/individualni-funkcni-cvicebni-plan",
+        type: "link",
+        showInFooter: true
       },
-      { label: "Bylinná napářka", link: "/sluzby/bylinna-naparka" },
-      { label: "Spinning babies", link: "/sluzby/spinning-babies" },
-      { label: "Zpracování placenty", link: "/sluzby/zpracovani-placenty" },
-      { label: "Rituály", link: "/sluzby/ritualy" },
+      { label: "Bylinná napářka", type: "link", link: "/sluzby/bylinna-naparka", showInFooter: true },
+      { label: "Spinning babies", type: "link", link: "/sluzby/spinning-babies", showInFooter: true },
+      { label: "Zpracování placenty", type: "link", link: "/sluzby/zpracovani-placenty", showInFooter: true },
+      { label: "Rituály", type: "link", link: "/sluzby/ritualy", showInFooter: true },
     ],
   },
   {
     label: "Kurzy a Workshopy",
-    link: "",
+    type: "category",
+    showInFooter: true,
     innerLinks: [
       {
         label: "Předporodní kurzy",
+        type: "link",
         link: "/kurzy-a-workshopy/predporodni-kurzy",
+        showInFooter: true
       },
       {
         label: "Zážitkový předporodní kurz",
+        type: "link",
         link: "/kurzy-a-workshopy/zazitkovy-predporodni-kurz",
+        showInFooter: true
       },
       {
         label: "Fyzická příprava na porod",
+        type: "link",
         link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
+        showInFooter: true
       },
       {
         label: "Kurz posilování středu těla a pánevního dna",
+        type: "link",
         link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
+        showInFooter: true
       },
     ],
   },
-  { label: "Události", link: "/events" },
+  { label: "Události", type: "link", link: "/events", showInFooter: false },
 ];
 
-export const footerLinks = [
-  {
-    label: "Služby",
-    link: "/sluzby",
-    innerLinks: [
-      {
-        label: "Kompletní příprava na porod a péče v těhotenství",
-        link: "/sluzby/kompletni-priprava-na-porod-a-pece-v-tehotenstvi",
-      },
-      // { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
 
-      { label: "Péče v šestinedělí", link: "/sluzby/pece-v-sestinedeli" },
-      { label: "Laktační poradenství", link: "/sluzby/laktacni-poradenstvi" },
-      {
-        label: "Těhotenské a rebozo masáže",
-        link: "/sluzby/tehotenske-a-rebozo-masaze",
-      },
-      {
-        label: "Individuální funkční cvičební plán",
-        link: "/sluzby/individualni-funkcni-cvicebni-plan",
-      },
-      { label: "Bylinná napářka", link: "/sluzby/bylinna-naparka" },
-      { label: "Spinning babies", link: "/sluzby/spinning-babies" },
-      { label: "Zpracování placenty", link: "/sluzby/zpracovani-placenty" },
-      { label: "Rituály", link: "/sluzby/ritualy" },
-    ],
-  },
-  {
-    label: "Kurzy a Workshopy",
-    link: "",
-    innerLinks: [
-      {
-        label: "Předporodní kurzy",
-        link: "/kurzy-a-workshopy/predporodni-kurzy",
-      },
-      {
-        label: "Zážitkový předporodní kurz",
-        link: "/kurzy-a-workshopy/zazitkovy-predporodni-kurz",
-      },
-      {
-        label: "Fyzická příprava na porod",
-        link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
-      },
-      {
-        label: "Kurz posilování středu těla a pánevního dna",
-        link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
-      },
-    ],
-  },
-];
+export interface SocialLink {
+  link: string;
+  icon: string;
+  label?: string;
+}
+export type SocialLinks = Record<string, SocialLink>;
 
-export const socialLinks = {
+export const socialLinks: SocialLinks = {
   mail: {
     label: "lucieodpocatku@gmail.com",
     link: "mailto:lucieodpocatku@gmail.com",

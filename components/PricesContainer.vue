@@ -5,7 +5,7 @@
 
 
             <PricePanel :title="panel.title" :subtitle="panel.subtitle" :price="panel.price"
-                :priceLabel="panel.priceLabel" :content="panel.content" :show-flower="panel.showFlower"
+                :priceLabel="panel.priceLabel" :content="panel.content" :show-flower="panel.showFlower" :list-title="panel.listTitle"
                 :btn-filled="panel.btnFilled" :link="panel.link" />
         </div>
     </div>

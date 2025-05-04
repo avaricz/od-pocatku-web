@@ -69,9 +69,9 @@
             <div class="flex flex-col max-w-[800px] items-center">
                 <h2>Nenechám Tě v tom!</h2>
                 <p class="text-center highlighted-text">
-                    Sama jsem tím vším prošla 3x. Proto jsem ti po celou dobu šestinedělí oporou a někým, na koho se
+                    <span>Sama</span> jsem tím vším prošla <span>3x</span>. Proto jsem ti <span>po celou dobu</span> šestinedělí oporou a někým, na koho se
                     můžeš
-                    kdykoliv obrátit.
+                    kdykoliv <span>obrátit</span>.
                 </p>
             </div>
             <NuxtLink :to="socialLinks.mail.link">

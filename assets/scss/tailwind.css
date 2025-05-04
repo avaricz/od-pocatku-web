@@ -68,5 +68,12 @@
     .flower-drop-shadow {
         filter: drop-shadow(2px 4px 6px var(--color-pink-700));
     }
+    .footer-category-bottom-border {
+        padding: 0 0 .5rem;
+        border-bottom: 2px solid;
+        border-image: linear-gradient(to right, var(--color-pink-700), var(--color-gray-950));
+        border-image-slice: 1;
+    }
 }
+
   

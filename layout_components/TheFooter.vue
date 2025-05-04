@@ -1,34 +1,48 @@
 <template>
-    <footer>
-        <div class="footer-container">
-            <div class="links">
+    <footer class="flex items-center justify-center bg-gray-950 text-gray-50 mt-auto">
+        <div class="flex flex-col gap-20 mx-auto py-24 px-8 max-w-[1280px] justify-evenly md:flex-row">
+            <div class="flex flex-col md:flex-row gap-20">
 
-                <div v-for="area in footerLinks" class="area-wrapper">
-                    <div class="title">
-                        <span>{{ area.label }}</span>
+                <div
+                    v-for="item in footerNavigation"
+                    :key="item.label"
+                    class="flex flex-col gap-8"
+                >
+
+                    <div
+                        v-if="item.type === 'category'"
+                        class="footer-category-bottom-border text-[1.1rem] font-semibold"
+                    >
+                        <span>{{ item.label }}</span>
                     </div>
-                    <ul class="list">
-                        <li v-for="link in area.innerLinks">
-                            <NuxtLink :to="link.link">
+                    <ul
+                        v-if="item.type === 'category'"
+                        class="flex flex-col gap-4 text-[.9rem]"
+                    >
+                        <li v-for="link in item.innerLinks">
+                            <NuxtLink :to="link.link" class="text-gray-300 hover:text-gray-50">
                                 {{ link.label }}
 
                             </NuxtLink>
                         </li>
                     </ul>
+
                 </div>
             </div>
 
-            <div class="contacts-wrapper">
-
-                <div class="area-wrapper">
-                    <div class="title">
+<!--Kontakt-->
+            <div class="flex flex-col gap-12">
+                <div class="flex flex-col gap-8">
+                    <div class="footer-category-bottom-border text-[1.1rem] font-semibold">
                         <span>Kontakt</span>
                     </div>
 
-                    <div class="contact">
-                        <h3 class="text-gray-50">Lucie Machalová</h3>
-                        <h5>Dula pro Kroměříž a okolí</h5>
-                        <NuxtLink :to="socialLinks.mail.link" class="mail">
+                    <div class="flex flex-col items-start gap-2">
+                        <h3 class="text-[1.4rem] whitespace-nowrap text-gray-50">Lucie Machalová</h3>
+                        <h5 class="font-medium whitespace-nowrap">Dula pro Kroměříž a okolí</h5>
+                        <NuxtLink
+                            :to="socialLinks.mail.link"
+                            class="flex items-center justify-center gap-4 text-gray-50 mt-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z" />
@@ -37,14 +51,14 @@
                         </NuxtLink>
                     </div>
                 </div>
-
-                <div class="area-wrapper">
-                    <div class="title">
+<!--Sleduj na-->
+                <div class="flex flex-col gap-8">
+                    <div class="footer-category-bottom-border p-8 text-[1.1rem] font-semibold">
                         <span>Sleduj na</span>
                     </div>
 
-                    <div class="follow">
-                        <NuxtLink :to="socialLinks.facebook.link" target="_blank">
+                    <div class="flex gap-4">
+                        <NuxtLink :to="socialLinks.facebook.link" target="_blank" class="cursor-pointer text-gray-50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
                                 <path fill="currentColor"
                                     d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256" />
@@ -64,113 +78,6 @@
 </template>
 
 <script setup>
-import { footerLinks, socialLinks } from '#imports';
-
+import { navigation, socialLinks } from '#imports';
+const footerNavigation = computed(() => navigation.filter((item) => item.showInFooter))
 </script>
-
-<style lang="scss" scoped>
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $black-dr;
-    color: $white;
-    margin-top: auto;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    margin: 0 auto;
-    padding: 6rem 2rem;
-    max-width: $large-screen;
-    justify-content: space-evenly;
-    @media (min-width:$small-screen) {
-        flex-direction: row;
-    }
-
-    .links {
-        display: flex;
-        flex-direction: column;
-        gap: 5rem;
-        @media (min-width: $small-screen) {
-            flex-direction: row;
-        }
-    }
-
-    .contacts-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        .contact {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            gap: .5rem;
-            
-            
-            h3 {
-                font-size: 1.4rem;
-                white-space: nowrap;
-            }
-            
-            h5 {
-                font-size: 1.0rem;
-                font-weight: 500;
-                white-space: nowrap;
-            }
-            
-            .mail {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 1rem;
-                color: $white;
-                margin-top: 1rem;
-            }
-        }
-        .follow {
-            display: flex;
-            gap: 1rem;
-            svg {
-                color: $white;
-                height: 32px;
-                width: 32px;
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-.area-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    .title {
-        padding: 0rem 0rem .5rem;
-        border-bottom: 2px solid;
-        border-image: linear-gradient(to right, $pink-dr, $black-dr);
-        border-image-slice: 1;
-
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-
-    .list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        font-size: .9rem;
-
-        a {
-            color: $gray;
-            &:hover {
-                color: $white;
-            }
-        }
-    }
-
-}
-</style>

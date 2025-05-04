@@ -51,7 +51,7 @@
                     <p class="highlighted-text text-center">
                         Pro napářku využívám <span>bylinné směsi</span>, které sama připravuji. Namíchat Ti můžu i
                         libovolné
-                        množství dávek do zásob.
+                        množství dávek <span>do zásob</span>.
                     </p>
                 </div>
                 <NuxtLink :to="socialLinks.mail.link">

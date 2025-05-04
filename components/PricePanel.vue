@@ -29,7 +29,7 @@
         </div>
 
         <div>{{ listTitle }}</div>
-        <ul class="content flex flex-col w-full gap=[.7rem] text-[.9rem] font-[300] p-0">
+        <ul class="content flex flex-col w-full text-center gap=[.7rem] text-[.9rem] font-[300] p-0">
             <li v-for="(item, index) in content" :key="index" v-html="item">
             </li>
         </ul>

@@ -143,23 +143,50 @@
         </div>
     </SectionsContainer>
     <SectionsContainer>
-        <PricePanel :title="price.title" :subtitle="price.subtitle" :price="price.price" :priceLabel="price.priceLabel"
-            :content="price.content" :show-flower="price.showFlower" :btn-filled="price.btnFilled" />
+        <PricesContainer :panels="prices" />
+        <!-- <PricePanel :title="price.title" :subtitle="price.subtitle" :price="price.price" :priceLabel="price.priceLabel"
+            :content="price.content" :show-flower="price.showFlower" :btn-filled="price.btnFilled" /> -->
     </SectionsContainer>
 </template>
 
 <script setup>
 import SectionsContainer from '~/components/SectionsContainer.vue';
-const price = ref({
-    title: "Standard",
-    subtitle: "",
-    price: 600,
-    priceLabel: "hodina",
-    content: [
-    ],
-    showFlower: true,
-    btnFilled: true
-})
+const prices = ref([
+    {
+        title: "1 Lekce",
+        subtitle: "Standard",
+        price: 600,
+        priceLabel: "",
+        listTitle: "Získáš",
+        content: ["Diagnostika","1 hodina cvičení"
+        ],
+        showFlower: true,
+        btnFilled: true
+    },
+    {
+        title: "5 Lekcí",
+        subtitle: "15% sleva",
+        price: 2550,
+        priceLabel: "",
+        listTitle: "Získáš",
+        content: ["Diagnostika","5 hodin cvičení", "Plán, jak na sobě dále pracovat", "Typy na lepší stravovací návyky"
+        ],
+        showFlower: true,
+        btnFilled: true,
+        highlight: true,
+    },
+    {
+        title: "3 Lekce",
+        subtitle: "10% sleva",
+        price: 1620,
+        priceLabel: "",
+        listTitle: "Získáš",
+        content: ["Diagnostika","5 hodin cvičení", "Plán, jak na sobě dále pracovat", 
+        ],
+        showFlower: true,
+        btnFilled: true
+    },
+])
 
 const cardsContent = ref([
     {
