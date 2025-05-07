@@ -27,31 +27,6 @@ function openMenu () {
 </script>
 
 <style scoped>
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.3s ease;
-}
-
-.slide-fade-enter-from {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-.slide-fade-enter-to {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-fade-leave-from {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-fade-leave-to {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
 .slide-down-enter-active,
 .slide-down-leave-active {
   transition: all 0.3s ease;
@@ -76,5 +51,4 @@ function openMenu () {
   opacity: 1;
   transform: translateY(-100%);
 }
-
 </style>

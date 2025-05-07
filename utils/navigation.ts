@@ -2,22 +2,22 @@ import { type ValidPaths } from "@/utils/validPaths";
 
 export interface NavigationLink {
   label: string;
-  type: "link"
+  type: "link";
   link: ValidPaths;
   showInFooter: boolean;
 }
 
 export interface NavigationCategory {
   label: string;
-  type: "category"
+  type: "category";
   innerLinks?: NavigationLink[];
   showInFooter: boolean;
 }
 
-export type NavigationItem = NavigationLink |  NavigationCategory;
+export type NavigationItem = NavigationLink | NavigationCategory;
 
 export const navigation: NavigationItem[] = [
-  { label: "Home", type: "link", link: "/", showInFooter: false},
+  { label: "Home", type: "link", link: "/", showInFooter: false },
   { label: "O mně", type: "link", link: "/about", showInFooter: false },
   {
     label: "Služby",
@@ -31,24 +31,54 @@ export const navigation: NavigationItem[] = [
         showInFooter: true,
       },
       // { label: '* Doprovod k císařskému řezu', link: '/sluzby/doprovod-k-cisarskemu-rezu' },
-      { label: "Péče v šestinedělí", type: "link", link: "/sluzby/pece-v-sestinedeli", showInFooter: true },
-      { label: "Laktační poradenství", type: "link", link: "/sluzby/laktacni-poradenstvi", showInFooter: true },
+      {
+        label: "Péče v šestinedělí",
+        type: "link",
+        link: "/sluzby/pece-v-sestinedeli",
+        showInFooter: true,
+      },
+      {
+        label: "Laktační poradenství",
+        type: "link",
+        link: "/sluzby/laktacni-poradenstvi",
+        showInFooter: true,
+      },
       {
         label: "Těhotenské a rebozo masáže",
         link: "/sluzby/tehotenske-a-rebozo-masaze",
         type: "link",
-        showInFooter: true
+        showInFooter: true,
       },
       {
-        label: "Individuální funkční cvičební plán",
-        link: "/sluzby/individualni-funkcni-cvicebni-plan",
+        label: "Individuální funkční trénink",
+        link: "/sluzby/individualni-funkcni-trenink",
         type: "link",
-        showInFooter: true
+        showInFooter: true,
       },
-      { label: "Bylinná napářka", type: "link", link: "/sluzby/bylinna-naparka", showInFooter: true },
-      { label: "Spinning babies", type: "link", link: "/sluzby/spinning-babies", showInFooter: true },
-      { label: "Zpracování placenty", type: "link", link: "/sluzby/zpracovani-placenty", showInFooter: true },
-      { label: "Rituály", type: "link", link: "/sluzby/ritualy", showInFooter: true },
+      {
+        label: "Bylinná napářka",
+        type: "link",
+        link: "/sluzby/bylinna-naparka",
+        showInFooter: true,
+      },
+      {
+        label: "Spinning babies",
+        type: "link",
+        link: "/sluzby/spinning-babies",
+        showInFooter: true,
+      },
+      {
+        label: "Zpracování placenty",
+        type: "link",
+        link: "/sluzby/zpracovani-placenty",
+        showInFooter: true,
+      },
+      {
+        label: "Rituály",
+        type: "link",
+        link: "/sluzby/ritualy",
+        showInFooter: true,
+      },
     ],
   },
   {
@@ -60,31 +90,30 @@ export const navigation: NavigationItem[] = [
         label: "Předporodní kurzy",
         type: "link",
         link: "/kurzy-a-workshopy/predporodni-kurzy",
-        showInFooter: true
+        showInFooter: true,
       },
       {
         label: "Zážitkový předporodní kurz",
         type: "link",
         link: "/kurzy-a-workshopy/zazitkovy-predporodni-kurz",
-        showInFooter: true
+        showInFooter: true,
       },
       {
         label: "Fyzická příprava na porod",
         type: "link",
         link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
-        showInFooter: true
+        showInFooter: true,
       },
       {
         label: "Kurz posilování středu těla a pánevního dna",
         type: "link",
         link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
-        showInFooter: true
+        showInFooter: true,
       },
     ],
   },
   { label: "Události", type: "link", link: "/events", showInFooter: false },
 ];
-
 
 export interface SocialLink {
   link: string;

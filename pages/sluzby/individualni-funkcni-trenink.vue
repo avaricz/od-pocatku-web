@@ -1,11 +1,9 @@
 <template>
-    <HeaderContainerRounded title="Individuální funkční cvičební plán"
+    <HeaderContainerRounded title="Individuální funkční trénink"
         description="Každá žena by měla znát své tělo a umět s ním pracovat. Naučím Tě, jak ho posílit, stabilizovat a vnímat, aby ses v něm cítila skvěle každý den."
         bg-image="/img/9297_org_thin_transparent.png" overlay>
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <TheButton :link="socialLinks.mail.link" label="Napiš mi" icon="fa:envelope-o" pulse />
         </template>
     </HeaderContainerRounded>
     <SectionsContainer>
@@ -151,6 +149,7 @@
 
 <script setup>
 import SectionsContainer from '~/components/SectionsContainer.vue';
+
 const prices = ref([
     {
         title: "1 Lekce",
@@ -158,7 +157,9 @@ const prices = ref([
         price: 600,
         priceLabel: "",
         listTitle: "Získáš",
-        content: ["Diagnostika","1 hodina cvičení"
+        content: [
+            "Vstupní diagnostika",
+            "1 hodina společného cvičení"
         ],
         showFlower: true,
         btnFilled: true
@@ -169,7 +170,11 @@ const prices = ref([
         price: 2550,
         priceLabel: "",
         listTitle: "Získáš",
-        content: ["Diagnostika","5 hodin cvičení", "Plán, jak na sobě dále pracovat", "Typy na lepší stravovací návyky"
+        content: [
+            "Vstupní diagnostika",
+            "5 hodin cvičení",
+            "Sestavení tréninkového plánu",
+            "Průběžné konzultace a motivace"
         ],
         showFlower: true,
         btnFilled: true,
@@ -181,7 +186,10 @@ const prices = ref([
         price: 1620,
         priceLabel: "",
         listTitle: "Získáš",
-        content: ["Diagnostika","5 hodin cvičení", "Plán, jak na sobě dále pracovat", 
+        content: [
+            "Vstupní diagnostika",
+            "3 hodiny společného cvičení",
+            "Sestavení tréninkového plánu",
         ],
         showFlower: true,
         btnFilled: true
