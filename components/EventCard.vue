@@ -2,17 +2,10 @@
     <div class="card-container">
         <div class="wrapper">
             <div class="img-wrapper">
-                <NuxtImg 
-                    src="/img/9103_org.jpg" 
-                    alt="" 
-                    densities="1x"
-                    sizes="sm:400px"
-                    format="webp"
-                    quality="100"
-                 />
+                <NuxtImg src="/img/9103_org.jpg" alt="" densities="1x" sizes="sm:400px" format="webp" quality="100" />
                 <div class="date">
-                    <span class="day">{{ event?.date_start_day}}</span>
-                    <span class="month">{{ event?.date_start_month}}</span>
+                    <span class="day">{{ event?.date_start_day }}</span>
+                    <span class="month">{{ event?.date_start_month }}</span>
                 </div>
             </div>
             <div class="header">
@@ -22,15 +15,13 @@
                 <div class="content-wrapper">
 
                     <div class="time">
-                        <span>Čas</span><span>{{event?.time_start}} - {{ event?.time_end}}</span>
+                        <span>Čas</span><span>{{ event?.time_start }} - {{ event?.time_end }}</span>
                     </div>
                     <div class="place">
                         <span>Místo</span><span>{{ event.adress }}</span>
                     </div>
                 </div>
-                    <NuxtLink :to="`/events?eventId=${event.id}`">
-                        <TheButton label="Info" filled pulse/>
-                    </NuxtLink>
+                <DefaultButton :to="`/events?eventId=${event.id}`" label="Info" pulse />
             </div>
         </div>
     </div>
@@ -39,6 +30,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { EventModel } from '~/models/EventModel';
+import DefaultButton from './buttons/DefaultButton.vue';
 
 defineProps({
     event: {
@@ -56,11 +48,11 @@ defineProps({
     flex-direction: column;
     height: 400px;
     width: 300px;
-    
+
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
-    overflow:hidden;
+    overflow: hidden;
 
     .wrapper {
         position: relative;
@@ -71,14 +63,16 @@ defineProps({
 
     .img-wrapper {
         background-color: $pink-dr;
-        
+
         height: 300px;
         transition: all .5s ease-in-out;
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .date {
             display: flex;
             flex-direction: column;
@@ -94,11 +88,13 @@ defineProps({
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
             overflow: hidden;
+
             .day {
                 text-align: center;
                 font-size: 3rem;
                 line-height: 1;
             }
+
             .month {
                 text-align: center;
                 background-color: $black-dr;
@@ -107,7 +103,7 @@ defineProps({
 
         }
     }
-    
+
     .header {
         height: 100px;
         background: $black-dr;
@@ -116,7 +112,7 @@ defineProps({
         justify-content: center;
         padding: 0 1rem;
         transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-        transform: translateY(0); 
+        transform: translateY(0);
 
         h4 {
             text-align: center;
@@ -130,11 +126,12 @@ defineProps({
         align-items: center;
         width: 100%;
         background: $gray-lt;
-        transform: translateY(0); 
+        transform: translateY(0);
         padding: 1rem;
         height: 300px;
         transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
         justify-content: space-between;
+
         .content-wrapper {
             div {
                 display: flex;
@@ -143,15 +140,18 @@ defineProps({
                 text-align: center;
                 padding: 1rem;
                 gap: .5rem;
+
                 :first-child {
                     font-weight: bold;
                 }
             }
+
             div:first-child {
                 border-bottom: 2px dotted $gray;
             }
         }
-            .button {
+
+        .button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,16 +162,20 @@ defineProps({
         }
     }
 
-    &:hover,:active{
-        .img-wrapper{
+    &:hover,
+    :active {
+        .img-wrapper {
             transform: translateY(-300px);
         }
+
         .header {
             transform: translateY(-300px);
         }
+
         .date {
             transform: translateY(-100%);
         }
+
         .content {
             transform: translateY(-300px);
         }

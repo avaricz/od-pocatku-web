@@ -3,9 +3,7 @@
         description="Pro nastávající maminky. Úleva, relaxace i propojení s miminkem. Dopřej si zaslouženou péči a harmonii těla i mysli."
         bg-image="/img/9400_org_transparent.png">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Těhotenské a rebozo masáže'" />
         </template>
     </HeaderContainerRounded>
 
@@ -42,9 +40,7 @@
                 </p>
 
             </div>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Těhotenské a rebozo masáže'" />
             <div class="flex flex-col lg:flex-row gap-8 ">
                 <div class="flex rounded-xl overflow-hidden max-h-[400px] max-w-[400px] lg:max-w-none">
                     <NuxtImg src="/img/29_org.jpeg" class="w-full object-cover object-center" alt="" densities="1x"
@@ -70,6 +66,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 
 const price = ref({
     title: "Standard",

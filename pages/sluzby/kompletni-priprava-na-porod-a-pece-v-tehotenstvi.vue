@@ -3,9 +3,7 @@
         title="Kompletní příprava na porod a péče v těhotenství"
         description="Kompletní příprava na porod, která zahrnuje vše, co potřebuješ k tomu, abys byla na porod připravená nejen fyzicky, ale i psychicky.">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Kompletní příprava na porod a péče v těhotenství'" />
         </template>
     </HeaderContainerRounded>
 
@@ -36,7 +34,7 @@
     </SectionsContainer>
 
     <SectionsContainer bg-color="bg-pink-100">
-        <div class="flex w-full w-full flex-col items-center justify-center gap-16">
+        <div class="flex w-full flex-col items-center justify-center gap-16">
             <div class="flex flex-col items-center">
                 <h2>Co získáš</h2>
                 <p class="max-w-[800px] text-center">Výhoda individuálních konzultací je, že sestavíme jejich náplň
@@ -54,9 +52,7 @@
             </div>
             <div class="flex flex-1 max-w-[600px] flex-col items-center justify-center md:p-4 gap-12">
                 <InfoList title="Dále nabízím" :content="infoList" :icon="'flower'" />
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton :subject="'Kompletní příprava na porod a péče v těhotenství'" />
             </div>
         </div>
 
@@ -69,6 +65,7 @@
 
 <script setup>
 import { socialLinks } from '#imports'
+import MailButton from '~/components/buttons/MailButton.vue'
 
 const cardsContent = ref([
     {

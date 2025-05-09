@@ -1,30 +1,21 @@
 <template>
     <SectionsContainer background-color="gray-lt">
         <div class="flex flex-1 gap-8 px-2 w-full">
-            <EventDetail v-if="events.length" :event="events[0]"/>
-            <NoEvents v-else/>
+            <EventDetail v-if="events.length" :event="events[0]" />
+            <NoEvents v-else />
 
         </div>
     </SectionsContainer>
-    <SectionsContainer 
-        v-if="events.length" 
-        background-color="white"
-    >
+    <SectionsContainer v-if="events.length" background-color="white">
         <div class="flex flex-1 flex-col gap-8 px-2 w-full">
-            <EventViewSwitcher 
-            v-for="(event, index) in events.slice(1)"
-            :key="event.id"
-            :event
-            :is-detail-open="eventsViewType[index+1]"
-            @click="toggleEventDetail(index +1)"
-            :id="`event-${event.id}`"
-            />
+            <EventViewSwitcher v-for="(event, index) in events.slice(1)" :key="event.id" :event
+                :is-detail-open="eventsViewType[index + 1]" @click="toggleEventDetail(index + 1)"
+                :id="`event-${event.id}`" />
         </div>
     </SectionsContainer>
 </template>
 
 <script setup lang="ts">
-import type { Event } from '~/types/types';
 import { EventModel } from '~/models/EventModel';
 import { useRoute } from 'vue-router';
 import rawEvents from '@/data/events.json'
@@ -34,9 +25,9 @@ const route = useRoute();
 const events = computed(() => {
     const filteredEvents = rawEvents.filter(event => {
         const now = new Date()
-        const eventEnd = new Date(event.date_end )
+        const eventEnd = new Date(event.date_end)
         return eventEnd > now
-        
+
     }).map(event => new EventModel(event))
 
     return filteredEvents
@@ -52,7 +43,7 @@ const toggleEventDetail = (index: number) => {
 
 const openEventById = (eventId: string | null) => {
     if (!eventId) return;
-
+    console.log('test', eventId)
     const eventIndex = events.value.findIndex(event => event.id === Number(eventId));
     if (eventIndex !== -1) {
         eventsViewType.value[eventIndex] = true;
@@ -77,8 +68,10 @@ const openEventById = (eventId: string | null) => {
 //     }
 // };
 
-onMounted(async()=>{
-//   await fetchEvents()
-    openEventById(route.query.eventId as string);
-})
+onMounted(() => {
+    //   await fetchEvents()
+    setTimeout(() => {
+        openEventById(route.query.eventId as string);
+    }, 100);
+});
 </script>

@@ -3,9 +3,7 @@
         description="Pro pohodlné a úspěšné kojení. Správné přikládání, řešení problémů i podpora v každé situaci."
         :bg-image="'/img/20_org_transparent.png'">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Laktační poradenství'" />
         </template>
     </HeaderContainerRounded>
 
@@ -45,9 +43,7 @@
                 </p>
 
             </div>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Laktační poradenství'" />
             <CardsPanel :data="cardsContent" />
         </div>
     </SectionsContainer>
@@ -61,6 +57,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 const price = ref({
     title: "Standard",
     subtitle: "",

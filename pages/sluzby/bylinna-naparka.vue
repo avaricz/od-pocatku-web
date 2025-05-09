@@ -3,9 +3,7 @@
         description="Uvolnění, hojení, regenerace – síla bylin v péči o ženské tělo."
         bg-image="/img/9480_org_transparent.png">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton subject="Bylinná napářka" />
         </template>
     </HeaderContainerRounded>
 
@@ -22,9 +20,7 @@
                     <span>hojení</span>.
                 </p>
             </div>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton subject="Bylinná napářka" />
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="flex rounded-xl overflow-hidden">
                     <NuxtImg src="/img/9480_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
@@ -54,9 +50,7 @@
                         množství dávek <span>do zásob</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Bylinná napářka" />
             </div>
         </div>
     </SectionsContainer>
@@ -79,7 +73,7 @@
                 <NuxtImg src="/img/9103_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
                     sizes="sm:100vw " format="webp" quality="90" />
             </div>
-            <InfoList :content="recipe.steps" :title="recipe.title"/>
+            <InfoList :content="recipe.steps" :title="recipe.title" />
         </div>
     </SectionsContainer>
     <SectionsContainer bg-color="bg-pink-100">
@@ -106,6 +100,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 
 const price = ref({
     title: "Standard",

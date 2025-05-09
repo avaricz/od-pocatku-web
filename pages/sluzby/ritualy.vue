@@ -3,9 +3,7 @@
         description="Přechodové rituály pro přijetí a prožití důležitých životních momentů s respektem a péčí."
         bg-image="/img/9483_org_transparent.png">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton subject="Rituály" />
         </template>
     </HeaderContainerRounded>
 
@@ -28,9 +26,8 @@
                         proto připravuji nejen předporodní rituály, ale i soukromý rituál pro pomoc při ztrátě.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Rituály" />
+
             </div>
         </div>
     </SectionsContainer>
@@ -62,9 +59,8 @@
                         <span>aspektech</span> a ke všemu, co nás v něm <span>potkává</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Rituály" />
+
             </div>
 
 
@@ -98,9 +94,7 @@
                         <span>skupinu</span> lidí, je možno je <span>darovat</span> blízké osobě.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Rituály" />
             </div>
         </div>
     </SectionsContainer>
@@ -113,6 +107,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 const price = ref({
     title: "Rituál",
     subtitle: "",

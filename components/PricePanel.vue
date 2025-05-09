@@ -16,16 +16,15 @@
             </div>
 
             <div v-if="additionalPrice">
-                <span v-if="additionalPrice && additionalPriceLabel"
-                    class="text-[0.8rem]">{{ additionalPriceLabel }}</span>
+                <span v-if="additionalPrice && additionalPriceLabel" class="text-[0.8rem]">{{ additionalPriceLabel
+                }}</span>
                 <div>
                     <span class="text-[2.5rem] font-extrabold text-gray-700 leading-none">{{ additionalPrice }}</span>
                     <span class="text-[0.8rem]">Kč</span>
 
                 </div>
             </div>
-
-            <TheButton :label="'Napiš mi'" pulse icon="fa:envelope-o" :link="link" />
+            <MailButton :subject="title + ' - ' + price" />
         </div>
 
         <div>{{ listTitle }}</div>
@@ -37,6 +36,8 @@
 </template>
 
 <script setup>
+import MailButton from './buttons/MailButton.vue';
+
 defineProps({
     title: String,
     subtitle: String,

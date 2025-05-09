@@ -3,9 +3,7 @@
         description="Pomohu Ti jemnými technikami usnadnit správné otočení miminka a připravit se na hladší porod."
         bg-image="/img/9175_org_transparent.png">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton subject="Spinning babies" />
         </template>
     </HeaderContainerRounded>
     <SectionsContainer>
@@ -25,9 +23,7 @@
                         <span>zaujalo v děloze správné postavení</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Spinning babies" />
             </div>
 
             <div class="flex flex-col lg:flex-row gap-8 ">
@@ -59,9 +55,7 @@
                         100% úspěšnost, ale <span>vždy dělám maximum. :)</span>
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Spinning babies" />
             </div>
             <div class="flex flex-1 items-center justify-center">
 
@@ -88,6 +82,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 const price = ref({
     title: "Standard",
     subtitle: "",

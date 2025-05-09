@@ -3,7 +3,7 @@
         description="Každá žena by měla znát své tělo a umět s ním pracovat. Naučím Tě, jak ho posílit, stabilizovat a vnímat, aby ses v něm cítila skvěle každý den."
         bg-image="/img/9297_org_thin_transparent.png" overlay>
         <template #button>
-            <TheButton :link="socialLinks.mail.link" label="Napiš mi" icon="fa:envelope-o" pulse />
+            <MailButton :subject="'Individuální funkční trénink'" />
         </template>
     </HeaderContainerRounded>
     <SectionsContainer>
@@ -17,9 +17,9 @@
                             těla</span> s komplexním zaměřením na celý <span>hluboký stabilizační systém</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton :subject="'Individuální funkční trénink'" />
+
+
             </div>
             <div class="flex flex-1 items-center justify-center">
                 <div class="flex rounded-full aspect-square max-w-[480px] overflow-hidden">
@@ -54,13 +54,8 @@
                     </p>
                 </div>
                 <div class="flex gap-8">
-
-                    <NuxtLink :to="socialLinks.mail.link">
-                        <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                    </NuxtLink>
-                    <NuxtLink to="/events">
-                        <TheButton label="Kurzy" icon="fa:calendar" pulse bordered />
-                    </NuxtLink>
+                    <MailButton :subject="'Individuální funkční trénink'" />
+                    <DefaultButton to="/events" label="Kurzy" icon="fa:calendar" pulse bordered />
                 </div>
 
             </div>
@@ -78,9 +73,8 @@
                     něm <span>dobře</span>.
                 </p>
             </div>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Individuální funkční trénink'" />
+
             <div class="flex flex-col md:flex-row gap-8 items-center">
                 <div
                     class="flex rounded-full overflow-hidden max-h-[320px] lg:max-h-[380px] max-w-[400px] lg:max-w-none">
@@ -124,9 +118,8 @@
                         kterého budeme postupně upravovat <span>cvičební plán</span> přesně na míru, aby pro Tebe mělo
                         cvičení co nejlepší <span>dlouhodobý efekt</span>.</p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton :subject="'Individuální funkční trénink'" />
+
             </div>
             <div class="flex flex-row gap-8">
                 <div class="flex rounded-xl overflow-hidden max-h-[400px]">
@@ -148,7 +141,8 @@
 </template>
 
 <script setup>
-import SectionsContainer from '~/components/SectionsContainer.vue';
+import DefaultButton from '~/components/buttons/DefaultButton.vue';
+import MailButton from '~/components/buttons/MailButton.vue';
 
 const prices = ref([
     {

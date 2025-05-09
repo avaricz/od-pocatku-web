@@ -3,9 +3,7 @@
         description="Jsem ti oporou bezprostředně po porodu, ať už v porodnici nebo u Tebe doma."
         bg-image="/img/7_org_transparent.png" btn-label="Napiš mi" :btn-link="socialLinks.mail.link">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton :subject="'Péče v šestinedělí'" />
         </template>
     </HeaderContainerRounded>
 
@@ -40,9 +38,7 @@
                         sebe <span>pečovat</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" filled pulse />
-                </NuxtLink>
+                <MailButton :subject="'Péče v šestinedělí'" />
             </div>
         </div>
     </SectionsContainer>
@@ -69,14 +65,13 @@
             <div class="flex flex-col max-w-[800px] items-center">
                 <h2>Nenechám Tě v tom!</h2>
                 <p class="text-center highlighted-text">
-                    <span>Sama</span> jsem tím vším prošla <span>3x</span>. Proto jsem ti <span>po celou dobu</span> šestinedělí oporou a někým, na koho se
+                    <span>Sama</span> jsem tím vším prošla <span>3x</span>. Proto jsem ti <span>po celou dobu</span>
+                    šestinedělí oporou a někým, na koho se
                     můžeš
                     kdykoliv <span>obrátit</span>.
                 </p>
             </div>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" filled pulse />
-            </NuxtLink>
+            <MailButton :subject="'Péče v šestinedělí'" />
             <div class="flex flex-col lg:flex-row max-w-[400px] lg:max-w-none lg:max-h-[400px] gap-4">
                 <div class="flex rounded-xl overflow-hidden " v-for="img in images2">
                     <NuxtImg :src="img.src" class="w-full object-cover object-center" alt="" densities="1x"
@@ -93,6 +88,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue'
+
 
 const price = ref({
     title: "Standard",

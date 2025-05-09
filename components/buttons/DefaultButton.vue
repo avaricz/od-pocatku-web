@@ -17,64 +17,38 @@
             <Icon v-if="icon" :name="icon" size="15px" />
             <span>{{ label }}</span>
         </component>
-        <!-- <a v-if="link" :href="link"
-            class="
-                flex items-center justify-center 
-                px-8 py-2
-                gap-2
-                rounded-xl
-                transition-all duration-300 linear
-                cursor-pointer
-                border-2 border-pink-700
-                bg-pink-700
-                text-gray-50 text-md font-semibold
-                "
-            :class="{
-                'neon-pulse': pulse,
-                'bg-transparent text-pink-700': bordered
-                }" 
-            @click.stop=""
-        >
-                <Icon v-if="icon" :name="icon" size="15px"/>
-                <span >{{ label }}</span>
-        </a>
-        <button v-else
-            class="
-                flex items-center justify-center 
-                px-8 py-2
-                gap-2
-                rounded-xl
-                transition-all duration-300 linear
-                cursor-pointer
-                border-2 border-pink-700
-                bg-pink-700
-                text-gray-50 text-md font-semibold
-                "
-            :class="{
-                'neon-pulse': pulse,
-                'bg-transparent text-pink-700': bordered
-                }" 
-            @click.stop=""
-        >
-                <Icon v-if="icon" :name="icon" size="15px"/>
-                <span >{{ label }}</span>
-        </button> -->
     </div>
 </template>
 
 <script setup lang="ts">
 import { Icon, NuxtLink } from '#components';
 
-const props = defineProps<{
-    to?: string,
-    href?: string,
-    label: string,
-    icon?: string,
-    pulse?: boolean,
-    bordered?: boolean,
-}>()
+type BaseProps = {
+    label: string
+    icon?: string
+    pulse?: boolean
+    bordered?: boolean
+}
 
-const componentType = computed(() => {
+type NuxtLinkProps = BaseProps & {
+    to: string
+    href?: never
+}
+
+type AnchorProps = BaseProps & {
+    href: string
+    subject?: string
+    to?: never
+}
+
+type ButtonProps = BaseProps & {
+    to?: never
+    href?: never
+}
+
+const props = defineProps<NuxtLinkProps | AnchorProps | ButtonProps>()
+
+const componentType = computed<'a' | 'button' | typeof NuxtLink>(() => {
     if (props.to) return NuxtLink
     if (props.href) return 'a'
     return 'button'

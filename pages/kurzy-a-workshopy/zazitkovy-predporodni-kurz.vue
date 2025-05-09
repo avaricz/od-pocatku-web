@@ -1,11 +1,8 @@
 <template>
   <HeaderContainerRounded bg-image="/img/9071_org.jpg" title="Zážitkový předporodní kurz"
-    description="Kurz, kdy pro Tebe příprava na porod bude skutečným zážitkem."
-    overlay>
+    description="Kurz, kdy pro Tebe příprava na porod bude skutečným zážitkem." overlay>
     <template #button>
-      <NuxtLink to="/events">
-        <TheButton label="Kurzy" icon="fa:calendar" pulse />
-      </NuxtLink>
+      <CoursesButton />
     </template>
   </HeaderContainerRounded>
   <SectionsContainer bg-color="bg-gray-50">
@@ -21,7 +18,10 @@
               text-center lg:text-left">
         <h2>Víkendový kurz</h2>
         <p class="highlighted-text max-w-[800px]">
-          Víkendový kurz v <span>malém kruhu</span> maximálně 6 těhotných žen, který si opravdu užiješ. Během dvou dní získáš <span>veškeré informace</span>, které k porodu i k ranému mateřství potřebuješ. To vše obohaceno o <span>praktické pohybové lekce</span> a další workshopy. V příjemné <span>voňavé atmosféře</span> a intimním prostředí, kde je dostatečný prostor pro sdílení a řešení právě Tvých otázek.
+          Víkendový kurz v <span>malém kruhu</span> maximálně 6 těhotných žen, který si opravdu užiješ. Během dvou dní
+          získáš <span>veškeré informace</span>, které k porodu i k ranému mateřství potřebuješ. To vše obohaceno o
+          <span>praktické pohybové lekce</span> a další workshopy. V příjemné <span>voňavé atmosféře</span> a intimním
+          prostředí, kde je dostatečný prostor pro sdílení a řešení právě Tvých otázek.
         </p>
       </div>
     </div>
@@ -32,76 +32,53 @@
 
         <h2 class="text-center">Co Tě čeká</h2>
         <p class="text-center mb-12 max-w-[800px]">
-          Po tomto kurzu budeš odcházet <span>vyklidněná</span>, <span>motivovaná</span> a <span>natěšená na porod</span>, protože budeš skvěle <span>připravená</span> a budeš vědět, že pro Tebe může být skutečným <span>zážitkem</span>.
-      </p>
-      <NuxtLink to="/events">
-          <TheButton label="Kurzy" icon="fa:calendar" filled pulse />
-        </NuxtLink>
-    </div>
+          Po tomto kurzu budeš odcházet <span>vyklidněná</span>, <span>motivovaná</span> a <span>natěšená na
+            porod</span>,
+          protože budeš skvěle <span>připravená</span> a budeš vědět, že pro Tebe může být skutečným
+          <span>zážitkem</span>.
+        </p>
+        <CoursesButton />
+      </div>
 
-    <div class="flex flex-col lg:flex-row gap-8">
+      <div class="flex flex-col lg:flex-row gap-8">
         <div class="flex  rounded-xl overflow-hidden">
-            <NuxtImg src="/img/9218_org.jpg" 
-                class="w-full object-cover object-center"
-                alt=""
-                densities="1x"
-                sizes="sm:100vw "
-                format="webp"
-                quality="90"
-            />
+          <NuxtImg src="/img/9218_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
+            sizes="sm:100vw " format="webp" quality="90" />
         </div>
         <div class="flex  rounded-xl overflow-hidden">
-            <NuxtImg src="/img/9101_org.jpg" 
-                class="w-full object-cover object-center"
-                alt=""
-                densities="1x"
-                sizes="sm:100vw"
-                format="webp"
-                quality="90"
-            />
+          <NuxtImg src="/img/9101_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
+            sizes="sm:100vw" format="webp" quality="90" />
         </div>
       </div>
     </div>
   </SectionsContainer>
   <SectionsContainer>
     <div class="flex flex-1 flex-col-reverse lg:flex-row items-center gap-20 p-4">
-        <div class="flex flex-1  items-center justify-center ">
-            <div class="flex  max-w-[400px] rounded-xl overflow-hidden">
-                <NuxtImg src="/img/9148_org.jpg" 
-                class="w-full object-cover object-center"
-                alt=""
-                densities="1x"
-                sizes="sm:100vw "
-                format="webp"
-                quality="90"
-                />
-            </div>
+      <div class="flex flex-1  items-center justify-center ">
+        <div class="flex  max-w-[400px] rounded-xl overflow-hidden">
+          <NuxtImg src="/img/9148_org.jpg" class="w-full object-cover object-center" alt="" densities="1x"
+            sizes="sm:100vw " format="webp" quality="90" />
         </div>
-        <div class="flex flex-1 items-center flex-col gap-12">
-            <div class="flex flex-col max-w-[800px] items-center">
-                <h2>Dále tě čeká</h2>
-                
-                <SimpleList :content="list" />
-              </div>
-              <NuxtLink to="/events">
-                  <TheButton label="Kurzy" icon="fa:calendar" filled pulse/>
-              </NuxtLink>
+      </div>
+      <div class="flex flex-1 items-center flex-col gap-12">
+        <div class="flex flex-col max-w-[800px] items-center">
+          <h2>Dále tě čeká</h2>
+
+          <SimpleList :content="list" />
         </div>
+        <CoursesButton />
+      </div>
     </div>
   </SectionsContainer>
-  <SectionsContainer >
-    <PricePanel 
-      title="Standard"
-      price="4.900" 
-      show-flower
-      subtitle="Zážitkový předporodní kurz"
-      list-title="Odneseš si"
-      :content="content"
-    />
+  <SectionsContainer>
+    <PricePanel title="Standard" price="4.900" show-flower subtitle="Zážitkový předporodní kurz" list-title="Odneseš si"
+      :content="content" />
   </SectionsContainer>
 </template>
 
 <script setup>
+import CoursesButton from '~/components/buttons/CoursesButton.vue';
+
 /* const images = ref([
   { src: './img/9483_org.jpg' },
   { src: './img/9241_org.jpg' },

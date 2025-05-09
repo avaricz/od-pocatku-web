@@ -3,9 +3,7 @@
         description="Placentu ve formě kapslí či tinktury lze využít pro podporu regenerace, hormonální rovnováhy a zdroj energie po porodu."
         bg-image="/img/36_org_transparent.png">
         <template #button>
-            <NuxtLink :to="socialLinks.mail.link">
-                <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-            </NuxtLink>
+            <MailButton subject="Zpracování placenty" />
         </template>
     </HeaderContainerRounded>
 
@@ -25,9 +23,7 @@
                             látek pro hojení matky po porodu</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Zpracování placenty" />
             </div>
             <div class="flex flex-1 items-center justify-center">
 
@@ -57,9 +53,7 @@
                         Zpracovává se a užívá v pohodlné formě <span>kapslí</span> nebo <span>tinktury</span>.
                     </p>
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Zpracování placenty" />
             </div>
         </div>
     </SectionsContainer>
@@ -81,9 +75,7 @@
                     <h2 class="text-center">Jak to probíhá</h2>
                     <InfoList :content="recipe" />
                 </div>
-                <NuxtLink :to="socialLinks.mail.link">
-                    <TheButton label="Napiš mi" icon="fa:envelope-o" pulse />
-                </NuxtLink>
+                <MailButton subject="Zpracování placenty" />
             </div>
         </div>
     </SectionsContainer>
@@ -93,6 +85,8 @@
 </template>
 
 <script setup>
+import MailButton from '~/components/buttons/MailButton.vue';
+
 
 const pricePanels = ref([
     {
