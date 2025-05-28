@@ -79,6 +79,19 @@
       },
       {
         "id": 7,
+        "title": "Tajemství pánevního dna II",
+        "date_start": "2025-05-26 16:00:00",
+        "date_end": "2025-05-26 19:00:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "100,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Navazující workshop pro ženy, které absolvovaly kurz Tajemství pánevního dna I.</p><p>Co nás čeká:</p><br><ul class='list-disc pl-5'><li>pokročilé techniky cvičení přes tři vrstvy</li><li>navazující bioenergetické techniky</li><li>zaměření na segment krku a chodidel</li><li>povídání o inkontinenci - prevenci a řešení</li><li>úvod do cvičení hlubokého stabilizačního systému</li><li>relaxace a sdílení</li></ul>",
+        "reservation_link": "mailto:lucieodpocatku@gmail.com"
+      },
+      {
+        "id": 8,
         "title": "Porod a vše kolem něj",
         "date_start": "2025-05-30 15:30:00",
         "date_end": "2025-05-30 18:30:00",
@@ -89,5 +102,18 @@
         "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
         "description": "<p>Co tě na workshopu čeká:</p><br><ul class='list-disc pl-5'><li>vše o čtyřech dobách porodních</li><li>jak se na porod co nejvíc připravit po fyzické i mentální stránce</li><li>jak poznat začátek porodu a co dělat pro hladký start</li><li>jak k porodu zapojit partnera</li><li>úlevové techniky a nácvik dýchání i porodních poloh</li><li>vše o bondingu i porodu placenty</li><li>jak se zbavit strachu a úzkosti – jak s těmito emocemi pracovat</li><li>jak si porod užít tak, aby byl pro tebe nezapomenutelným zážitkem</li></ul>",
         "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-05-30;viewMode=7-days"
+      },
+      {
+        "id": 9,
+        "title": "Předporodní kurz: Šestinedělí, kojení a rané mateřství",
+        "date_start": "2025-06-20 15:30:00",
+        "date_end": "2025-06-20 18:30:00",
+        "adress": "Rodinné Centrum Klubíčko - Albertova 4062, Kroměříž",
+        "price": "250,-",
+        "image": null,
+        "map_image": "map_klubicko.png",
+        "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+        "description": "<p>Co tě na workshopu čeká:</p><br><ul class='list-disc pl-5'><li>vše o bondingu a samopřisátí</li><li>vše o správné technice kojení</li><li>jak řešit nejrůznější situace i jak jim předejít</li><li>jak o sebe pečovat v šestinedělí a jak se postarat o co nejlepší regeneraci těla po porodu</li><li>zpracování placenty</li><li>vše o pláči miminka - jak mu porozumět, a o 'setkání ženy s vlastním stínem'</li><li>jak začít mateřství tak, abys byla v co největší pohodě</li></ul>",
+        "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-06-20;viewMode=7-days"
       } 
 ]

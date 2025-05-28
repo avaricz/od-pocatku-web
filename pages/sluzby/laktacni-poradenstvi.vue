@@ -49,8 +49,7 @@
     </SectionsContainer>
 
     <SectionsContainer>
-        <PricePanel :title="price.title" :subtitle="price.subtitle" :price="price.price" :priceLabel="price.priceLabel"
-            :content="price.content" :show-flower="price.showFlower" :btn-filled="price.btnFilled" />
+        <PricesContainer :panels="prices" />
     </SectionsContainer>
 
 
@@ -59,16 +58,29 @@
 <script setup>
 import MailButton from '~/components/buttons/MailButton.vue';
 
-const price = ref({
-    title: "Standard",
-    subtitle: "",
-    price: 800,
-    priceLabel: "hodina",
-    content: [
-    ],
-    showFlower: true,
-    btnFilled: true
-})
+const prices = ref([
+    {
+        title: "Standard",
+        subtitle: "",
+        price: 800,
+        priceLabel: "hodina",
+        content: [
+        ],
+        showFlower: true,
+        btnFilled: true
+    },
+    {
+        title: "Zprávy",
+        subtitle: "",
+        price: 200,
+        priceLabel: "konzultace",
+        content: ['Jsem vám k dispozici i přes whatsapp či messenger.'
+        ],
+        showFlower: true,
+        btnFilled: true
+    }
+])
+
 const cardsContent = ref([
     {
         title: "SPRÁVNÁ TECHNIKA KOJENÍ",

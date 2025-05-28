@@ -27,12 +27,13 @@
   </SectionsContainer>
   <SectionsContainer bg-color="bg-gray-100">
     <div class="flex flex-col items-center p-4">
-      <h2 class="text-center">Příprava těla na porod a mateřství</h2>
-      <p class="text-center mb-24 max-w-[800px]">
-        Objev důležité principy péče o své tělo v těhotenství i po porodu. Nauč se, jak správně pracovat s hlubokým
-        stabilizačním systémem, pánevním dnem a dechem, jak připravit své tělo na porod a podpořit své zotavení v
-        šestinedělí. Díky cíleným cvičením a technikám předejdeš bolestem, získáš kondici, a vytvoříš pevný základ pro
-        mateřství.
+      <h2 class="text-center">Příprava těla na porod a další měsíce</h2>
+      <p class="text-center mb-24 max-w-[800px] highlighted-text">
+        Objev důležité <span>principy</span> péče o své tělo <span>v těhotenství</span> i <span>po porodu</span>. Nauč
+        se, jak správně pracovat s <span>hlubokým stabilizačním systémem</span>, <span>pánevním dnem</span> a
+        <span>dechem</span>, jak <span>připravit</span> své tělo na porod a podpořit své <span>zotavení</span> v
+        šestinedělí. Díky cíleným cvičením a technikám <span>předejdeš</span> bolestem, <span>získáš</span> kondici a
+        <span>vytvoříš</span> pevný základ pro své mateřství.
       </p>
       <CardsPanelSimple :content="cards" />
     </div>

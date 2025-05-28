@@ -135,8 +135,6 @@
     </SectionsContainer>
     <SectionsContainer>
         <PricesContainer :panels="prices" />
-        <!-- <PricePanel :title="price.title" :subtitle="price.subtitle" :price="price.price" :priceLabel="price.priceLabel"
-            :content="price.content" :show-flower="price.showFlower" :btn-filled="price.btnFilled" /> -->
     </SectionsContainer>
 </template>
 

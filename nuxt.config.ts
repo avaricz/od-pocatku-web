@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/flower.svg' }]
-    }
+      link: [{ rel: "icon", type: "image/x-icon", href: "/flower.svg" }],
+    },
   },
   image: {
     screens: {
@@ -13,42 +13,37 @@ export default defineNuxtConfig({
       md: 768,
       lg: 1024,
       xl: 1280,
-      '2xl': 1536
+      "2xl": 1536,
     },
-    format: ['webp'],
+    format: ["webp"],
     quality: 90,
     presets: {
       default: {
         modifiers: {
-          format: 'webp',
+          format: "webp",
           quality: 100,
         },
       },
     },
   },
-  css: [
-    '~/assets/scss/tailwind.css',
-    '~/assets/scss/main.scss'
-  ],
+  css: ["~/assets/scss/tailwind.css", "~/assets/scss/main.scss"],
   vite: {
-    plugins: [
-      tailwindcss()
-    ],
+    plugins: [tailwindcss()],
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "~/assets/scss/base.scss" as *;'
-        }
-      }
-    }
+          additionalData: '@use "~/assets/scss/base.scss" as *;',
+        },
+      },
+    },
   },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon'],
+  modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/icon"],
   nitro: {
     prerender: {
-      routes: ['/'],
-      ignore: ['/api/**', '/doprovod-k-cisarskemu-rezu']  
+      routes: ["/"],
+      ignore: ["/api/**", "/doprovod-k-cisarskemu-rezu"],
     },
     // experimental: {
     //   database: true,
@@ -62,12 +57,10 @@ export default defineNuxtConfig({
     // runtimeConfig: {
     //   databasePath: '.data/events-db.sqlite' // Nastav cestu k databázi
     // }
-    
   },
-//   runtimeConfig: {
-//     public: {
-//         apiBase: "/api", 
-//     }
-// }
-  
-})
+  //   runtimeConfig: {
+  //     public: {
+  //         apiBase: "/api",
+  //     }
+  // }
+});

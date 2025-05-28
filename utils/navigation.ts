@@ -73,12 +73,12 @@ export const navigation: NavigationItem[] = [
         link: "/sluzby/zpracovani-placenty",
         showInFooter: true,
       },
-      {
-        label: "Rituály",
-        type: "link",
-        link: "/sluzby/ritualy",
-        showInFooter: true,
-      },
+      // {
+      //   label: "Rituály",
+      //   type: "link",
+      //   link: "/sluzby/ritualy",
+      //   showInFooter: true,
+      // },
     ],
   },
   {
