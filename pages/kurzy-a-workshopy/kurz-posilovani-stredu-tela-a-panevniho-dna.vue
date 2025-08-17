@@ -94,12 +94,11 @@
     <div class="flex flex-col items-center p-4 gap-12">
       <div class="flex flex-col items-center p-4 gap-4">
         <h2 class="text-center">Kurzy</h2>
-        <p class="text-center">Kurzy probíhají v Kroměříži každou středu a čtvrtek.</p>
-        <p class="text-center">Aktuálně kurzy zaplněny - možno si rezervovat místo od září 2025.</p>
         <div class="flex flex-col justify-center items-center gap-8 max-w-[700px] border rounded-xl p-4 bg-gray-100">
-          <p class="text-center">Už teď se lze přihlašovat na kurzy v příštím školním roce! A to v úterý a ve čtvrtek
-            18:15
-            - 19:15</p>
+          <h4 class="text-lg font-semibold">
+            Vyber si svůj kurz v novém školním roce!
+          </h4>
+          <p class="text-center">Úterý nebo čtvrtek 18:15 - 19:15h na adrese Velehradská 507 v Kroměříži. </p>
           <DefaultButton
             href="https://od-pocatku.reenio.cz/cs/view/posilovani-panevniho-dna-a-core-r81914/2025-09-09;viewMode=7-days"
             label="PŘIHLÁSIT" pulse />
