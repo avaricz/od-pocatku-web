@@ -132,6 +132,19 @@
   },
   {
     "id": 11,
+    "title": "Workshop Tajemství pánevního dna II",
+    "date_start": "2025-09-22 16:00:00",
+    "date_end": "2025-09-22 18:30:00",
+    "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
+    "price": "100,-",
+    "image": null,
+    "map_image": "map_klubicko.png",
+    "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+    "description": "<p>Navazující kurz pro ženy, co prošly workshopem Tajemství pánevního dna I</p><br><p>Co Tě čeká:</p><ul><li>pokročilé techniky cvičení přes tři vrstvy</li>\n    <li>navazující bioenergetické techniky</li>\n    <li>zaměření na segment krku a chodidel</li>\n    <li>povídání o ikontinenci - prevenci a řešení</li>\n    <li>úvod do cvičení hlubokého stabilizačního systému</li>\n    <li>relaxace a sdílení</li>\n </ul>",
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/view/tajemstvi-panevniho-dna-ii-r82644/2025-09-22;viewMode=7-days"
+  },
+  {
+    "id": 12,
     "title": "Předporodní kurz pro páry",
     "date_start": "2025-09-26 17:30:00",
     "date_end": "2025-09-26 19:00:00",
