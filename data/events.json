@@ -184,28 +184,68 @@
   },
   {
     "id": 15,
+    "title": "Wellbeing pro mámy",
+    "date_start": "2025-11-02 16:00:00",
+    "date_end": "2025-11-02 19:00:00",
+    "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
+    "price": "100,-",
+    "image": null,
+    "map_image": "map_klubicko.png",
+    "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+    "description": "<p>Wellbeing pro mámy – čas jen pro TEBE!</p>\n<br> <p>Milá maminko, zastav se na chvilku. Odlož povinnosti, starosti i hračky rozházené po bytě a dopřej si odpoledne plné klidu, péče a ženské energie.</p>\n <br><p>Co Tě čeká:</p><ul>\n    <li>- jemné dechové a relaxační techniky, které uvolní tělo i mysl</li>\n    <li>- automasáže, které Ti dodají novou sílu</li>\n    <li>- cvičení na sebepoznání – nahlédneš do svého vnitřního světa</li>\n  <li>- vedená meditace k uzemnění a harmonii</li>\n <br><p>Nebudeš muset nic – jen být. Bez dětí, bez úklidu, bez spěchu.</p> <p>Dopřej si čas pro sebe, zasloužíš si to.</p> </ul>",
+
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/view/funkcni-treninky-r81914/2025-11-02;viewMode=7-days"
+  },
+  {
+    "id": 16,
+    "title": "Workshop fyzická příprava na porod",
+    "date_start": "2025-11-07 15:30:00",
+    "date_end": "2025-11-07 18:30:00",
+    "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
+    "price": "250,-",
+    "image": null,
+    "map_image": "map_klubicko.png",
+    "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+    "description": "<p>Pro fit těhotenství, snadný porod, rychlý návrat do kondice!</p>\n <br> <ul>\n  <li>- prevence diastázy, povoleného pánevního dna, bolestí zad a kloubů</li>\n    <li>- dechové techniky pro pevný core i jednotlivé porodní fáze</li>\n    <li>- cviky na mobilitu pánve pro snadnější porod</li>\n  <li>- série vhodných těhotenských cvičení</li>\n <li>- aktivace i relaxace</li>\n </ul> <br><p>Vhodné pro ženy ve II. trimestru.</p> \n",
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/view/funkcni-treninky-r81914/2025-11-07;viewMode=7-days"
+  },
+  {
+    "id": 17,
+    "title": "Šestinedělí, kojení a rané mateřství",
+    "date_start": "2025-11-21 15:30:00",
+    "date_end": "2025-11-21 18:30:00",
+    "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
+    "price": "250,-",
+    "image": null,
+    "map_image": "map_klubicko.png",
+    "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+    "description": "<p>Co tě na workshopu čeká:</p>\n <br>\n <ul>\n    <li>- vše o bondingu a samopřisátí</li>\n    <li>- vše o správné technice kojení</li>\n    <li>- jak řešit nejrůznější situace i jak jim předejít</li>\n    <li>- jak o sebe pečovat v šestinedělí a jak se postarat o co nejlepší regeneraci těla po porodu</li>\n <li>- zpracování placenty</li>\n <li>- vše o pláči miminka - jak mu porozumět, a o 'setkání ženy s vlastním stínem'</li>\n <li>- jak začít mateřství tak, abys byla v co největší pohodě</li>\n   </ul>",
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-11-21;viewMode=7-days"
+  },
+  {
+    "id": 18,
     "title": "Předporodní kurz pro páry",
-    "date_start": "2025-11-21 17:30:00",
-    "date_end": "2025-11-21 19:00:00",
+    "date_start": "2025-11-28 17:30:00",
+    "date_end": "2025-11-28 19:00:00",
     "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
     "price": "400,-/pár",
     "image": null,
     "map_image": "map_klubicko.png",
     "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
     "description": "<p>Vše, co potřebujete vědět k porodu a šestinedělí - jasně, výstižně a prakticky.</p>\n <br>\n <ul>\n    <li>- praktický kurz zaměřený na muže, aby byli při porodu i po něm tou nejlepší oporou</li>\n    <li>- společný nácvik úlevových technik, masáží a porodních pozic v páru</li>\n    <li>- co dělat od první kontrakce až po bonding</li>\n    <li>- téma šestinedělí - nástin ženské psychiky, co žena prožívá a co potřebuje</li>\n  </ul>",
-    "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-11-21;viewMode=7-days"
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2025-11-28;viewMode=7-days"
   },
   {
-    "id": 16,
+    "id": 19,
     "title": "Workshop funkčního pohybu",
-    "date_start": "2025-12-12 15:30:00",
-    "date_end": "2025-12-12 18:30:00",
+    "date_start": "2025-12-07 15:30:00",
+    "date_end": "2025-12-07 18:30:00",
     "adress": "RC Klubíčko - Albertova 4062, Kroměříž",
     "price": "100,-",
     "image": null,
     "map_image": "map_klubicko.png",
     "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
     "description": "<ul>\n    <li>- aktivace pánevního dna a hlubokého stabilizačního systému</li>\n    <li>- série cviků na funkční zpevňování celého těla</li>\n    <li>- jak tyto cviky a zdravý pohyb zařadit do běžného dne</li>\n  <li>- dechová cvičení, relaxace</li>\n </ul>",
-    "reservation_link": "https://od-pocatku.reenio.cz/cs/view/funkcni-treninky-r81914/2025-12-12;viewMode=7-days"
+    "reservation_link": "https://od-pocatku.reenio.cz/cs/view/funkcni-treninky-r81914/2025-12-07;viewMode=7-days"
   }
 ]
