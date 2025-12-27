@@ -99,6 +99,24 @@ export const navigation: NavigationItem[] = [
         showInFooter: true,
       },
       {
+        label: "Tajemství pánevního dna",
+        type: "link",
+        link: "/kurzy-a-workshopy/tajemstvi-panevniho-dna",
+        showInFooter: true,
+      },
+      {
+        label: "Beseda pro dívky o dospívání a začínající cykličnosti",
+        type: "link",
+        link: "/kurzy-a-workshopy/beseda-pro-divky-o-dospevani-a-zacinajici-cyklicnosti",
+        showInFooter: true,
+      },
+      {
+        label: "Bioenergetika - práce s tělem a emocemi",
+        type: "link",
+        link: "/kurzy-a-workshopy/bioenergetika-prace-s-telem-a-emocemi",
+        showInFooter: true,
+      },
+      {
         label: "Fyzická příprava na porod",
         type: "link",
         link: "/kurzy-a-workshopy/fyzicka-priprava-na-porod",
@@ -108,6 +126,12 @@ export const navigation: NavigationItem[] = [
         label: "Kurz posilování středu těla a pánevního dna",
         type: "link",
         link: "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna",
+        showInFooter: true,
+      },
+      {
+        label: "Dechové techniky",
+        type: "link",
+        link: "/kurzy-a-workshopy/dechove-techniky",
         showInFooter: true,
       },
     ],

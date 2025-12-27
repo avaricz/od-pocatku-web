@@ -13,5 +13,9 @@ export type ValidPaths =
   | "/sluzby/ritualy"
   | "/kurzy-a-workshopy/predporodni-kurzy"
   | "/kurzy-a-workshopy/zazitkovy-predporodni-kurz"
+  | "/kurzy-a-workshopy/tajemstvi-panevniho-dna"
+  | "/kurzy-a-workshopy/beseda-pro-divky-o-dospevani-a-zacinajici-cyklicnosti"
+  | "/kurzy-a-workshopy/bioenergetika-prace-s-telem-a-emocemi"
+  | "/kurzy-a-workshopy/dechove-techniky"
   | "/kurzy-a-workshopy/fyzicka-priprava-na-porod"
   | "/kurzy-a-workshopy/kurz-posilovani-stredu-tela-a-panevniho-dna";
