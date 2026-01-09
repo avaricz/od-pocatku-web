@@ -247,5 +247,71 @@
     "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
     "description": "<ul>\n    <li>- aktivace pánevního dna a hlubokého stabilizačního systému</li>\n    <li>- série cviků na funkční zpevňování celého těla</li>\n    <li>- jak tyto cviky a zdravý pohyb zařadit do běžného dne</li>\n  <li>- dechová cvičení, relaxace</li>\n </ul>",
     "reservation_link": "https://od-pocatku.reenio.cz/cs/view/funkcni-treninky-r81914/2025-12-07;viewMode=7-days"
-  }
+  },
+  {
+  "id": 20,
+  "title": "Funkční trénink",
+  "date_start": "2026-01-14 17:00:00",
+  "date_end": "2026-01-14 19:00:00",
+  "adress": "Kulturní dům Věžky u Kroměříže",
+  "price": "vstupné dobrovolné (akce je pořádána spolkem MAS Hříběcí hory)",
+  "image": null,
+  "map_image": null,
+  "map_url": null,
+  "description": "<p>Dvouhodinový funkční trénink pro ženy i muže!</p>\n <br>\n<span>Na co se můžete těšit: </span> \n<ul>\n  <li>- naučení správné techniky základních cviků</li>\n  <li>- tabata na rozehřátí</li>\n  <li>- série na zpevnění celého těla</li>\n  <li>- planková výzva</li>\n  <li>- cviky na mobilitu, stretching</li>\n  <li>- kondiční cvičení</li>\n  <li>- závěrečná relaxace</li>\n</ul>\n<p></p>",
+  "reservation_link": "mailto:vendula.dolezelova@hribecihory.cz"
+},
+{
+  "id": 21,
+  "title": "Povánoční zpevňovačka",
+  "date_start": "2026-01-16 17:00:00",
+  "date_end": "2026-01-16 19:00:00",
+  "adress": "Poliklinika – Tř. Osvobození 1388, Otrokovice (prostor organizace Aktivně životem)",
+  "price": "220,-",
+  "image": null,
+  "map_image": null,
+  "map_url": null,
+  "description": "<p>Pohybový restart na začátek nového roku!</p>\n<br>\n<span>Těš se na: </span> \n<ul>\n  <li>- série na zpevnění celého těla</li>\n  <li>- cviky na mobilitu, stretching</li>\n  <li>- funkční cvičení s vlastní vahou</li>\n  <li>- správná technika</li>\n  <li>- závěrečná relaxace</li>\n</ul>\n<br>\n<p>Akce pořádána ve spolupráci s organizací Aktivně životem.</p>",
+  "reservation_link": "https://od-pocatku.reenio.cz/cs/view/povanocni-zpevnovacka-r89752/2026-01-16;viewMode=7-days"
+},
+{
+  "id": 22,
+  "title": "Povánoční zpevňovačka",
+  "date_start": "2026-01-17 16:00:00",
+  "date_end": "2026-01-17 18:00:00",
+  "adress": "Poliklinika – Tř. Osvobození 1388, Otrokovice (prostor organizace Aktivně životem)",
+  "price": "220,-",
+  "image": null,
+  "map_image": null,
+  "map_url": null,
+  "description": "<p>Pohybový restart na začátek nového roku!</p>\n<br>\n<span>Těš se na: </span> \n<ul>\n  <li>- série na zpevnění celého těla</li>\n  <li>- cviky na mobilitu, stretching</li>\n  <li>- funkční cvičení s vlastní vahou</li>\n  <li>- správná technika</li>\n  <li>- závěrečná relaxace</li>\n</ul>\n<br>\n<p>Akce pořádána ve spolupráci s organizací Aktivně životem.</p>",
+  "reservation_link": "https://od-pocatku.reenio.cz/cs/view/povanocni-zpevnovacka-r89752/2026-01-17;viewMode=7-days"
+},
+{
+  "id": 23,
+  "title": "Novoroční wellbeing – nedělní odpoledne pro ženy",
+  "date_start": "2026-01-25 14:30:00",
+  "date_end": "2026-01-25 18:00:00",
+  "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
+  "price": "200,-",
+  "image": null,
+  "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+  "description": "<p>Pojďme si užít nedělní odpoledne plné dobré nálady, klidu a příjemné atmosféry, kde v kruhu žen dopřejeme čas samy sobě a vědomě vykročíme do nového roku.</p>\n<br>\n<span>Co nás čeká: </span> \n<ul>\n  <li>- bezpečný a podpůrný kruh žen</li>\n  <li>- sdílení a rekapitulace uplynulého roku</li>\n  <li>- vytvoření záměru pro nový rok</li>\n  <li>- symbolický rituál</li>\n  <li>- dechové techniky a relaxační cvičení</li>\n  <li>- lehký vědomý pohyb pro kontakt s tělem</li>\n  <li>- vedená meditace</li>\n</ul>\n<br>\n<p>Setkání je otevřené všem ženám bez rozdílu.</p>",
+  "reservation_link": "mailto:habrova@klubickokm.cz"
+},
+{
+  "id": 24,
+  "title": "Workshop pro těhotné: fyzická příprava na porod",
+  "date_start": "2026-02-06 15:30:00",
+  "date_end": "2026-02-06 18:30:00",
+  "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
+  "price": "250,-",
+  "image": null,
+  "map_image": null,
+  "map_url": null,
+  "description": "<p>Pro fit těhotenství, snadný porod a rychlý návrat do kondice!</p>\n<br>\n<ul>\n  <li>- prevence diastázy, povoleného pánevního dna, bolestí zad a kloubů</li>\n  <li>- dechové techniky pro pevný core i jednotlivé porodní fáze</li>\n  <li>- cviky na mobilitu pánve pro snadnější porod</li>\n  <li>- série vhodných těhotenských cvičení</li>\n  <li>- aktivace i relaxace</li>\n</ul>\n<br>\n<p>Vhodné pro ženy ve II. trimestru.</p>",
+  "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2026-02-06;viewMode=7-days"
+}
+
 ]

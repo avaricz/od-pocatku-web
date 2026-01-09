@@ -35,9 +35,9 @@
                 <DefaultButton :href="event?.reservation_link" label="Rezervovat" pulse />
             </div>
 
-            <div class="flex justify-center items-center w-full h-[180px] overflow-hidden">
+            <div v-if="event.map_image" class="flex justify-center items-center w-full h-[180px] overflow-hidden">
                 <NuxtLink :to="event.map_url" target="_blank">
-                    <NuxtImg :src="'/maps/map_klubicko.png'" class="w-full h-full object-cover object-center transition-all duration-300 ease-in-out 
+                    <NuxtImg :src="`/maps/${event.map_image}`" class="w-full h-full object-cover object-center transition-all duration-300 ease-in-out 
                                 hover:cursor-pointer md:grayscale hover:grayscale-0" densities="1x"
                         sizes="sm:100vw md:100vw lg:100vw xl:100vw" format="webp" quality="100" />
                 </NuxtLink>
