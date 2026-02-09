@@ -308,10 +308,49 @@
   "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
   "price": "250,-",
   "image": null,
-  "map_image": null,
-  "map_url": null,
+ "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
   "description": "<p>Pro fit těhotenství, snadný porod a rychlý návrat do kondice!</p>\n<br>\n<ul>\n  <li>- prevence diastázy, povoleného pánevního dna, bolestí zad a kloubů</li>\n  <li>- dechové techniky pro pevný core i jednotlivé porodní fáze</li>\n  <li>- cviky na mobilitu pánve pro snadnější porod</li>\n  <li>- série vhodných těhotenských cvičení</li>\n  <li>- aktivace i relaxace</li>\n</ul>\n<br>\n<p>Vhodné pro ženy ve II. trimestru.</p>",
   "reservation_link": "https://od-pocatku.reenio.cz/cs/service/predporodni-kurzy-40417/2026-02-06;viewMode=7-days"
+},
+{
+  "id": 25,
+  "title": "Předporodní kurz: Šestinedělí, kojení a rané mateřství",
+  "date_start": "2026-02-20 15:30:00",
+  "date_end": "2026-02-20 18:30:00",
+  "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
+  "price": "250,-",
+  "image": null,
+  "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+  "description": "<span>Co tě na workshopu čeká:</span>\n<br>\n<ul>\n  <li>- vše o bondingu a samopřisátí</li>\n  <li>- vše o správné technice kojení</li>\n  <li>- jak řešit nejrůznější situace i jak jim předejít</li>\n  <li>- jak o sebe pečovat v šestinedělí a jak se postarat o co nejlepší regeneraci těla po porodu</li>\n  <li>- zpracování placenty</li>\n  <li>- vše o pláči miminka - jak mu porozumět, a o 'setkání ženy s vlastním stínem'</li>\n  <li>- jak začít mateřství tak, abys byla v co největší pohodě</li>\n</ul>",
+  "reservation_link": "mailto:habrova@klubickokm.cz"
+},
+{
+  "id": 26,
+  "title": "Únorová zpevňovačka",
+  "date_start": "2026-02-21 16:00:00",
+  "date_end": "2026-02-21 18:00:00",
+  "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
+  "price": "220,-",
+  "image": null,
+  "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+  "description": "<p>Funkční trénink pro ženy</p>\n<br>\n<span>Co tě čeká:</span>\n<ul>\n  <li>- důkladný stretching a cviky na mobilitu</li>\n  <li>- aktivace pánevího dna a hlubokého stabilizačního systému</li>\n  <li>- intervalový trénink na posílení celého těla</li>\n  <li>- kondiční cvičení</li>\n  <li>- závěrečná relaxace</li>\n</ul>",
+  "reservation_link": "mailto:habrova@klubickokm.cz"
+},
+{
+  "id": 27,
+  "title": "Předporodní kurz pro páry",
+  "date_start": "2026-03-13 17:30:00",
+  "date_end": "2026-03-13 19:00:00",
+  "adress": "RC Klubíčko – Albertova 4062/8, Kroměříž",
+  "price": "200,- / pár",
+  "image": null,
+  "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/@49.2906151,17.3851795,17z/data=!4m17!1m7!3m6!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2zS2x1YsOtxI1rbyBLcm9txJvFmcOtxb4sIHouIHMu!8m2!3d49.2906151!4d17.3851795!16s%2Fg%2F1vspq75n!4m8!1m0!1m5!1m1!1s0x4713068ef3bcdd87:0xa51cc4d0a95d0af8!2m2!1d17.3851795!2d49.2906151!3e3!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+  "description": "<p>Praktický kurz pro páry, který vás připraví na porod i šestinedělí jasně, výstižně a bez zbytečné teorie.</p>\n<br>\n<ul>\n  <li>- praktická příprava mužů, aby byli tou nejlepší oporou u porodu i po něm</li>\n  <li>- společný nácvik úlevových technik, masáží a porodních pozic</li>\n  <li>- co dělat od první kontrakce až po bonding</li>\n  <li>- šestinedělí: ženská psychika, co žena prožívá a co potřebuje</li>\n</ul>",
+  "reservation_link": "mailto:habrova@klubickokm.cz"
 }
 
 ]
