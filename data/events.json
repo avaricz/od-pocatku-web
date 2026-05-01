@@ -429,5 +429,18 @@
   "map_url": "https://maps.app.goo.gl/1J4whuHin179HGPF9",
   "description": "<p>Zůstaň silná i v těhotenství. Připrav své tělo na výkon, který tě čeká. Pro ženy, které chtějí být FIT, mít kontrolu nad svým tělem a jít k porodu připravené.</p>\n<br>\n<ul>\n  <li>- síla a stabilita pro porod</li>\n  <li>- efektivní dýchání pod zátěží</li>\n  <li>- mobilita bez bolesti</li>\n  <li>- funkční práce s pánevním dnem</li>\n  <li>- rychlejší regenerace</li></ul>",
   "reservation_link": "mailto:lucieodpocatku@gmail.com"
+},
+{
+  "id": 34,
+  "title": "Kruháč pro ženy",
+  "date_start": "2026-05-17 17:00:00",
+  "date_end": "2026-05-17 18:30:00",
+  "adress": "RC Klubíčko – Albertova 4062, Kroměříž",
+  "price": "200,-",
+  "image": null,
+  "map_image": "map_klubicko.png",
+  "map_url": "https://www.google.cz/maps/dir//Klub%C3%AD%C4%8Dko+Krom%C4%9B%C5%99%C3%AD%C5%BE,+z.+s.,+Albertova+4062%2F8,+767+01+Krom%C4%9B%C5%99%C3%AD%C5%BE+1/",
+  "description": "<p>Kruháč pro ženy</p>\n<br>\n<ul>\n  <li>- funkční cvičení s pomůckami</li>\n  <li>- intervalový trénink</li>\n  <li>- kardio i silové cvičení</li>\n  <li>- vše pod dohledem, podle svého tempa a kondice</li>\n</ul>",
+  "reservation_link": "mailto:lucieodpocatku@gmail.com"
 }
 ]
